@@ -30,7 +30,7 @@
           <mxGeometry height="24" width="462" y="84" as="geometry" />
         </mxCell>
         <UserObject label="&lt;b&gt;CloudinaryProvider&lt;/b&gt;" mermaidId="n:CloudinaryProvider" mermaidBaseStyle="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" mermaidBaseValue="&lt;b&gt;CloudinaryProvider&lt;/b&gt;" id="9">
-          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
+          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=72;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
             <mxGeometry height="168" width="226" x="533" y="226" as="geometry" />
           </mxCell>
         </UserObject>
@@ -47,7 +47,7 @@
           <mxGeometry height="24" width="226" y="132" as="geometry" />
         </mxCell>
         <UserObject label="&lt;b&gt;CloudinarySDK&lt;/b&gt;" mermaidId="n:CloudinarySDK" mermaidBaseStyle="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" mermaidBaseValue="&lt;b&gt;CloudinarySDK&lt;/b&gt;" id="14">
-          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
+          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=72;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
             <mxGeometry height="168" width="333" x="283" y="468" as="geometry" />
           </mxCell>
         </UserObject>
@@ -122,7 +122,7 @@
           <mxGeometry height="24" width="462" y="84" as="geometry" />
         </mxCell>
         <UserObject label="&lt;b&gt;CloudinaryProvider&lt;/b&gt;" mermaidId="n:CloudinaryProvider" mermaidBaseStyle="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" mermaidBaseValue="&lt;b&gt;CloudinaryProvider&lt;/b&gt;" id="9">
-          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
+          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=72;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
             <mxGeometry height="168" width="226" x="533" y="226" as="geometry" />
           </mxCell>
         </UserObject>
@@ -139,7 +139,7 @@
           <mxGeometry height="24" width="226" y="132" as="geometry" />
         </mxCell>
         <UserObject label="&lt;b&gt;CloudinarySDK&lt;/b&gt;" mermaidId="n:CloudinarySDK" mermaidBaseStyle="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" mermaidBaseValue="&lt;b&gt;CloudinarySDK&lt;/b&gt;" id="14">
-          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
+          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=72;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
             <mxGeometry height="168" width="333" x="283" y="468" as="geometry" />
           </mxCell>
         </UserObject>

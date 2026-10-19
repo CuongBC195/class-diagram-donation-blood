@@ -205,7 +205,6 @@ class PrismaService {
   +donation_interval_rules: PrismaIntervalRuleDelegate
   +urgency_levels: PrismaUrgencyLevelDelegate
   +roles: PrismaRoleDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -362,7 +361,6 @@ direction TB
 
 class MasterDataController {
   -masterDataService: MasterDataService
-  ...
   +getFacilities(query: MasterDataFilterDto): Promise~any~
   +getFacilityById(id: number): Promise~any~
   +createFacility(dto: CreateFacilityDto): Promise~any~
@@ -419,7 +417,6 @@ class UpdateFacilityDto {
 
 class MasterDataService {
   -prisma: PrismaService
-  ...
   +getFacilities(query: MasterDataFilterDto): Promise~any~
   +getFacilityById(id: number): Promise~any~
   +createFacility(dto: CreateFacilityDto): Promise~any~
@@ -458,7 +455,6 @@ class PrismaService {
   +medical_facilities: PrismaMedicalFacilityDelegate
   +provinces: PrismaProvinceDelegate
   +wards: PrismaWardDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -530,7 +526,6 @@ direction TB
 
 class MasterDataController {
   -masterDataService: MasterDataService
-  ...
   +getBloodTypes(query: MasterDataFilterDto): Promise~any~
   +createBloodType(dto: CreateBloodTypeDto): Promise~any~
   +updateBloodType(id: number, dto: UpdateBloodTypeDto): Promise~any~
@@ -580,7 +575,6 @@ class UpdateBloodComponentDto {
 
 class MasterDataService {
   -prisma: PrismaService
-  ...
   +getBloodTypes(query: MasterDataFilterDto): Promise~any~
   +createBloodType(dto: CreateBloodTypeDto): Promise~any~
   +updateBloodType(id: number, dto: UpdateBloodTypeDto): Promise~any~
@@ -612,7 +606,6 @@ class PrismaService {
   +blood_types: PrismaBloodTypeDelegate
   +blood_components: PrismaBloodComponentDelegate
   +donation_interval_rules: PrismaIntervalRuleDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -678,7 +671,6 @@ direction TB
 
 class MasterDataController {
   -masterDataService: MasterDataService
-  ...
   +getBloodCompatibilities(query: MasterDataFilterDto): Promise~any~
   +createBloodCompatibility(dto: CreateBloodCompatibilityDto): Promise~any~
   +updateBloodCompatibility(id: number, dto: UpdateBloodCompatibilityDto): Promise~any~
@@ -710,7 +702,6 @@ class UpdateBloodCompatibilityDto {
 
 class MasterDataService {
   -prisma: PrismaService
-  ...
   +getBloodCompatibilities(query: MasterDataFilterDto): Promise~any~
   +createBloodCompatibility(dto: CreateBloodCompatibilityDto): Promise~any~
   +updateBloodCompatibility(id: number, dto: UpdateBloodCompatibilityDto): Promise~any~
@@ -738,7 +729,6 @@ class PrismaService {
   +blood_types: PrismaBloodTypeDelegate
   +blood_components: PrismaBloodComponentDelegate
   +blood_compatibility: PrismaCompatibilityDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -803,7 +793,6 @@ direction TB
 
 class MasterDataController {
   -masterDataService: MasterDataService
-  ...
   +getDonationIntervalRules(query: MasterDataFilterDto): Promise~any~
   +createDonationIntervalRule(dto: CreateDonationIntervalRuleDto): Promise~any~
   +updateDonationIntervalRule(id: number, dto: UpdateDonationIntervalRuleDto): Promise~any~
@@ -834,7 +823,6 @@ class UpdateDonationIntervalRuleDto {
 
 class MasterDataService {
   -prisma: PrismaService
-  ...
   +getDonationIntervalRules(query: MasterDataFilterDto): Promise~any~
   +createDonationIntervalRule(dto: CreateDonationIntervalRuleDto): Promise~any~
   +updateDonationIntervalRule(id: number, dto: UpdateDonationIntervalRuleDto): Promise~any~
@@ -861,7 +849,6 @@ class PrismaClient {
 class PrismaService {
   +blood_components: PrismaBloodComponentDelegate
   +donation_interval_rules: PrismaIntervalRuleDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -914,7 +901,6 @@ direction TB
 
 class MasterDataController {
   -masterDataService: MasterDataService
-  ...
   +getProvinces(): Promise~any~
   +getWards(id: number): Promise~any~
   +getRoles(): Promise~any~
@@ -924,7 +910,6 @@ class MasterDataController {
 
 class MasterDataService {
   -prisma: PrismaService
-  ...
   +getProvinces(): Promise~any~
   +getWards(provinceId: number): Promise~any~
   +getRoles(): Promise~any~
@@ -953,7 +938,6 @@ class PrismaService {
   +wards: PrismaWardDelegate
   +roles: PrismaRoleDelegate
   +urgency_levels: PrismaUrgencyLevelDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }

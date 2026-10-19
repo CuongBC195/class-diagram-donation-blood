@@ -100,7 +100,6 @@ class PrismaService {
   +education_documents: PrismaEducationDocumentDelegate
   +blood_types: PrismaBloodTypeDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -187,7 +186,6 @@ direction TB
 
 class EducationController {
   -educationService: EducationService
-  ...
   +getCategories(): Promise~any~
   +createCategory(dto: CreateEducationCategoryDto): Promise~any~
   +updateCategory(id: number, dto: UpdateEducationCategoryDto): Promise~any~
@@ -209,7 +207,6 @@ class UpdateEducationCategoryDto {
 
 class EducationService {
   -prisma: PrismaService
-  ...
   +getCategories(): Promise~any~
   +createCategory(dto: CreateEducationCategoryDto): Promise~any~
   +updateCategory(id: number, dto: UpdateEducationCategoryDto): Promise~any~
@@ -236,7 +233,6 @@ class PrismaClient {
 class PrismaService {
   +education_document_categories: PrismaEducationCategoryDelegate
   +education_documents: PrismaEducationDocumentDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -284,7 +280,6 @@ direction TB
 
 class EducationController {
   -educationService: EducationService
-  ...
   +getDocuments(query: EducationFilterDto): Promise~any~
   +getDocumentBySlug(slug: string): Promise~any~
   +getRelatedDocuments(slug: string): Promise~any~
@@ -326,7 +321,6 @@ class UpdateEducationDocumentDto {
 
 class EducationService {
   -prisma: PrismaService
-  ...
   +getDocuments(query: EducationFilterDto): Promise~any~
   +getDocumentById(id: number): Promise~any~
   +getDocumentBySlug(slug: string): Promise~any~
@@ -358,7 +352,6 @@ class PrismaService {
   +education_document_categories: PrismaEducationCategoryDelegate
   +blood_types: PrismaBloodTypeDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }

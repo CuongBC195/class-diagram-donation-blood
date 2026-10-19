@@ -139,7 +139,6 @@ class Bcrypt {
   <<utility>>
   +hash(data: string, saltOrRounds: any): Promise~string~
   +genSalt(rounds: number): Promise~string~
-  ...
 }
 
 class ExcelUtil {
@@ -177,7 +176,6 @@ class PrismaService {
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
   +notifications: PrismaNotificationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -333,7 +331,6 @@ direction TB
 
 class UsersController {
   -usersService: UsersService
-  ...
   +getProfile(req: any): Promise~any~
   +updateProfile(req: any, body: any): Promise~any~
   ...
@@ -341,7 +338,6 @@ class UsersController {
 
 class UsersService {
   -prisma: PrismaService
-  ...
   +getProfile(userId: number): Promise~any~
   +updateProfile(userId: number, data: any): Promise~any~
   ...
@@ -370,7 +366,6 @@ class PrismaService {
   +provinces: PrismaProvinceDelegate
   +wards: PrismaWardDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -463,7 +458,6 @@ direction TB
 
 class UsersController {
   -usersService: UsersService
-  ...
   +uploadAvatar(req: any, file: Express.Multer.File): Promise~any~
   ...
 }
@@ -471,7 +465,6 @@ class UsersController {
 class UsersService {
   -prisma: PrismaService
   -cloudinary: CloudinaryService
-  ...
   +uploadAvatar(userId: number, file: Express.Multer.File): Promise~any~
   ...
 }
@@ -499,7 +492,6 @@ class PrismaClient {
 
 class PrismaService {
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -531,7 +523,6 @@ direction TB
 
 class UsersController {
   -usersService: UsersService
-  ...
   +requestChangePasswordOtp(req: any): Promise~any~
   +changePassword(req: any, dto: ChangePasswordVerifyDto): Promise~any~
   ...
@@ -552,26 +543,22 @@ class CreateNotificationDto {
 class OtpTypeCode {
   <<enumeration>>
   CHANGE_PASSWORD
-  ...
 }
 
 class DestinationType {
   <<enumeration>>
   EMAIL
-  ...
 }
 
 class NotificationType {
   <<enumeration>>
   SUCCESS
-  ...
 }
 
 class UsersService {
   -prisma: PrismaService
   -mailService: MailService
   -notificationsService: NotificationsService
-  ...
   +sendChangePasswordOtp(userId: number): Promise~any~
   +changePassword(userId: number, dto: ChangePasswordVerifyDto): Promise~any~
   ...
@@ -582,12 +569,10 @@ class Bcrypt {
   +hash(data: string, saltOrRounds: any): Promise~string~
   +compare(data: string, encrypted: string): Promise~boolean~
   +genSalt(rounds: number): Promise~string~
-  ...
 }
 
 class MailService {
   -mailerService: MailerService
-  ...
   +sendChangePasswordEmail(email: string, otpCode: string, name: string): Promise~void~
   ...
 }
@@ -599,7 +584,6 @@ class MailerService {
 
 class NotificationsService {
   -prisma: PrismaService
-  ...
   +createNotification(dto: CreateNotificationDto): Promise~any~
   ...
 }
@@ -626,7 +610,6 @@ class PrismaService {
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
   +notifications: PrismaNotificationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -709,7 +692,6 @@ direction TB
 
 class UsersController {
   -usersService: UsersService
-  ...
   +getAllUsers(query: UserFilterDto): Promise~any~
   +getUserById(userId: number): Promise~any~
   +createUser(dto: CreateUserAdminDto): Promise~any~
@@ -787,7 +769,6 @@ class UpdateUserAdminDto {
 
 class UsersService {
   -prisma: PrismaService
-  ...
   +getAllUsers(query: UserFilterDto): Promise~any~
   +getUserById(userId: number): Promise~any~
   +createUserAdmin(dto: CreateUserAdminDto): Promise~any~
@@ -800,7 +781,6 @@ class Bcrypt {
   <<utility>>
   +hash(data: string, saltOrRounds: any): Promise~string~
   +genSalt(rounds: number): Promise~string~
-  ...
 }
 
 class OnModuleInit {
@@ -829,7 +809,6 @@ class PrismaService {
   +wards: PrismaWardDelegate
   +blood_types: PrismaBloodTypeDelegate
   +donations: PrismaDonationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -956,7 +935,6 @@ direction TB
 
 class UsersController {
   -usersService: UsersService
-  ...
   +exportExcel(query: UserFilterDto, res: Response): Promise~void~
   +downloadTemplate(res: Response): Promise~void~
   +importExcel(file: Express.Multer.File, req: any): Promise~any~
@@ -975,7 +953,6 @@ class UserFilterDto {
 
 class UsersService {
   -prisma: PrismaService
-  ...
   +exportExcel(query: any): Promise~Buffer~
   +getTemplate(): Promise~Buffer~
   +importExcel(buffer: Buffer, staffId: number): Promise~any~
@@ -992,7 +969,6 @@ class ExcelUtil {
 class Bcrypt {
   <<utility>>
   +hash(data: string, saltOrRounds: any): Promise~string~
-  ...
 }
 
 class OnModuleInit {
@@ -1015,7 +991,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +roles: PrismaRoleDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }

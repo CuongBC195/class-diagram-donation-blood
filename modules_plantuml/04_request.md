@@ -159,7 +159,6 @@ class PrismaService {
   +donor_availability_slots: PrismaAvailabilitySlotDelegate
   +provinces: PrismaProvinceDelegate
   +wards: PrismaWardDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -361,7 +360,6 @@ hide empty members
 
 class RequestController {
   -requestService: RequestService
-  ...
   +createRequest(req: any, dto: CreateRequestDto): Promise<any>
   +createPublicRequest(req: any, dto: CreateRequestDto): Promise<any>
   ...
@@ -395,7 +393,6 @@ enum NotificationType {
 class RequestService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
-  ...
   +createRequest(dto: CreateRequestDto, user: any): Promise<any>
   +createPublicRequest(dto: CreateRequestDto, userId?: number): Promise<any>
   ...
@@ -431,7 +428,6 @@ class PrismaService {
   +blood_components: PrismaBloodComponentDelegate
   +urgency_levels: PrismaUrgencyLevelDelegate
   +blood_request_statuses: PrismaRequestStatusDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -540,7 +536,6 @@ hide empty members
 
 class RequestController {
   -requestService: RequestService
-  ...
   +getPublicRequests(query: any): Promise<any>
   +getPublicRequestByCode(code: string): Promise<any>
   +getMyRequests(req: any, query: any): Promise<any>
@@ -551,7 +546,6 @@ class RequestController {
 
 class RequestService {
   -prisma: PrismaService
-  ...
   +getRequests(query: any, user?: any): Promise<any>
   +getRequestByCode(code: string): Promise<any>
   +getRequestById(requestId: number, userId: number): Promise<any>
@@ -581,7 +575,6 @@ class PrismaService {
   +blood_request_statuses: PrismaRequestStatusDelegate
   +blood_request_status_history: PrismaStatusHistoryDelegate
   +donor_availability_slots: PrismaAvailabilitySlotDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -685,7 +678,6 @@ hide empty members
 
 class RequestController {
   -requestService: RequestService
-  ...
   +updateRequest(req: any, id: number, dto: Partial<CreateRequestDto>): Promise<any>
   +deleteRequest(req: any, id: number): Promise<any>
   +cancelRequest(req: any, id: number): Promise<any>
@@ -705,7 +697,6 @@ class CreateRequestDto {
 
 class RequestService {
   -prisma: PrismaService
-  ...
   +updateRequest(requestId: number, dto: Partial<CreateRequestDto>, user: any): Promise<any>
   +deleteRequest(requestId: number, user: any): Promise<any>
   +cancelRequest(requestId: number, user: any): Promise<any>
@@ -731,7 +722,6 @@ class PrismaService {
   +blood_request_status_history: PrismaStatusHistoryDelegate
   +blood_request_inventory_allocations: PrismaAllocationDelegate
   +blood_request_statuses: PrismaRequestStatusDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -799,7 +789,6 @@ hide empty members
 
 class RequestController {
   -requestService: RequestService
-  ...
   +processRequest(req: any, id: number): Promise<any>
   ...
 }
@@ -826,7 +815,6 @@ class RequestService {
   -prisma: PrismaService
   -eventEmitter: EventEmitter2
   -notificationsService: NotificationsService
-  ...
   +processRequest(requestId: number, user: any): Promise<any>
   +handleMatchDonorsEvent(payload: any): Promise<void>
   ...
@@ -863,7 +851,6 @@ class PrismaService {
   +notifications: PrismaNotificationDelegate
   +blood_request_statuses: PrismaStatusDelegate
   +blood_request_donor_matches: PrismaDonorMatchDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -993,7 +980,6 @@ hide empty members
 
 class RequestController {
   -requestService: RequestService
-  ...
   +getAllocations(req: any, id: number): Promise<any>
   +allocateInventory(req: any, id: number, dto: AllocateInventoryDto): Promise<any>
   +releaseAllocation(req: any, allocationId: number): Promise<any>
@@ -1006,7 +992,6 @@ class AllocateInventoryDto {
 
 class RequestService {
   -prisma: PrismaService
-  ...
   +getAllocations(requestId: number, user?: any): Promise<any>
   +allocateInventory(requestId: number, inventoryIds: number[], user: any): Promise<any>
   +releaseAllocation(allocationId: number, user: any): Promise<any>
@@ -1038,7 +1023,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +blood_types: PrismaBloodTypeDelegate
   +blood_components: PrismaBloodComponentDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -1156,7 +1140,6 @@ hide empty members
 
 class RequestController {
   -requestService: RequestService
-  ...
   +getMatches(req: any, id: number): Promise<any>
   +findDonorMatches(req: any, id: number): Promise<any>
   +updateMatchStatus(req: any, matchId: number, dto: UpdateMatchStatusDto): Promise<any>
@@ -1169,7 +1152,6 @@ class UpdateMatchStatusDto {
 
 class RequestService {
   -prisma: PrismaService
-  ...
   +getMatches(requestId: number, user?: any): Promise<any>
   +findDonorMatches(requestId: number, user?: any): Promise<any>
   +updateMatchStatus(matchId: number, status: string, user?: any): Promise<any>
@@ -1194,7 +1176,6 @@ class PrismaService {
   +blood_requests: PrismaBloodRequestDelegate
   +blood_request_donor_matches: PrismaDonorMatchDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -1256,7 +1237,6 @@ hide empty members
 
 class RequestController {
   -requestService: RequestService
-  ...
   +exportExcel(query: any, res: Response, req: any): Promise<void>
   +downloadTemplate(res: Response): Promise<void>
   +importExcel(file: Express.Multer.File, req: any): Promise<any>
@@ -1265,7 +1245,6 @@ class RequestController {
 
 class RequestService {
   -prisma: PrismaService
-  ...
   +exportExcel(query: any, user?: any): Promise<Buffer>
   +getTemplate(): Promise<Buffer>
   +importExcel(buffer: Buffer, user: any): Promise<any>
@@ -1297,7 +1276,6 @@ class PrismaService {
   +blood_request_status_history: PrismaStatusHistoryDelegate
   +blood_request_statuses: PrismaRequestStatusDelegate
   +urgency_levels: PrismaUrgencyLevelDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }

@@ -67,7 +67,6 @@ class PrismaClient {
 class PrismaService {
   +notifications: PrismaNotificationDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -122,7 +121,6 @@ hide empty members
 
 class NotificationsController {
   -notificationsService: NotificationsService
-  ...
   +getMyNotifications(req: any, query: any): Promise<any>
   +getUnreadCount(req: any): Promise<any>
   +markAllAsRead(req: any): Promise<any>
@@ -132,7 +130,6 @@ class NotificationsController {
 
 class NotificationsService {
   -prisma: PrismaService
-  ...
   +getNotifications(query: any): Promise<any>
   +getUnreadCount(userId: number): Promise<any>
   +markAllAsRead(userId: number): Promise<any>
@@ -157,7 +154,6 @@ class PrismaClient {
 class PrismaService {
   +notifications: PrismaNotificationDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -205,7 +201,6 @@ hide empty members
 
 class NotificationsController {
   -notificationsService: NotificationsService
-  ...
   +createNotification(dto: CreateNotificationDto): Promise<any>
   +getNotifications(query: any): Promise<any>
   +deleteNotification(id: number): Promise<any>
@@ -230,7 +225,6 @@ enum NotificationType {
 
 class NotificationsService {
   -prisma: PrismaService
-  ...
   +createNotification(dto: CreateNotificationDto): Promise<any>
   +notifyAdmins(title: string, message: string, type: string, reference_type?: string, reference_id?: number): Promise<void>
   +getNotifications(query: any): Promise<any>
@@ -255,7 +249,6 @@ class PrismaClient {
 class PrismaService {
   +notifications: PrismaNotificationDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }

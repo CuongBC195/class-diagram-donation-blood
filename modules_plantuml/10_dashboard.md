@@ -45,7 +45,6 @@ class PrismaService {
   +blood_request_statuses: PrismaRequestStatusDelegate
   +blood_types: PrismaBloodTypeDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -196,7 +195,6 @@ class PrismaService {
   +blood_request_statuses: PrismaRequestStatusDelegate
   +blood_types: PrismaBloodTypeDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }

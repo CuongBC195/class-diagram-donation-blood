@@ -100,6 +100,7 @@ class JwtStrategy {
 }
 
 class PassportStrategy {
+
 }
 
 class OnModuleInit {
@@ -126,7 +127,6 @@ class PrismaService {
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
   +notifications: PrismaNotificationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -250,7 +250,6 @@ direction TB
 
 class AuthController {
   -authService: AuthService
-  ...
   +register(dto: RegisterDto): Promise~any~
   ...
 }
@@ -265,25 +264,21 @@ class RegisterDto {
 class RoleCode {
   <<enumeration>>
   MEMBER
-  ...
 }
 
 class OtpTypeCode {
   <<enumeration>>
   REGISTER_VERIFY
-  ...
 }
 
 class DestinationType {
   <<enumeration>>
   EMAIL
-  ...
 }
 
 class AuthService {
   -prisma: PrismaService
   -mailService: MailService
-  ...
   +register(dto: RegisterDto): Promise~any~
   ...
 }
@@ -292,12 +287,10 @@ class Bcrypt {
   <<utility>>
   +hash(data: string, saltOrRounds: any): Promise~string~
   +genSalt(rounds: number): Promise~string~
-  ...
 }
 
 class MailService {
   -mailerService: MailerService
-  ...
   +sendVerificationEmail(email: string, otpCode: string, name: string): Promise~void~
   ...
 }
@@ -329,7 +322,6 @@ class PrismaService {
   +roles: PrismaRoleDelegate
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -405,7 +397,6 @@ direction TB
 
 class AuthController {
   -authService: AuthService
-  ...
   +verifyOtp(dto: OtpDto): Promise~any~
   ...
 }
@@ -425,19 +416,16 @@ class CreateNotificationDto {
 class OtpTypeCode {
   <<enumeration>>
   REGISTER_VERIFY
-  ...
 }
 
 class NotificationType {
   <<enumeration>>
   INFO
-  ...
 }
 
 class AuthService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
-  ...
   +verifyOtp(dto: OtpDto): Promise~any~
   ...
 }
@@ -445,12 +433,10 @@ class AuthService {
 class Bcrypt {
   <<utility>>
   +compare(data: string, encrypted: string): Promise~boolean~
-  ...
 }
 
 class NotificationsService {
   -prisma: PrismaService
-  ...
   +createNotification(dto: CreateNotificationDto): Promise~any~
   +notifyAdmins(title: string, message: string, type: string, reference_type?: string, reference_id?: number): Promise~void~
   ...
@@ -478,7 +464,6 @@ class PrismaService {
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
   +notifications: PrismaNotificationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -558,7 +543,6 @@ direction TB
 
 class AuthController {
   -authService: AuthService
-  ...
   +resendOtp(dto: ResendOtpDto): Promise~any~
   ...
 }
@@ -570,19 +554,16 @@ class ResendOtpDto {
 class OtpTypeCode {
   <<enumeration>>
   REGISTER_VERIFY
-  ...
 }
 
 class DestinationType {
   <<enumeration>>
   EMAIL
-  ...
 }
 
 class AuthService {
   -prisma: PrismaService
   -mailService: MailService
-  ...
   +resendOtp(dto: ResendOtpDto): Promise~any~
   ...
 }
@@ -590,12 +571,10 @@ class AuthService {
 class Bcrypt {
   <<utility>>
   +hash(data: string, saltOrRounds: any): Promise~string~
-  ...
 }
 
 class MailService {
   -mailerService: MailerService
-  ...
   +sendVerificationEmail(email: string, otpCode: string, name: string): Promise~void~
   ...
 }
@@ -625,7 +604,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -688,7 +666,6 @@ direction TB
 
 class AuthController {
   -authService: AuthService
-  ...
   +login(dto: LoginDto): Promise~any~
   ...
 }
@@ -701,7 +678,6 @@ class LoginDto {
 class AuthService {
   -prisma: PrismaService
   -jwtService: JwtService
-  ...
   +login(dto: LoginDto): Promise~any~
   ...
 }
@@ -714,13 +690,11 @@ class JwtService {
 class Bcrypt {
   <<utility>>
   +compare(data: string, encrypted: string): Promise~boolean~
-  ...
 }
 
 class Crypto {
   <<utility>>
   +randomBytes(size: number): Buffer
-  ...
 }
 
 class OnModuleInit {
@@ -743,7 +717,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +roles: PrismaRoleDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -809,7 +782,6 @@ direction TB
 
 class AuthController {
   -authService: AuthService
-  ...
   +refreshToken(dto: RefreshTokenDto): Promise~any~
   ...
 }
@@ -821,7 +793,6 @@ class RefreshTokenDto {
 class AuthService {
   -prisma: PrismaService
   -jwtService: JwtService
-  ...
   +refreshToken(refreshToken: string): Promise~any~
   ...
 }
@@ -834,7 +805,6 @@ class JwtService {
 class Crypto {
   <<utility>>
   +randomBytes(size: number): Buffer
-  ...
 }
 
 class OnModuleInit {
@@ -857,7 +827,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +roles: PrismaRoleDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -914,7 +883,6 @@ direction TB
 
 class AuthController {
   -authService: AuthService
-  ...
   +forgotPassword(dto: ForgotPasswordDto): Promise~any~
   ...
 }
@@ -926,19 +894,16 @@ class ForgotPasswordDto {
 class OtpTypeCode {
   <<enumeration>>
   RESET_PASSWORD
-  ...
 }
 
 class DestinationType {
   <<enumeration>>
   EMAIL
-  ...
 }
 
 class AuthService {
   -prisma: PrismaService
   -mailService: MailService
-  ...
   +forgotPassword(dto: ForgotPasswordDto): Promise~any~
   ...
 }
@@ -946,12 +911,10 @@ class AuthService {
 class Bcrypt {
   <<utility>>
   +hash(data: string, saltOrRounds: any): Promise~string~
-  ...
 }
 
 class MailService {
   -mailerService: MailerService
-  ...
   +sendForgotPasswordEmail(email: string, otpCode: string): Promise~void~
   ...
 }
@@ -982,7 +945,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -1044,7 +1006,6 @@ direction TB
 
 class AuthController {
   -authService: AuthService
-  ...
   +resetPassword(dto: ResetPasswordDto): Promise~any~
   ...
 }
@@ -1065,19 +1026,16 @@ class CreateNotificationDto {
 class OtpTypeCode {
   <<enumeration>>
   RESET_PASSWORD
-  ...
 }
 
 class NotificationType {
   <<enumeration>>
   SUCCESS
-  ...
 }
 
 class AuthService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
-  ...
   +resetPassword(dto: ResetPasswordDto): Promise~any~
   ...
 }
@@ -1087,12 +1045,10 @@ class Bcrypt {
   +hash(data: string, saltOrRounds: any): Promise~string~
   +compare(data: string, encrypted: string): Promise~boolean~
   +genSalt(rounds: number): Promise~string~
-  ...
 }
 
 class NotificationsService {
   -prisma: PrismaService
-  ...
   +createNotification(dto: CreateNotificationDto): Promise~any~
   ...
 }
@@ -1119,7 +1075,6 @@ class PrismaService {
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
   +notifications: PrismaNotificationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }

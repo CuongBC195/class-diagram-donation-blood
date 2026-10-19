@@ -24,16 +24,38 @@ DESTINATIONS = [
 TMP_DIR = Path("/tmp/drawio_mermaid_batch")
 TMP_DIR.mkdir(parents=True, exist_ok=True)
 
+def fix_swimlane_margins(drawio_file: Path):
+    import re
+    tree = ET.parse(drawio_file)
+    root = tree.getroot()
+    changed = False
+    for uo in root.iter("UserObject"):
+        cell = uo.find("mxCell")
+        if cell is not None and "swimlane" in cell.attrib.get("style", ""):
+            style = cell.attrib["style"]
+            m_sz = re.search(r"startSize=(\d+)", style)
+            if m_sz:
+                sz = int(m_sz.group(1))
+                if sz > 48:
+                    new_style = re.sub(r"marginTop=\d+", f"marginTop={sz}", style)
+                    if new_style != style:
+                        cell.attrib["style"] = new_style
+                        changed = True
+    if changed:
+        tree.write(drawio_file, encoding="utf-8", xml_declaration=True)
+
 def convert_single_mmd(key: str) -> Path:
     mmd_path = MMD_DIR / f"{key}.mmd"
     out_drawio = TMP_DIR / f"{key}.drawio"
     
-    # Cache check
+    # Cache check with mtime
     if out_drawio.exists() and out_drawio.stat().st_size > 500:
-        return out_drawio
+        if out_drawio.stat().st_mtime >= mmd_path.stat().st_mtime:
+            return out_drawio
         
     cmd = [DRAWIO_BIN, "-x", "-f", "xml", "-o", str(out_drawio), str(mmd_path)]
     subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    fix_swimlane_margins(out_drawio)
     return out_drawio
 
 def main():

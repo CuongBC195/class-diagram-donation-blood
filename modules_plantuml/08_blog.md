@@ -116,7 +116,6 @@ class PrismaService {
   +blog_posts: PrismaBlogPostDelegate
   +blog_comments: PrismaBlogCommentDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -207,7 +206,6 @@ hide empty members
 
 class BlogController {
   -blogService: BlogService
-  ...
   +getCategories(): Promise<any>
   +createCategory(dto: CreateCategoryDto): Promise<any>
   +updateCategory(id: number, dto: UpdateCategoryDto): Promise<any>
@@ -227,7 +225,6 @@ class UpdateCategoryDto {
 
 class BlogService {
   -prisma: PrismaService
-  ...
   +getCategories(): Promise<any>
   +createCategory(dto: CreateCategoryDto): Promise<any>
   +updateCategory(id: number, dto: UpdateCategoryDto): Promise<any>
@@ -252,7 +249,6 @@ class PrismaClient {
 class PrismaService {
   +blog_categories: PrismaBlogCategoryDelegate
   +blog_posts: PrismaBlogPostDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -300,7 +296,6 @@ hide empty members
 
 class BlogController {
   -blogService: BlogService
-  ...
   +getAllPosts(query: BlogFilterDto): Promise<any>
   +getPostBySlug(slug: string): Promise<any>
   +getRelatedPosts(slug: string): Promise<any>
@@ -339,7 +334,6 @@ class UpdatePostDto {
 
 class BlogService {
   -prisma: PrismaService
-  ...
   +getAllPosts(query: BlogFilterDto): Promise<any>
   +getPostBySlug(slug: string): Promise<any>
   +getRelatedPosts(slug: string): Promise<any>
@@ -367,7 +361,6 @@ class PrismaService {
   +blog_categories: PrismaBlogCategoryDelegate
   +blog_posts: PrismaBlogPostDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -433,7 +426,6 @@ hide empty members
 
 class BlogController {
   -blogService: BlogService
-  ...
   +getComments(id: string, query: any): Promise<any>
   +addComment(id: number, req: any, body: AddCommentDto): Promise<any>
   +editMyComment(id: number, req: any, content: string): Promise<any>
@@ -449,7 +441,6 @@ class AddCommentDto {
 
 class BlogService {
   -prisma: PrismaService
-  ...
   +getComments(postId: number, query: any): Promise<any>
   +addComment(postId: number, userId: number | null, data: AddCommentDto): Promise<any>
   +editComment(commentId: number, userId: number, content: string): Promise<any>
@@ -475,7 +466,6 @@ class PrismaService {
   +blog_comments: PrismaBlogCommentDelegate
   +blog_posts: PrismaBlogPostDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -535,7 +525,6 @@ hide empty members
 
 class BlogController {
   -blogService: BlogService
-  ...
   +getAdminComments(query: any): Promise<any>
   +approveComment(id: number, isApproved: boolean): Promise<any>
   +deleteAdminComment(id: number): Promise<any>
@@ -544,7 +533,6 @@ class BlogController {
 
 class BlogService {
   -prisma: PrismaService
-  ...
   +getAdminComments(query: any): Promise<any>
   +approveComment(commentId: number, isApproved: boolean): Promise<any>
   +deleteAdminComment(commentId: number): Promise<any>
@@ -569,7 +557,6 @@ class PrismaService {
   +blog_comments: PrismaBlogCommentDelegate
   +blog_posts: PrismaBlogPostDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }

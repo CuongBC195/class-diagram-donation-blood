@@ -209,7 +209,6 @@ class PrismaService {
   +inventory_transactions: PrismaInventoryTransactionDelegate
   +donation_interval_rules: PrismaDonationIntervalRuleDelegate
   +blood_components: PrismaBloodComponentDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -390,7 +389,6 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
-  ...
   +registerDonor(req: any, data: any): Promise~any~
   +getProfile(req: any): Promise~any~
   +updateProfile(req: any, dto: UpdateDonorProfileDto): Promise~any~
@@ -414,7 +412,6 @@ class UpdateDonorProfileDto {
 
 class DonorService {
   -prisma: PrismaService
-  ...
   +registerDonorProfile(userId: number, data: any): Promise~any~
   +getDonorProfile(userId: number): Promise~any~
   +updateDonorProfile(userId: number, dto: UpdateDonorProfileDto): Promise~any~
@@ -442,7 +439,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +donor_profiles: PrismaDonorProfileDelegate
   +blood_types: PrismaBloodTypeDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -510,14 +506,12 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
-  ...
   +updateAvailability(req: any, body: object): Promise~any~
   ...
 }
 
 class DonorService {
   -prisma: PrismaService
-  ...
   +updateAvailability(userId: number, isAvailable: boolean): Promise~any~
   ...
 }
@@ -540,7 +534,6 @@ class PrismaClient {
 
 class PrismaService {
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -574,7 +567,6 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
-  ...
   +bookSlot(req: any, dto: BookDonationSlotDto): Promise~any~
   +cancelSlot(req: any, id: number): Promise~any~
   ...
@@ -607,7 +599,6 @@ class NotificationType {
 class DonorService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
-  ...
   +bookDonationSlot(userId: number, data: BookDonationSlotDto): Promise~any~
   +cancelDonationSlot(userId: number, slotId: number): Promise~any~
   ...
@@ -645,7 +636,6 @@ class PrismaService {
   +blood_requests: PrismaBloodRequestDelegate
   +blood_compatibility: PrismaBloodCompatibilityDelegate
   +blood_request_donor_matches: PrismaDonorMatchDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -762,7 +752,6 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
-  ...
   +getHistory(req: any): Promise~any~
   +getMySlots(req: any): Promise~any~
   +getSchedules(facilityId: string): Promise~any~
@@ -771,7 +760,6 @@ class DonorController {
 
 class DonorService {
   -prisma: PrismaService
-  ...
   +getDonationHistory(userId: number): Promise~any~
   +getMySlots(userId: number): Promise~any~
   +getSchedules(facilityId?: number): Promise~any~
@@ -802,7 +790,6 @@ class PrismaService {
   +blood_types: PrismaBloodTypeDelegate
   +blood_components: PrismaBloodComponentDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -896,7 +883,6 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
-  ...
   +getSlots(query: PaginationDto, req: any): Promise~any~
   +createSlot(dto: any, req: any): Promise~any~
   +updateSlotStatus(id: number, dto: UpdateSlotStatusDto, req: any): Promise~any~
@@ -921,7 +907,6 @@ class UpdateSlotStatusDto {
 class DonorService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
-  ...
   +getSlots(query: PaginationDto, user: any): Promise~any~
   +createAdminSlot(dto: any, user: any): Promise~any~
   +updateSlotStatus(slotId: number, dto: UpdateSlotStatusDto, user: any): Promise~any~
@@ -965,7 +950,6 @@ class PrismaService {
   +donor_availability_slots: PrismaAvailabilitySlotDelegate
   +facility_donation_schedules: PrismaDonationScheduleDelegate
   +notifications: PrismaNotificationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -1037,7 +1021,6 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
-  ...
   +recordDonation(req: any, dto: RecordDonationDto): Promise~any~
   ...
 }
@@ -1056,7 +1039,6 @@ class RecordDonationDto {
 
 class DonorService {
   -prisma: PrismaService
-  ...
   +recordDonation(user: any, dto: RecordDonationDto): Promise~any~
   ...
 }
@@ -1088,7 +1070,6 @@ class PrismaService {
   +blood_request_statuses: PrismaBloodRequestStatusDelegate
   +blood_request_inventory_allocations: PrismaInventoryAllocationDelegate
   +donation_interval_rules: PrismaDonationIntervalRuleDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }

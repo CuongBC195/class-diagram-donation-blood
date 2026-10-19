@@ -183,6 +183,7 @@ class JwtStrategy {
 }
 
 class PassportStrategy {
+
 }
 
 class OnModuleInit {
@@ -209,7 +210,6 @@ class PrismaService {
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
   +notifications: PrismaNotificationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -335,7 +335,6 @@ direction TB
 
 class AuthController {
   -authService: AuthService
-  ...
   +register(dto: RegisterDto): Promise~any~
   ...
 }
@@ -350,25 +349,21 @@ class RegisterDto {
 class RoleCode {
   <<enumeration>>
   MEMBER
-  ...
 }
 
 class OtpTypeCode {
   <<enumeration>>
   REGISTER_VERIFY
-  ...
 }
 
 class DestinationType {
   <<enumeration>>
   EMAIL
-  ...
 }
 
 class AuthService {
   -prisma: PrismaService
   -mailService: MailService
-  ...
   +register(dto: RegisterDto): Promise~any~
   ...
 }
@@ -377,12 +372,10 @@ class Bcrypt {
   <<utility>>
   +hash(data: string, saltOrRounds: any): Promise~string~
   +genSalt(rounds: number): Promise~string~
-  ...
 }
 
 class MailService {
   -mailerService: MailerService
-  ...
   +sendVerificationEmail(email: string, otpCode: string, name: string): Promise~void~
   ...
 }
@@ -414,7 +407,6 @@ class PrismaService {
   +roles: PrismaRoleDelegate
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -492,7 +484,6 @@ direction TB
 
 class AuthController {
   -authService: AuthService
-  ...
   +verifyOtp(dto: OtpDto): Promise~any~
   ...
 }
@@ -512,19 +503,16 @@ class CreateNotificationDto {
 class OtpTypeCode {
   <<enumeration>>
   REGISTER_VERIFY
-  ...
 }
 
 class NotificationType {
   <<enumeration>>
   INFO
-  ...
 }
 
 class AuthService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
-  ...
   +verifyOtp(dto: OtpDto): Promise~any~
   ...
 }
@@ -532,12 +520,10 @@ class AuthService {
 class Bcrypt {
   <<utility>>
   +compare(data: string, encrypted: string): Promise~boolean~
-  ...
 }
 
 class NotificationsService {
   -prisma: PrismaService
-  ...
   +createNotification(dto: CreateNotificationDto): Promise~any~
   +notifyAdmins(title: string, message: string, type: string, reference_type?: string, reference_id?: number): Promise~void~
   ...
@@ -565,7 +551,6 @@ class PrismaService {
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
   +notifications: PrismaNotificationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -647,7 +632,6 @@ direction TB
 
 class AuthController {
   -authService: AuthService
-  ...
   +resendOtp(dto: ResendOtpDto): Promise~any~
   ...
 }
@@ -659,19 +643,16 @@ class ResendOtpDto {
 class OtpTypeCode {
   <<enumeration>>
   REGISTER_VERIFY
-  ...
 }
 
 class DestinationType {
   <<enumeration>>
   EMAIL
-  ...
 }
 
 class AuthService {
   -prisma: PrismaService
   -mailService: MailService
-  ...
   +resendOtp(dto: ResendOtpDto): Promise~any~
   ...
 }
@@ -679,12 +660,10 @@ class AuthService {
 class Bcrypt {
   <<utility>>
   +hash(data: string, saltOrRounds: any): Promise~string~
-  ...
 }
 
 class MailService {
   -mailerService: MailerService
-  ...
   +sendVerificationEmail(email: string, otpCode: string, name: string): Promise~void~
   ...
 }
@@ -714,7 +693,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -779,7 +757,6 @@ direction TB
 
 class AuthController {
   -authService: AuthService
-  ...
   +login(dto: LoginDto): Promise~any~
   ...
 }
@@ -792,7 +769,6 @@ class LoginDto {
 class AuthService {
   -prisma: PrismaService
   -jwtService: JwtService
-  ...
   +login(dto: LoginDto): Promise~any~
   ...
 }
@@ -805,13 +781,11 @@ class JwtService {
 class Bcrypt {
   <<utility>>
   +compare(data: string, encrypted: string): Promise~boolean~
-  ...
 }
 
 class Crypto {
   <<utility>>
   +randomBytes(size: number): Buffer
-  ...
 }
 
 class OnModuleInit {
@@ -834,7 +808,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +roles: PrismaRoleDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -902,7 +875,6 @@ direction TB
 
 class AuthController {
   -authService: AuthService
-  ...
   +refreshToken(dto: RefreshTokenDto): Promise~any~
   ...
 }
@@ -914,7 +886,6 @@ class RefreshTokenDto {
 class AuthService {
   -prisma: PrismaService
   -jwtService: JwtService
-  ...
   +refreshToken(refreshToken: string): Promise~any~
   ...
 }
@@ -927,7 +898,6 @@ class JwtService {
 class Crypto {
   <<utility>>
   +randomBytes(size: number): Buffer
-  ...
 }
 
 class OnModuleInit {
@@ -950,7 +920,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +roles: PrismaRoleDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -1009,7 +978,6 @@ direction TB
 
 class AuthController {
   -authService: AuthService
-  ...
   +forgotPassword(dto: ForgotPasswordDto): Promise~any~
   ...
 }
@@ -1021,19 +989,16 @@ class ForgotPasswordDto {
 class OtpTypeCode {
   <<enumeration>>
   RESET_PASSWORD
-  ...
 }
 
 class DestinationType {
   <<enumeration>>
   EMAIL
-  ...
 }
 
 class AuthService {
   -prisma: PrismaService
   -mailService: MailService
-  ...
   +forgotPassword(dto: ForgotPasswordDto): Promise~any~
   ...
 }
@@ -1041,12 +1006,10 @@ class AuthService {
 class Bcrypt {
   <<utility>>
   +hash(data: string, saltOrRounds: any): Promise~string~
-  ...
 }
 
 class MailService {
   -mailerService: MailerService
-  ...
   +sendForgotPasswordEmail(email: string, otpCode: string): Promise~void~
   ...
 }
@@ -1077,7 +1040,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -1141,7 +1103,6 @@ direction TB
 
 class AuthController {
   -authService: AuthService
-  ...
   +resetPassword(dto: ResetPasswordDto): Promise~any~
   ...
 }
@@ -1162,19 +1123,16 @@ class CreateNotificationDto {
 class OtpTypeCode {
   <<enumeration>>
   RESET_PASSWORD
-  ...
 }
 
 class NotificationType {
   <<enumeration>>
   SUCCESS
-  ...
 }
 
 class AuthService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
-  ...
   +resetPassword(dto: ResetPasswordDto): Promise~any~
   ...
 }
@@ -1184,12 +1142,10 @@ class Bcrypt {
   +hash(data: string, saltOrRounds: any): Promise~string~
   +compare(data: string, encrypted: string): Promise~boolean~
   +genSalt(rounds: number): Promise~string~
-  ...
 }
 
 class NotificationsService {
   -prisma: PrismaService
-  ...
   +createNotification(dto: CreateNotificationDto): Promise~any~
   ...
 }
@@ -1216,7 +1172,6 @@ class PrismaService {
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
   +notifications: PrismaNotificationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -1426,7 +1381,6 @@ class Bcrypt {
   <<utility>>
   +hash(data: string, saltOrRounds: any): Promise~string~
   +genSalt(rounds: number): Promise~string~
-  ...
 }
 
 class ExcelUtil {
@@ -1464,7 +1418,6 @@ class PrismaService {
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
   +notifications: PrismaNotificationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -1622,7 +1575,6 @@ direction TB
 
 class UsersController {
   -usersService: UsersService
-  ...
   +getProfile(req: any): Promise~any~
   +updateProfile(req: any, body: any): Promise~any~
   ...
@@ -1630,7 +1582,6 @@ class UsersController {
 
 class UsersService {
   -prisma: PrismaService
-  ...
   +getProfile(userId: number): Promise~any~
   +updateProfile(userId: number, data: any): Promise~any~
   ...
@@ -1659,7 +1610,6 @@ class PrismaService {
   +provinces: PrismaProvinceDelegate
   +wards: PrismaWardDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -1754,7 +1704,6 @@ direction TB
 
 class UsersController {
   -usersService: UsersService
-  ...
   +uploadAvatar(req: any, file: Express.Multer.File): Promise~any~
   ...
 }
@@ -1762,7 +1711,6 @@ class UsersController {
 class UsersService {
   -prisma: PrismaService
   -cloudinary: CloudinaryService
-  ...
   +uploadAvatar(userId: number, file: Express.Multer.File): Promise~any~
   ...
 }
@@ -1790,7 +1738,6 @@ class PrismaClient {
 
 class PrismaService {
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -1824,7 +1771,6 @@ direction TB
 
 class UsersController {
   -usersService: UsersService
-  ...
   +requestChangePasswordOtp(req: any): Promise~any~
   +changePassword(req: any, dto: ChangePasswordVerifyDto): Promise~any~
   ...
@@ -1845,26 +1791,22 @@ class CreateNotificationDto {
 class OtpTypeCode {
   <<enumeration>>
   CHANGE_PASSWORD
-  ...
 }
 
 class DestinationType {
   <<enumeration>>
   EMAIL
-  ...
 }
 
 class NotificationType {
   <<enumeration>>
   SUCCESS
-  ...
 }
 
 class UsersService {
   -prisma: PrismaService
   -mailService: MailService
   -notificationsService: NotificationsService
-  ...
   +sendChangePasswordOtp(userId: number): Promise~any~
   +changePassword(userId: number, dto: ChangePasswordVerifyDto): Promise~any~
   ...
@@ -1875,12 +1817,10 @@ class Bcrypt {
   +hash(data: string, saltOrRounds: any): Promise~string~
   +compare(data: string, encrypted: string): Promise~boolean~
   +genSalt(rounds: number): Promise~string~
-  ...
 }
 
 class MailService {
   -mailerService: MailerService
-  ...
   +sendChangePasswordEmail(email: string, otpCode: string, name: string): Promise~void~
   ...
 }
@@ -1892,7 +1832,6 @@ class MailerService {
 
 class NotificationsService {
   -prisma: PrismaService
-  ...
   +createNotification(dto: CreateNotificationDto): Promise~any~
   ...
 }
@@ -1919,7 +1858,6 @@ class PrismaService {
   +otp_types: PrismaOtpTypeDelegate
   +user_otps: PrismaUserOtpDelegate
   +notifications: PrismaNotificationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -2004,7 +1942,6 @@ direction TB
 
 class UsersController {
   -usersService: UsersService
-  ...
   +getAllUsers(query: UserFilterDto): Promise~any~
   +getUserById(userId: number): Promise~any~
   +createUser(dto: CreateUserAdminDto): Promise~any~
@@ -2082,7 +2019,6 @@ class UpdateUserAdminDto {
 
 class UsersService {
   -prisma: PrismaService
-  ...
   +getAllUsers(query: UserFilterDto): Promise~any~
   +getUserById(userId: number): Promise~any~
   +createUserAdmin(dto: CreateUserAdminDto): Promise~any~
@@ -2095,7 +2031,6 @@ class Bcrypt {
   <<utility>>
   +hash(data: string, saltOrRounds: any): Promise~string~
   +genSalt(rounds: number): Promise~string~
-  ...
 }
 
 class OnModuleInit {
@@ -2124,7 +2059,6 @@ class PrismaService {
   +wards: PrismaWardDelegate
   +blood_types: PrismaBloodTypeDelegate
   +donations: PrismaDonationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -2253,7 +2187,6 @@ direction TB
 
 class UsersController {
   -usersService: UsersService
-  ...
   +exportExcel(query: UserFilterDto, res: Response): Promise~void~
   +downloadTemplate(res: Response): Promise~void~
   +importExcel(file: Express.Multer.File, req: any): Promise~any~
@@ -2272,7 +2205,6 @@ class UserFilterDto {
 
 class UsersService {
   -prisma: PrismaService
-  ...
   +exportExcel(query: any): Promise~Buffer~
   +getTemplate(): Promise~Buffer~
   +importExcel(buffer: Buffer, staffId: number): Promise~any~
@@ -2289,7 +2221,6 @@ class ExcelUtil {
 class Bcrypt {
   <<utility>>
   +hash(data: string, saltOrRounds: any): Promise~string~
-  ...
 }
 
 class OnModuleInit {
@@ -2312,7 +2243,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +roles: PrismaRoleDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -2579,7 +2509,6 @@ class PrismaService {
   +inventory_transactions: PrismaInventoryTransactionDelegate
   +donation_interval_rules: PrismaDonationIntervalRuleDelegate
   +blood_components: PrismaBloodComponentDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -2762,7 +2691,6 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
-  ...
   +registerDonor(req: any, data: any): Promise~any~
   +getProfile(req: any): Promise~any~
   +updateProfile(req: any, dto: UpdateDonorProfileDto): Promise~any~
@@ -2786,7 +2714,6 @@ class UpdateDonorProfileDto {
 
 class DonorService {
   -prisma: PrismaService
-  ...
   +registerDonorProfile(userId: number, data: any): Promise~any~
   +getDonorProfile(userId: number): Promise~any~
   +updateDonorProfile(userId: number, dto: UpdateDonorProfileDto): Promise~any~
@@ -2814,7 +2741,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +donor_profiles: PrismaDonorProfileDelegate
   +blood_types: PrismaBloodTypeDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -2884,14 +2810,12 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
-  ...
   +updateAvailability(req: any, body: object): Promise~any~
   ...
 }
 
 class DonorService {
   -prisma: PrismaService
-  ...
   +updateAvailability(userId: number, isAvailable: boolean): Promise~any~
   ...
 }
@@ -2914,7 +2838,6 @@ class PrismaClient {
 
 class PrismaService {
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -2950,7 +2873,6 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
-  ...
   +bookSlot(req: any, dto: BookDonationSlotDto): Promise~any~
   +cancelSlot(req: any, id: number): Promise~any~
   ...
@@ -2983,7 +2905,6 @@ class NotificationType {
 class DonorService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
-  ...
   +bookDonationSlot(userId: number, data: BookDonationSlotDto): Promise~any~
   +cancelDonationSlot(userId: number, slotId: number): Promise~any~
   ...
@@ -3021,7 +2942,6 @@ class PrismaService {
   +blood_requests: PrismaBloodRequestDelegate
   +blood_compatibility: PrismaBloodCompatibilityDelegate
   +blood_request_donor_matches: PrismaDonorMatchDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -3140,7 +3060,6 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
-  ...
   +getHistory(req: any): Promise~any~
   +getMySlots(req: any): Promise~any~
   +getSchedules(facilityId: string): Promise~any~
@@ -3149,7 +3068,6 @@ class DonorController {
 
 class DonorService {
   -prisma: PrismaService
-  ...
   +getDonationHistory(userId: number): Promise~any~
   +getMySlots(userId: number): Promise~any~
   +getSchedules(facilityId?: number): Promise~any~
@@ -3180,7 +3098,6 @@ class PrismaService {
   +blood_types: PrismaBloodTypeDelegate
   +blood_components: PrismaBloodComponentDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -3276,7 +3193,6 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
-  ...
   +getSlots(query: PaginationDto, req: any): Promise~any~
   +createSlot(dto: any, req: any): Promise~any~
   +updateSlotStatus(id: number, dto: UpdateSlotStatusDto, req: any): Promise~any~
@@ -3301,7 +3217,6 @@ class UpdateSlotStatusDto {
 class DonorService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
-  ...
   +getSlots(query: PaginationDto, user: any): Promise~any~
   +createAdminSlot(dto: any, user: any): Promise~any~
   +updateSlotStatus(slotId: number, dto: UpdateSlotStatusDto, user: any): Promise~any~
@@ -3345,7 +3260,6 @@ class PrismaService {
   +donor_availability_slots: PrismaAvailabilitySlotDelegate
   +facility_donation_schedules: PrismaDonationScheduleDelegate
   +notifications: PrismaNotificationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -3419,7 +3333,6 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
-  ...
   +recordDonation(req: any, dto: RecordDonationDto): Promise~any~
   ...
 }
@@ -3438,7 +3351,6 @@ class RecordDonationDto {
 
 class DonorService {
   -prisma: PrismaService
-  ...
   +recordDonation(user: any, dto: RecordDonationDto): Promise~any~
   ...
 }
@@ -3470,7 +3382,6 @@ class PrismaService {
   +blood_request_statuses: PrismaBloodRequestStatusDelegate
   +blood_request_inventory_allocations: PrismaInventoryAllocationDelegate
   +donation_interval_rules: PrismaDonationIntervalRuleDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -3751,7 +3662,6 @@ class PrismaService {
   +donor_availability_slots: PrismaAvailabilitySlotDelegate
   +provinces: PrismaProvinceDelegate
   +wards: PrismaWardDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -3956,7 +3866,6 @@ direction TB
 
 class RequestController {
   -requestService: RequestService
-  ...
   +createRequest(req: any, dto: CreateRequestDto): Promise~any~
   +createPublicRequest(req: any, dto: CreateRequestDto): Promise~any~
   ...
@@ -3991,7 +3900,6 @@ class NotificationType {
 class RequestService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
-  ...
   +createRequest(dto: CreateRequestDto, user: any): Promise~any~
   +createPublicRequest(dto: CreateRequestDto, userId?: number): Promise~any~
   ...
@@ -4029,7 +3937,6 @@ class PrismaService {
   +blood_components: PrismaBloodComponentDelegate
   +urgency_levels: PrismaUrgencyLevelDelegate
   +blood_request_statuses: PrismaRequestStatusDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -4140,7 +4047,6 @@ direction TB
 
 class RequestController {
   -requestService: RequestService
-  ...
   +getPublicRequests(query: any): Promise~any~
   +getPublicRequestByCode(code: string): Promise~any~
   +getMyRequests(req: any, query: any): Promise~any~
@@ -4151,7 +4057,6 @@ class RequestController {
 
 class RequestService {
   -prisma: PrismaService
-  ...
   +getRequests(query: any, user?: any): Promise~any~
   +getRequestByCode(code: string): Promise~any~
   +getRequestById(requestId: number, userId: number): Promise~any~
@@ -4183,7 +4088,6 @@ class PrismaService {
   +blood_request_statuses: PrismaRequestStatusDelegate
   +blood_request_status_history: PrismaStatusHistoryDelegate
   +donor_availability_slots: PrismaAvailabilitySlotDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -4288,7 +4192,6 @@ direction TB
 
 class RequestController {
   -requestService: RequestService
-  ...
   +updateRequest(req: any, id: number, dto: Partial~CreateRequestDto~): Promise~any~
   +deleteRequest(req: any, id: number): Promise~any~
   +cancelRequest(req: any, id: number): Promise~any~
@@ -4308,7 +4211,6 @@ class CreateRequestDto {
 
 class RequestService {
   -prisma: PrismaService
-  ...
   +updateRequest(requestId: number, dto: Partial~CreateRequestDto~, user: any): Promise~any~
   +deleteRequest(requestId: number, user: any): Promise~any~
   +cancelRequest(requestId: number, user: any): Promise~any~
@@ -4336,7 +4238,6 @@ class PrismaService {
   +blood_request_status_history: PrismaStatusHistoryDelegate
   +blood_request_inventory_allocations: PrismaAllocationDelegate
   +blood_request_statuses: PrismaRequestStatusDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -4405,7 +4306,6 @@ direction TB
 
 class RequestController {
   -requestService: RequestService
-  ...
   +processRequest(req: any, id: number): Promise~any~
   ...
 }
@@ -4433,7 +4333,6 @@ class RequestService {
   -prisma: PrismaService
   -eventEmitter: EventEmitter2
   -notificationsService: NotificationsService
-  ...
   +processRequest(requestId: number, user: any): Promise~any~
   +handleMatchDonorsEvent(payload: any): Promise~void~
   ...
@@ -4472,7 +4371,6 @@ class PrismaService {
   +notifications: PrismaNotificationDelegate
   +blood_request_statuses: PrismaStatusDelegate
   +blood_request_donor_matches: PrismaDonorMatchDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -4604,7 +4502,6 @@ direction TB
 
 class RequestController {
   -requestService: RequestService
-  ...
   +getAllocations(req: any, id: number): Promise~any~
   +allocateInventory(req: any, id: number, dto: AllocateInventoryDto): Promise~any~
   +releaseAllocation(req: any, allocationId: number): Promise~any~
@@ -4617,7 +4514,6 @@ class AllocateInventoryDto {
 
 class RequestService {
   -prisma: PrismaService
-  ...
   +getAllocations(requestId: number, user?: any): Promise~any~
   +allocateInventory(requestId: number, inventoryIds: number[], user: any): Promise~any~
   +releaseAllocation(allocationId: number, user: any): Promise~any~
@@ -4651,7 +4547,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +blood_types: PrismaBloodTypeDelegate
   +blood_components: PrismaBloodComponentDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -4771,7 +4666,6 @@ direction TB
 
 class RequestController {
   -requestService: RequestService
-  ...
   +getMatches(req: any, id: number): Promise~any~
   +findDonorMatches(req: any, id: number): Promise~any~
   +updateMatchStatus(req: any, matchId: number, dto: UpdateMatchStatusDto): Promise~any~
@@ -4784,7 +4678,6 @@ class UpdateMatchStatusDto {
 
 class RequestService {
   -prisma: PrismaService
-  ...
   +getMatches(requestId: number, user?: any): Promise~any~
   +findDonorMatches(requestId: number, user?: any): Promise~any~
   +updateMatchStatus(matchId: number, status: string, user?: any): Promise~any~
@@ -4811,7 +4704,6 @@ class PrismaService {
   +blood_requests: PrismaBloodRequestDelegate
   +blood_request_donor_matches: PrismaDonorMatchDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -4874,7 +4766,6 @@ direction TB
 
 class RequestController {
   -requestService: RequestService
-  ...
   +exportExcel(query: any, res: Response, req: any): Promise~void~
   +downloadTemplate(res: Response): Promise~void~
   +importExcel(file: Express.Multer.File, req: any): Promise~any~
@@ -4883,7 +4774,6 @@ class RequestController {
 
 class RequestService {
   -prisma: PrismaService
-  ...
   +exportExcel(query: any, user?: any): Promise~Buffer~
   +getTemplate(): Promise~Buffer~
   +importExcel(buffer: Buffer, user: any): Promise~any~
@@ -4918,7 +4808,6 @@ class PrismaService {
   +blood_request_status_history: PrismaStatusHistoryDelegate
   +blood_request_statuses: PrismaRequestStatusDelegate
   +urgency_levels: PrismaUrgencyLevelDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -5075,7 +4964,6 @@ class PrismaService {
   +blood_components: PrismaBloodComponentDelegate
   +users: PrismaUserDelegate
   +donations: PrismaDonationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -5187,7 +5075,6 @@ direction TB
 
 class InventoryController {
   -inventoryService: InventoryService
-  ...
   +getInventoryList(query: any, req: any): Promise~any~
   +getStats(req: any): Promise~any~
   ...
@@ -5195,7 +5082,6 @@ class InventoryController {
 
 class InventoryService {
   -prisma: PrismaService
-  ...
   +getInventoryList(query: any, user: any): Promise~any~
   +getInventoryStats(user: any): Promise~any~
   ...
@@ -5222,7 +5108,6 @@ class PrismaService {
   +medical_facilities: PrismaMedicalFacilityDelegate
   +blood_types: PrismaBloodTypeDelegate
   +blood_components: PrismaBloodComponentDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -5287,7 +5172,6 @@ direction TB
 
 class InventoryController {
   -inventoryService: InventoryService
-  ...
   +receiveBlood(req: any, dto: ReceiveBloodDto): Promise~any~
   ...
 }
@@ -5306,7 +5190,6 @@ class ReceiveBloodDto {
 
 class InventoryService {
   -prisma: PrismaService
-  ...
   +receiveBlood(dto: any, user: any): Promise~any~
   ...
 }
@@ -5331,7 +5214,6 @@ class PrismaClient {
 class PrismaService {
   +blood_inventory: PrismaBloodInventoryDelegate
   +inventory_transactions: PrismaInventoryTransactionDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -5388,7 +5270,6 @@ direction TB
 
 class InventoryController {
   -inventoryService: InventoryService
-  ...
   +updateBlood(req: any, inventoryId: number, dto: UpdateBloodDto): Promise~any~
   ...
 }
@@ -5407,7 +5288,6 @@ class UpdateBloodDto {
 
 class InventoryService {
   -prisma: PrismaService
-  ...
   +updateBlood(inventoryId: number, dto: any, user: any): Promise~any~
   ...
 }
@@ -5430,7 +5310,6 @@ class PrismaClient {
 
 class PrismaService {
   +blood_inventory: PrismaBloodInventoryDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -5470,7 +5349,6 @@ direction TB
 
 class InventoryController {
   -inventoryService: InventoryService
-  ...
   +discardBlood(req: any, inventoryId: number, dto: DiscardBloodDto): Promise~any~
   ...
 }
@@ -5481,7 +5359,6 @@ class DiscardBloodDto {
 
 class InventoryService {
   -prisma: PrismaService
-  ...
   +discardBlood(inventoryId: number, user: any, reason: string): Promise~any~
   ...
 }
@@ -5506,7 +5383,6 @@ class PrismaClient {
 class PrismaService {
   +blood_inventory: PrismaBloodInventoryDelegate
   +inventory_transactions: PrismaInventoryTransactionDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -5556,7 +5432,6 @@ direction TB
 
 class InventoryController {
   -inventoryService: InventoryService
-  ...
   +exportExcel(query: any, res: Response, req: any): Promise~void~
   +downloadTemplate(res: Response): Promise~void~
   +importExcel(file: Express.Multer.File, req: any): Promise~any~
@@ -5565,7 +5440,6 @@ class InventoryController {
 
 class InventoryService {
   -prisma: PrismaService
-  ...
   +exportExcel(query: any, user: any): Promise~Buffer~
   +getTemplate(): Promise~Buffer~
   +importExcel(buffer: Buffer, staffId: number): Promise~any~
@@ -5599,7 +5473,6 @@ class PrismaService {
   +blood_inventory: PrismaBloodInventoryDelegate
   +inventory_transactions: PrismaInventoryTransactionDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -5758,7 +5631,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +notifications: PrismaNotificationDelegate
   +blood_types: PrismaBloodTypeDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -5857,7 +5729,6 @@ direction TB
 
 class SchedulesController {
   -schedulesService: SchedulesService
-  ...
   +getAllSchedules(query: ScheduleFilterDto, user: any): Promise~any~
   +getScheduleById(id: number, user: any): Promise~any~
   +createSchedule(dto: CreateScheduleDto, user: any): Promise~any~
@@ -5897,7 +5768,6 @@ class ScheduleFilterDto {
 class SchedulesService {
   -logger: Logger
   -prisma: PrismaService
-  ...
   +onModuleInit(): Promise~void~
   +handleCronClosePastSchedules(): Promise~void~
   +getAllSchedules(query: ScheduleFilterDto, user: any): Promise~any~
@@ -5928,7 +5798,6 @@ class PrismaService {
   +facility_donation_schedules: PrismaDonationScheduleDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
   +donor_availability_slots: PrismaAvailabilitySlotDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -5994,7 +5863,6 @@ direction TB
 
 class SchedulesController {
   -schedulesService: SchedulesService
-  ...
   +getScheduleDonors(id: number, query: any, user: any): Promise~any~
   +updateDonorStatus(id: number, slotId: number, status: string, user: any): Promise~any~
   +exportScheduleDonors(id: number, res: Response, user: any): Promise~any~
@@ -6019,7 +5887,6 @@ class SchedulesService {
   -logger: Logger
   -prisma: PrismaService
   -notificationsService: NotificationsService
-  ...
   +getScheduleDonors(scheduleId: number, query: any, user: any): Promise~any~
   +updateDonorStatus(scheduleId: number, slotId: number, status: string, user: any): Promise~any~
   +exportScheduleDonors(scheduleId: number, user: any): Promise~object~
@@ -6059,7 +5926,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +blood_types: PrismaBloodTypeDelegate
   +notifications: PrismaNotificationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -6338,7 +6204,6 @@ class PrismaService {
   +donation_interval_rules: PrismaIntervalRuleDelegate
   +urgency_levels: PrismaUrgencyLevelDelegate
   +roles: PrismaRoleDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -6497,7 +6362,6 @@ direction TB
 
 class MasterDataController {
   -masterDataService: MasterDataService
-  ...
   +getFacilities(query: MasterDataFilterDto): Promise~any~
   +getFacilityById(id: number): Promise~any~
   +createFacility(dto: CreateFacilityDto): Promise~any~
@@ -6554,7 +6418,6 @@ class UpdateFacilityDto {
 
 class MasterDataService {
   -prisma: PrismaService
-  ...
   +getFacilities(query: MasterDataFilterDto): Promise~any~
   +getFacilityById(id: number): Promise~any~
   +createFacility(dto: CreateFacilityDto): Promise~any~
@@ -6593,7 +6456,6 @@ class PrismaService {
   +medical_facilities: PrismaMedicalFacilityDelegate
   +provinces: PrismaProvinceDelegate
   +wards: PrismaWardDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -6667,7 +6529,6 @@ direction TB
 
 class MasterDataController {
   -masterDataService: MasterDataService
-  ...
   +getBloodTypes(query: MasterDataFilterDto): Promise~any~
   +createBloodType(dto: CreateBloodTypeDto): Promise~any~
   +updateBloodType(id: number, dto: UpdateBloodTypeDto): Promise~any~
@@ -6717,7 +6578,6 @@ class UpdateBloodComponentDto {
 
 class MasterDataService {
   -prisma: PrismaService
-  ...
   +getBloodTypes(query: MasterDataFilterDto): Promise~any~
   +createBloodType(dto: CreateBloodTypeDto): Promise~any~
   +updateBloodType(id: number, dto: UpdateBloodTypeDto): Promise~any~
@@ -6749,7 +6609,6 @@ class PrismaService {
   +blood_types: PrismaBloodTypeDelegate
   +blood_components: PrismaBloodComponentDelegate
   +donation_interval_rules: PrismaIntervalRuleDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -6817,7 +6676,6 @@ direction TB
 
 class MasterDataController {
   -masterDataService: MasterDataService
-  ...
   +getBloodCompatibilities(query: MasterDataFilterDto): Promise~any~
   +createBloodCompatibility(dto: CreateBloodCompatibilityDto): Promise~any~
   +updateBloodCompatibility(id: number, dto: UpdateBloodCompatibilityDto): Promise~any~
@@ -6849,7 +6707,6 @@ class UpdateBloodCompatibilityDto {
 
 class MasterDataService {
   -prisma: PrismaService
-  ...
   +getBloodCompatibilities(query: MasterDataFilterDto): Promise~any~
   +createBloodCompatibility(dto: CreateBloodCompatibilityDto): Promise~any~
   +updateBloodCompatibility(id: number, dto: UpdateBloodCompatibilityDto): Promise~any~
@@ -6877,7 +6734,6 @@ class PrismaService {
   +blood_types: PrismaBloodTypeDelegate
   +blood_components: PrismaBloodComponentDelegate
   +blood_compatibility: PrismaCompatibilityDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -6944,7 +6800,6 @@ direction TB
 
 class MasterDataController {
   -masterDataService: MasterDataService
-  ...
   +getDonationIntervalRules(query: MasterDataFilterDto): Promise~any~
   +createDonationIntervalRule(dto: CreateDonationIntervalRuleDto): Promise~any~
   +updateDonationIntervalRule(id: number, dto: UpdateDonationIntervalRuleDto): Promise~any~
@@ -6975,7 +6830,6 @@ class UpdateDonationIntervalRuleDto {
 
 class MasterDataService {
   -prisma: PrismaService
-  ...
   +getDonationIntervalRules(query: MasterDataFilterDto): Promise~any~
   +createDonationIntervalRule(dto: CreateDonationIntervalRuleDto): Promise~any~
   +updateDonationIntervalRule(id: number, dto: UpdateDonationIntervalRuleDto): Promise~any~
@@ -7002,7 +6856,6 @@ class PrismaClient {
 class PrismaService {
   +blood_components: PrismaBloodComponentDelegate
   +donation_interval_rules: PrismaIntervalRuleDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -7057,7 +6910,6 @@ direction TB
 
 class MasterDataController {
   -masterDataService: MasterDataService
-  ...
   +getProvinces(): Promise~any~
   +getWards(id: number): Promise~any~
   +getRoles(): Promise~any~
@@ -7067,7 +6919,6 @@ class MasterDataController {
 
 class MasterDataService {
   -prisma: PrismaService
-  ...
   +getProvinces(): Promise~any~
   +getWards(provinceId: number): Promise~any~
   +getRoles(): Promise~any~
@@ -7096,7 +6947,6 @@ class PrismaService {
   +wards: PrismaWardDelegate
   +roles: PrismaRoleDelegate
   +urgency_levels: PrismaUrgencyLevelDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -7266,7 +7116,6 @@ class PrismaService {
   +blog_posts: PrismaBlogPostDelegate
   +blog_comments: PrismaBlogCommentDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -7358,7 +7207,6 @@ direction TB
 
 class BlogController {
   -blogService: BlogService
-  ...
   +getCategories(): Promise~any~
   +createCategory(dto: CreateCategoryDto): Promise~any~
   +updateCategory(id: number, dto: UpdateCategoryDto): Promise~any~
@@ -7378,7 +7226,6 @@ class UpdateCategoryDto {
 
 class BlogService {
   -prisma: PrismaService
-  ...
   +getCategories(): Promise~any~
   +createCategory(dto: CreateCategoryDto): Promise~any~
   +updateCategory(id: number, dto: UpdateCategoryDto): Promise~any~
@@ -7405,7 +7252,6 @@ class PrismaClient {
 class PrismaService {
   +blog_categories: PrismaBlogCategoryDelegate
   +blog_posts: PrismaBlogPostDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -7454,7 +7300,6 @@ direction TB
 
 class BlogController {
   -blogService: BlogService
-  ...
   +getAllPosts(query: BlogFilterDto): Promise~any~
   +getPostBySlug(slug: string): Promise~any~
   +getRelatedPosts(slug: string): Promise~any~
@@ -7493,7 +7338,6 @@ class UpdatePostDto {
 
 class BlogService {
   -prisma: PrismaService
-  ...
   +getAllPosts(query: BlogFilterDto): Promise~any~
   +getPostBySlug(slug: string): Promise~any~
   +getRelatedPosts(slug: string): Promise~any~
@@ -7523,7 +7367,6 @@ class PrismaService {
   +blog_categories: PrismaBlogCategoryDelegate
   +blog_posts: PrismaBlogPostDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -7590,7 +7433,6 @@ direction TB
 
 class BlogController {
   -blogService: BlogService
-  ...
   +getComments(id: string, query: any): Promise~any~
   +addComment(id: number, req: any, body: AddCommentDto): Promise~any~
   +editMyComment(id: number, req: any, content: string): Promise~any~
@@ -7606,7 +7448,6 @@ class AddCommentDto {
 
 class BlogService {
   -prisma: PrismaService
-  ...
   +getComments(postId: number, query: any): Promise~any~
   +addComment(postId: number, userId: number | null, data: AddCommentDto): Promise~any~
   +editComment(commentId: number, userId: number, content: string): Promise~any~
@@ -7634,7 +7475,6 @@ class PrismaService {
   +blog_comments: PrismaBlogCommentDelegate
   +blog_posts: PrismaBlogPostDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -7695,7 +7535,6 @@ direction TB
 
 class BlogController {
   -blogService: BlogService
-  ...
   +getAdminComments(query: any): Promise~any~
   +approveComment(id: number, isApproved: boolean): Promise~any~
   +deleteAdminComment(id: number): Promise~any~
@@ -7704,7 +7543,6 @@ class BlogController {
 
 class BlogService {
   -prisma: PrismaService
-  ...
   +getAdminComments(query: any): Promise~any~
   +approveComment(commentId: number, isApproved: boolean): Promise~any~
   +deleteAdminComment(commentId: number): Promise~any~
@@ -7731,7 +7569,6 @@ class PrismaService {
   +blog_comments: PrismaBlogCommentDelegate
   +blog_posts: PrismaBlogPostDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -7881,7 +7718,6 @@ class PrismaService {
   +education_documents: PrismaEducationDocumentDelegate
   +blood_types: PrismaBloodTypeDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -7970,7 +7806,6 @@ direction TB
 
 class EducationController {
   -educationService: EducationService
-  ...
   +getCategories(): Promise~any~
   +createCategory(dto: CreateEducationCategoryDto): Promise~any~
   +updateCategory(id: number, dto: UpdateEducationCategoryDto): Promise~any~
@@ -7992,7 +7827,6 @@ class UpdateEducationCategoryDto {
 
 class EducationService {
   -prisma: PrismaService
-  ...
   +getCategories(): Promise~any~
   +createCategory(dto: CreateEducationCategoryDto): Promise~any~
   +updateCategory(id: number, dto: UpdateEducationCategoryDto): Promise~any~
@@ -8019,7 +7853,6 @@ class PrismaClient {
 class PrismaService {
   +education_document_categories: PrismaEducationCategoryDelegate
   +education_documents: PrismaEducationDocumentDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -8069,7 +7902,6 @@ direction TB
 
 class EducationController {
   -educationService: EducationService
-  ...
   +getDocuments(query: EducationFilterDto): Promise~any~
   +getDocumentBySlug(slug: string): Promise~any~
   +getRelatedDocuments(slug: string): Promise~any~
@@ -8111,7 +7943,6 @@ class UpdateEducationDocumentDto {
 
 class EducationService {
   -prisma: PrismaService
-  ...
   +getDocuments(query: EducationFilterDto): Promise~any~
   +getDocumentById(id: number): Promise~any~
   +getDocumentBySlug(slug: string): Promise~any~
@@ -8143,7 +7974,6 @@ class PrismaService {
   +education_document_categories: PrismaEducationCategoryDelegate
   +blood_types: PrismaBloodTypeDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -8258,7 +8088,6 @@ class PrismaService {
   +blood_request_statuses: PrismaRequestStatusDelegate
   +blood_types: PrismaBloodTypeDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -8412,7 +8241,6 @@ class PrismaService {
   +blood_request_statuses: PrismaRequestStatusDelegate
   +blood_types: PrismaBloodTypeDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -8575,7 +8403,6 @@ class PrismaClient {
 class PrismaService {
   +notifications: PrismaNotificationDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -8631,7 +8458,6 @@ direction TB
 
 class NotificationsController {
   -notificationsService: NotificationsService
-  ...
   +getMyNotifications(req: any, query: any): Promise~any~
   +getUnreadCount(req: any): Promise~any~
   +markAllAsRead(req: any): Promise~any~
@@ -8641,7 +8467,6 @@ class NotificationsController {
 
 class NotificationsService {
   -prisma: PrismaService
-  ...
   +getNotifications(query: any): Promise~any~
   +getUnreadCount(userId: number): Promise~any~
   +markAllAsRead(userId: number): Promise~any~
@@ -8668,7 +8493,6 @@ class PrismaClient {
 class PrismaService {
   +notifications: PrismaNotificationDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -8717,7 +8541,6 @@ direction TB
 
 class NotificationsController {
   -notificationsService: NotificationsService
-  ...
   +createNotification(dto: CreateNotificationDto): Promise~any~
   +getNotifications(query: any): Promise~any~
   +deleteNotification(id: number): Promise~any~
@@ -8743,7 +8566,6 @@ class NotificationType {
 
 class NotificationsService {
   -prisma: PrismaService
-  ...
   +createNotification(dto: CreateNotificationDto): Promise~any~
   +notifyAdmins(title: string, message: string, type: string, reference_type?: string, reference_id?: number): Promise~void~
   +getNotifications(query: any): Promise~any~
@@ -8770,7 +8592,6 @@ class PrismaClient {
 class PrismaService {
   +notifications: PrismaNotificationDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -8863,7 +8684,6 @@ class PrismaClient {
 
 class PrismaService {
   +system_settings: PrismaSystemSettingDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -8936,7 +8756,6 @@ class PrismaClient {
 
 class PrismaService {
   +system_settings: PrismaSystemSettingDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }

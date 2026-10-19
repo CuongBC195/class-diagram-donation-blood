@@ -93,7 +93,6 @@ class PrismaService {
   +blood_components: PrismaBloodComponentDelegate
   +users: PrismaUserDelegate
   +donations: PrismaDonationDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -204,7 +203,6 @@ hide empty members
 
 class InventoryController {
   -inventoryService: InventoryService
-  ...
   +getInventoryList(query: any, req: any): Promise<any>
   +getStats(req: any): Promise<any>
   ...
@@ -212,7 +210,6 @@ class InventoryController {
 
 class InventoryService {
   -prisma: PrismaService
-  ...
   +getInventoryList(query: any, user: any): Promise<any>
   +getInventoryStats(user: any): Promise<any>
   ...
@@ -237,7 +234,6 @@ class PrismaService {
   +medical_facilities: PrismaMedicalFacilityDelegate
   +blood_types: PrismaBloodTypeDelegate
   +blood_components: PrismaBloodComponentDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -301,7 +297,6 @@ hide empty members
 
 class InventoryController {
   -inventoryService: InventoryService
-  ...
   +receiveBlood(req: any, dto: ReceiveBloodDto): Promise<any>
   ...
 }
@@ -320,7 +315,6 @@ class ReceiveBloodDto {
 
 class InventoryService {
   -prisma: PrismaService
-  ...
   +receiveBlood(dto: any, user: any): Promise<any>
   ...
 }
@@ -343,7 +337,6 @@ class PrismaClient {
 class PrismaService {
   +blood_inventory: PrismaBloodInventoryDelegate
   +inventory_transactions: PrismaInventoryTransactionDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -399,7 +392,6 @@ hide empty members
 
 class InventoryController {
   -inventoryService: InventoryService
-  ...
   +updateBlood(req: any, inventoryId: number, dto: UpdateBloodDto): Promise<any>
   ...
 }
@@ -418,7 +410,6 @@ class UpdateBloodDto {
 
 class InventoryService {
   -prisma: PrismaService
-  ...
   +updateBlood(inventoryId: number, dto: any, user: any): Promise<any>
   ...
 }
@@ -439,7 +430,6 @@ class PrismaClient {
 
 class PrismaService {
   +blood_inventory: PrismaBloodInventoryDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -479,7 +469,6 @@ hide empty members
 
 class InventoryController {
   -inventoryService: InventoryService
-  ...
   +discardBlood(req: any, inventoryId: number, dto: DiscardBloodDto): Promise<any>
   ...
 }
@@ -490,7 +479,6 @@ class DiscardBloodDto {
 
 class InventoryService {
   -prisma: PrismaService
-  ...
   +discardBlood(inventoryId: number, user: any, reason: string): Promise<any>
   ...
 }
@@ -513,7 +501,6 @@ class PrismaClient {
 class PrismaService {
   +blood_inventory: PrismaBloodInventoryDelegate
   +inventory_transactions: PrismaInventoryTransactionDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -562,7 +549,6 @@ hide empty members
 
 class InventoryController {
   -inventoryService: InventoryService
-  ...
   +exportExcel(query: any, res: Response, req: any): Promise<void>
   +downloadTemplate(res: Response): Promise<void>
   +importExcel(file: Express.Multer.File, req: any): Promise<any>
@@ -571,7 +557,6 @@ class InventoryController {
 
 class InventoryService {
   -prisma: PrismaService
-  ...
   +exportExcel(query: any, user: any): Promise<Buffer>
   +getTemplate(): Promise<Buffer>
   +importExcel(buffer: Buffer, staffId: number): Promise<any>
@@ -602,7 +587,6 @@ class PrismaService {
   +blood_inventory: PrismaBloodInventoryDelegate
   +inventory_transactions: PrismaInventoryTransactionDelegate
   +users: PrismaUserDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }

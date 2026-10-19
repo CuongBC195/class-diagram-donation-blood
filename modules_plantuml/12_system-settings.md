@@ -48,7 +48,6 @@ class PrismaClient {
 
 class PrismaService {
   +system_settings: PrismaSystemSettingDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
@@ -119,7 +118,6 @@ class PrismaClient {
 
 class PrismaService {
   +system_settings: PrismaSystemSettingDelegate
-  ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }

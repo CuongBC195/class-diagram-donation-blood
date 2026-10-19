@@ -106,7 +106,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +notifications: PrismaNotificationDelegate
   +blood_types: PrismaBloodTypeDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -203,7 +202,6 @@ direction TB
 
 class SchedulesController {
   -schedulesService: SchedulesService
-  ...
   +getAllSchedules(query: ScheduleFilterDto, user: any): Promise~any~
   +getScheduleById(id: number, user: any): Promise~any~
   +createSchedule(dto: CreateScheduleDto, user: any): Promise~any~
@@ -243,7 +241,6 @@ class ScheduleFilterDto {
 class SchedulesService {
   -logger: Logger
   -prisma: PrismaService
-  ...
   +onModuleInit(): Promise~void~
   +handleCronClosePastSchedules(): Promise~void~
   +getAllSchedules(query: ScheduleFilterDto, user: any): Promise~any~
@@ -274,7 +271,6 @@ class PrismaService {
   +facility_donation_schedules: PrismaDonationScheduleDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
   +donor_availability_slots: PrismaAvailabilitySlotDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
@@ -338,7 +334,6 @@ direction TB
 
 class SchedulesController {
   -schedulesService: SchedulesService
-  ...
   +getScheduleDonors(id: number, query: any, user: any): Promise~any~
   +updateDonorStatus(id: number, slotId: number, status: string, user: any): Promise~any~
   +exportScheduleDonors(id: number, res: Response, user: any): Promise~any~
@@ -363,7 +358,6 @@ class SchedulesService {
   -logger: Logger
   -prisma: PrismaService
   -notificationsService: NotificationsService
-  ...
   +getScheduleDonors(scheduleId: number, query: any, user: any): Promise~any~
   +updateDonorStatus(scheduleId: number, slotId: number, status: string, user: any): Promise~any~
   +exportScheduleDonors(scheduleId: number, user: any): Promise~object~
@@ -403,7 +397,6 @@ class PrismaService {
   +users: PrismaUserDelegate
   +blood_types: PrismaBloodTypeDelegate
   +notifications: PrismaNotificationDelegate
-  ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
