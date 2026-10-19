@@ -22666,10 +22666,46 @@
         <mxCell id="c_CloudinaryService_sep" parent="c_CloudinaryService" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
           <mxGeometry y="56" width="480" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryService_m0" parent="c_CloudinaryService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+uploadImage(file: Express.Multer.File): Promise&amp;lt;any&amp;gt;" vertex="1">
+        <mxCell id="c_CloudinaryService_m0" parent="c_CloudinaryService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+uploadFile(file: Express.Multer.File): Promise&amp;lt;any&amp;gt;" vertex="1">
           <mxGeometry y="64" width="480" height="24" as="geometry" />
         </mxCell>
+        <mxCell id="c_CloudinaryProvider" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;utility&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;CloudinaryProvider&lt;/b&gt;" vertex="1">
+          <mxGeometry x="730" y="258" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinaryProvider_f0" parent="c_CloudinaryProvider" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+provide: string" vertex="1">
+          <mxGeometry y="44" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinaryProvider_sep" parent="c_CloudinaryProvider" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="68" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinaryProvider_m0" parent="c_CloudinaryProvider" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+useFactory(): any" vertex="1">
+          <mxGeometry y="76" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinarySDK" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;utility&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;CloudinarySDK&lt;/b&gt;" vertex="1">
+          <mxGeometry x="1060" y="258" width="320" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinarySDK_f0" parent="c_CloudinarySDK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="44" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinarySDK_sep" parent="c_CloudinarySDK" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="68" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinarySDK_m0" parent="c_CloudinarySDK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+config(options: object): any" vertex="1">
+          <mxGeometry y="76" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinarySDK_m1" parent="c_CloudinarySDK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+upload_stream(callback: any): any" vertex="1">
+          <mxGeometry y="100" width="320" height="24" as="geometry" />
+        </mxCell>
         <mxCell id="e1" edge="1" parent="1" source="c_CloudinaryController" target="c_CloudinaryService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=classicThin;endFill=1;endSize=10;" value="Association">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="c_CloudinaryService" target="c_CloudinaryProvider" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="c_CloudinaryService" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="c_CloudinaryProvider" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
@@ -22710,10 +22746,46 @@
         <mxCell id="c_CloudinaryService_sep" parent="c_CloudinaryService" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
           <mxGeometry y="56" width="480" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryService_m0" parent="c_CloudinaryService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+uploadImage(file: Express.Multer.File): Promise&amp;lt;any&amp;gt;" vertex="1">
+        <mxCell id="c_CloudinaryService_m0" parent="c_CloudinaryService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+uploadFile(file: Express.Multer.File): Promise&amp;lt;any&amp;gt;" vertex="1">
           <mxGeometry y="64" width="480" height="24" as="geometry" />
         </mxCell>
+        <mxCell id="c_CloudinaryProvider" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;utility&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;CloudinaryProvider&lt;/b&gt;" vertex="1">
+          <mxGeometry x="730" y="306" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinaryProvider_f0" parent="c_CloudinaryProvider" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+provide: string" vertex="1">
+          <mxGeometry y="44" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinaryProvider_sep" parent="c_CloudinaryProvider" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="68" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinaryProvider_m0" parent="c_CloudinaryProvider" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+useFactory(): any" vertex="1">
+          <mxGeometry y="76" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinarySDK" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;utility&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;CloudinarySDK&lt;/b&gt;" vertex="1">
+          <mxGeometry x="1060" y="306" width="320" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinarySDK_f0" parent="c_CloudinarySDK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="44" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinarySDK_sep" parent="c_CloudinarySDK" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="68" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinarySDK_m0" parent="c_CloudinarySDK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+config(options: object): any" vertex="1">
+          <mxGeometry y="76" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CloudinarySDK_m1" parent="c_CloudinarySDK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+upload_stream(callback: any): any" vertex="1">
+          <mxGeometry y="100" width="320" height="24" as="geometry" />
+        </mxCell>
         <mxCell id="e1" edge="1" parent="1" source="c_CloudinaryController" target="c_CloudinaryService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=classicThin;endFill=1;endSize=10;" value="Association">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="c_CloudinaryService" target="c_CloudinaryProvider" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="c_CloudinaryService" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="c_CloudinaryProvider" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
