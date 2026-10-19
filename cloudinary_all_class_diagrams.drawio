@@ -1,143 +1,185 @@
-<mxfile host="Electron" agent="Antigravity" version="21.0.0" pages="2">
-  <diagram id="cloudinary_overview" name="Cloudinary Overview">
-    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3200" pageHeight="2200" math="0" shadow="0">
+<mxfile host="Electron" version="32.4.1">
+  <diagram id="cloudinary_cloudinary_overview" name="3.13 Cloudinary Overview">
+    <mxGraphModel grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="0" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="title_box" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=20;fontStyle=1;fontColor=#000000;" value="3.13.1 Overview Class Diagram - File Upload Feature" vertex="1">
-          <mxGeometry x="100" y="20" width="1800" height="40" as="geometry" />
+        <UserObject label="&lt;b&gt;CloudinaryController&lt;/b&gt;" mermaidId="n:CloudinaryController" mermaidBaseStyle="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=48;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" mermaidBaseValue="&lt;b&gt;CloudinaryController&lt;/b&gt;" id="2">
+          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=48;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
+            <mxGeometry height="144" width="489" x="8" y="8" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="3" parent="2" style="text;fontSize=16;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=12;spacingBottom=2;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="-cloudinaryService: CloudinaryService" vertex="1">
+          <mxGeometry height="24" width="489" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryController" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;CloudinaryController&lt;/b&gt;" vertex="1">
-          <mxGeometry x="200" y="90" width="480" height="88" as="geometry" />
+        <mxCell id="4" parent="2" style="line;strokeWidth=1;fillColor=none;spacingLeft=3;spacingRight=3;rotatable=0;points=[];strokeColor=inherit;" vertex="1">
+          <mxGeometry height="24" width="489" y="84" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryController_f0" parent="c_CloudinaryController" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="-cloudinaryService: CloudinaryService" vertex="1">
-          <mxGeometry y="32" width="480" height="24" as="geometry" />
+        <mxCell id="5" parent="2" style="text;fontSize=16;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=12;spacingBottom=2;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="+uploadImage(file: Express.Multer.File): Promise&lt;any&gt;" vertex="1">
+          <mxGeometry height="24" width="489" y="108" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryController_sep" parent="c_CloudinaryController" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="56" width="480" height="8" as="geometry" />
+        <UserObject label="&lt;b&gt;CloudinaryService&lt;/b&gt;" mermaidId="n:CloudinaryService" mermaidBaseStyle="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=48;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" mermaidBaseValue="&lt;b&gt;CloudinaryService&lt;/b&gt;" id="6">
+          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=48;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
+            <mxGeometry height="120" width="462" x="21" y="250" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="7" parent="6" style="line;strokeWidth=1;fillColor=none;spacingLeft=3;spacingRight=3;rotatable=0;points=[];strokeColor=inherit;" vertex="1">
+          <mxGeometry height="24" width="462" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryController_m0" parent="c_CloudinaryController" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+uploadImage(file: Express.Multer.File): Promise&amp;lt;any&amp;gt;" vertex="1">
-          <mxGeometry y="64" width="480" height="24" as="geometry" />
+        <mxCell id="8" parent="6" style="text;fontSize=16;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=12;spacingBottom=2;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="+uploadFile(file: Express.Multer.File): Promise&lt;any&gt;" vertex="1">
+          <mxGeometry height="24" width="462" y="84" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryService" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;CloudinaryService&lt;/b&gt;" vertex="1">
-          <mxGeometry x="200" y="258" width="480" height="88" as="geometry" />
+        <UserObject label="&lt;b&gt;CloudinaryProvider&lt;/b&gt;" mermaidId="n:CloudinaryProvider" mermaidBaseStyle="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" mermaidBaseValue="&lt;b&gt;CloudinaryProvider&lt;/b&gt;" id="9">
+          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
+            <mxGeometry height="168" width="226" x="533" y="226" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="10" parent="9" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=16;movable=0;resizable=0;rotatable=0;points=[];fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="«utility»" vertex="1">
+          <mxGeometry height="24" width="226" y="12" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryService_f0" parent="c_CloudinaryService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
-          <mxGeometry y="32" width="480" height="24" as="geometry" />
+        <mxCell id="11" parent="9" style="text;fontSize=16;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=12;spacingBottom=2;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="+provide: string" vertex="1">
+          <mxGeometry height="24" width="226" y="84" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryService_sep" parent="c_CloudinaryService" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="56" width="480" height="8" as="geometry" />
+        <mxCell id="12" parent="9" style="line;strokeWidth=1;fillColor=none;spacingLeft=3;spacingRight=3;rotatable=0;points=[];strokeColor=inherit;" vertex="1">
+          <mxGeometry height="24" width="226" y="108" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryService_m0" parent="c_CloudinaryService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+uploadFile(file: Express.Multer.File): Promise&amp;lt;any&amp;gt;" vertex="1">
-          <mxGeometry y="64" width="480" height="24" as="geometry" />
+        <mxCell id="13" parent="9" style="text;fontSize=16;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=12;spacingBottom=2;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="+useFactory(): any" vertex="1">
+          <mxGeometry height="24" width="226" y="132" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryProvider" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;utility&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;CloudinaryProvider&lt;/b&gt;" vertex="1">
-          <mxGeometry x="730" y="258" width="280" height="100" as="geometry" />
+        <UserObject label="&lt;b&gt;CloudinarySDK&lt;/b&gt;" mermaidId="n:CloudinarySDK" mermaidBaseStyle="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" mermaidBaseValue="&lt;b&gt;CloudinarySDK&lt;/b&gt;" id="14">
+          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
+            <mxGeometry height="168" width="333" x="283" y="468" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="15" parent="14" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=16;movable=0;resizable=0;rotatable=0;points=[];fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="«utility»" vertex="1">
+          <mxGeometry height="24" width="333" y="12" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryProvider_f0" parent="c_CloudinaryProvider" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+provide: string" vertex="1">
-          <mxGeometry y="44" width="280" height="24" as="geometry" />
+        <mxCell id="16" parent="14" style="line;strokeWidth=1;fillColor=none;spacingLeft=3;spacingRight=3;rotatable=0;points=[];strokeColor=inherit;" vertex="1">
+          <mxGeometry height="24" width="333" y="84" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryProvider_sep" parent="c_CloudinaryProvider" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="68" width="280" height="8" as="geometry" />
+        <mxCell id="17" parent="14" style="text;fontSize=16;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=12;spacingBottom=2;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="+config(options: object): any" vertex="1">
+          <mxGeometry height="24" width="333" y="108" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryProvider_m0" parent="c_CloudinaryProvider" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+useFactory(): any" vertex="1">
-          <mxGeometry y="76" width="280" height="24" as="geometry" />
+        <mxCell id="18" parent="14" style="text;fontSize=16;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=12;spacingBottom=2;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="+upload_stream(callback: any): any" vertex="1">
+          <mxGeometry height="24" width="333" y="132" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinarySDK" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;utility&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;CloudinarySDK&lt;/b&gt;" vertex="1">
-          <mxGeometry x="1060" y="258" width="320" height="124" as="geometry" />
-        </mxCell>
-        <mxCell id="c_CloudinarySDK_f0" parent="c_CloudinarySDK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
-          <mxGeometry y="44" width="320" height="24" as="geometry" />
-        </mxCell>
-        <mxCell id="c_CloudinarySDK_sep" parent="c_CloudinarySDK" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="68" width="320" height="8" as="geometry" />
-        </mxCell>
-        <mxCell id="c_CloudinarySDK_m0" parent="c_CloudinarySDK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+config(options: object): any" vertex="1">
-          <mxGeometry y="76" width="320" height="24" as="geometry" />
-        </mxCell>
-        <mxCell id="c_CloudinarySDK_m1" parent="c_CloudinarySDK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+upload_stream(callback: any): any" vertex="1">
-          <mxGeometry y="100" width="320" height="24" as="geometry" />
-        </mxCell>
-        <mxCell id="e1" edge="1" parent="1" source="c_CloudinaryController" target="c_CloudinaryService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=classicThin;endFill=1;endSize=10;" value="Association">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e2" edge="1" parent="1" source="c_CloudinaryService" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e3" edge="1" parent="1" source="c_CloudinaryProvider" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
+        <UserObject label="Association" mermaidId="e:CloudinaryController-&gt;CloudinaryService#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=light-dark(#ECECFF,#1f2020);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Association" id="19">
+          <mxCell edge="1" parent="1" source="2" style="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=light-dark(#ECECFF,#1f2020);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="6">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Dependency" mermaidId="e:CloudinaryService-&gt;CloudinarySDK#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=light-dark(#ECECFF,#1f2020);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.09;entryY=0;" mermaidBaseValue="Dependency" id="20">
+          <mxCell edge="1" parent="1" source="6" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=light-dark(#ECECFF,#1f2020);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.09;entryY=0;fixDash=1;" target="14">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="252" y="431" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Dependency" mermaidId="e:CloudinaryProvider-&gt;CloudinarySDK#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=light-dark(#ECECFF,#1f2020);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.91;entryY=0;" mermaidBaseValue="Dependency" id="21">
+          <mxCell edge="1" parent="1" source="9" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=light-dark(#ECECFF,#1f2020);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.91;entryY=0;fixDash=1;" target="14">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="646" y="431" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="cloudinary_upload" name="Upload Image">
-    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3200" pageHeight="2200" math="0" shadow="0">
+  <diagram id="cloudinary_cloudinary_upload" name="3.13 Upload Image">
+    <mxGraphModel grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="0" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="title_box" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=20;fontStyle=1;fontColor=#000000;" value="3.13.2.1 Class Diagram - Upload Image" vertex="1">
-          <mxGeometry x="100" y="20" width="1800" height="40" as="geometry" />
+        <UserObject label="&lt;b&gt;CloudinaryController&lt;/b&gt;" mermaidId="n:CloudinaryController" mermaidBaseStyle="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=48;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" mermaidBaseValue="&lt;b&gt;CloudinaryController&lt;/b&gt;" id="2">
+          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=48;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
+            <mxGeometry height="144" width="489" x="8" y="8" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="3" parent="2" style="text;fontSize=16;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=12;spacingBottom=2;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="-cloudinaryService: CloudinaryService" vertex="1">
+          <mxGeometry height="24" width="489" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryController" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;CloudinaryController&lt;/b&gt;" vertex="1">
-          <mxGeometry x="200" y="90" width="480" height="88" as="geometry" />
+        <mxCell id="4" parent="2" style="line;strokeWidth=1;fillColor=none;spacingLeft=3;spacingRight=3;rotatable=0;points=[];strokeColor=inherit;" vertex="1">
+          <mxGeometry height="24" width="489" y="84" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryController_f0" parent="c_CloudinaryController" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="-cloudinaryService: CloudinaryService" vertex="1">
-          <mxGeometry y="32" width="480" height="24" as="geometry" />
+        <mxCell id="5" parent="2" style="text;fontSize=16;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=12;spacingBottom=2;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="+uploadImage(file: Express.Multer.File): Promise&lt;any&gt;" vertex="1">
+          <mxGeometry height="24" width="489" y="108" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryController_sep" parent="c_CloudinaryController" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="56" width="480" height="8" as="geometry" />
+        <UserObject label="&lt;b&gt;CloudinaryService&lt;/b&gt;" mermaidId="n:CloudinaryService" mermaidBaseStyle="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=48;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" mermaidBaseValue="&lt;b&gt;CloudinaryService&lt;/b&gt;" id="6">
+          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=48;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
+            <mxGeometry height="120" width="462" x="21" y="250" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="7" parent="6" style="line;strokeWidth=1;fillColor=none;spacingLeft=3;spacingRight=3;rotatable=0;points=[];strokeColor=inherit;" vertex="1">
+          <mxGeometry height="24" width="462" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryController_m0" parent="c_CloudinaryController" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+uploadImage(file: Express.Multer.File): Promise&amp;lt;any&amp;gt;" vertex="1">
-          <mxGeometry y="64" width="480" height="24" as="geometry" />
+        <mxCell id="8" parent="6" style="text;fontSize=16;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=12;spacingBottom=2;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="+uploadFile(file: Express.Multer.File): Promise&lt;any&gt;" vertex="1">
+          <mxGeometry height="24" width="462" y="84" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryService" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;CloudinaryService&lt;/b&gt;" vertex="1">
-          <mxGeometry x="200" y="258" width="480" height="88" as="geometry" />
+        <UserObject label="&lt;b&gt;CloudinaryProvider&lt;/b&gt;" mermaidId="n:CloudinaryProvider" mermaidBaseStyle="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" mermaidBaseValue="&lt;b&gt;CloudinaryProvider&lt;/b&gt;" id="9">
+          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
+            <mxGeometry height="168" width="226" x="533" y="226" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="10" parent="9" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=16;movable=0;resizable=0;rotatable=0;points=[];fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="«utility»" vertex="1">
+          <mxGeometry height="24" width="226" y="12" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryService_f0" parent="c_CloudinaryService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
-          <mxGeometry y="32" width="480" height="24" as="geometry" />
+        <mxCell id="11" parent="9" style="text;fontSize=16;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=12;spacingBottom=2;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="+provide: string" vertex="1">
+          <mxGeometry height="24" width="226" y="84" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryService_sep" parent="c_CloudinaryService" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="56" width="480" height="8" as="geometry" />
+        <mxCell id="12" parent="9" style="line;strokeWidth=1;fillColor=none;spacingLeft=3;spacingRight=3;rotatable=0;points=[];strokeColor=inherit;" vertex="1">
+          <mxGeometry height="24" width="226" y="108" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryService_m0" parent="c_CloudinaryService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+uploadFile(file: Express.Multer.File): Promise&amp;lt;any&amp;gt;" vertex="1">
-          <mxGeometry y="64" width="480" height="24" as="geometry" />
+        <mxCell id="13" parent="9" style="text;fontSize=16;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=12;spacingBottom=2;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="+useFactory(): any" vertex="1">
+          <mxGeometry height="24" width="226" y="132" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryProvider" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;utility&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;CloudinaryProvider&lt;/b&gt;" vertex="1">
-          <mxGeometry x="730" y="258" width="280" height="100" as="geometry" />
+        <UserObject label="&lt;b&gt;CloudinarySDK&lt;/b&gt;" mermaidId="n:CloudinarySDK" mermaidBaseStyle="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" mermaidBaseValue="&lt;b&gt;CloudinarySDK&lt;/b&gt;" id="14">
+          <mxCell parent="1" style="swimlane;html=1;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;horizontal=1;childLayout=stackLayout;startSize=72;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginTop=12;marginBottom=12;stackSpacing=0;swimlaneFillColor=#ffffff;whiteSpace=wrap;spacingTop=24;fillColor=#ffffff;strokeColor=#111111;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;" vertex="1">
+            <mxGeometry height="168" width="333" x="283" y="468" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="15" parent="14" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=16;movable=0;resizable=0;rotatable=0;points=[];fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="«utility»" vertex="1">
+          <mxGeometry height="24" width="333" y="12" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryProvider_f0" parent="c_CloudinaryProvider" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+provide: string" vertex="1">
-          <mxGeometry y="44" width="280" height="24" as="geometry" />
+        <mxCell id="16" parent="14" style="line;strokeWidth=1;fillColor=none;spacingLeft=3;spacingRight=3;rotatable=0;points=[];strokeColor=inherit;" vertex="1">
+          <mxGeometry height="24" width="333" y="84" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryProvider_sep" parent="c_CloudinaryProvider" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="68" width="280" height="8" as="geometry" />
+        <mxCell id="17" parent="14" style="text;fontSize=16;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=12;spacingBottom=2;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="+config(options: object): any" vertex="1">
+          <mxGeometry height="24" width="333" y="108" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinaryProvider_m0" parent="c_CloudinaryProvider" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+useFactory(): any" vertex="1">
-          <mxGeometry y="76" width="280" height="24" as="geometry" />
+        <mxCell id="18" parent="14" style="text;fontSize=16;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=12;spacingBottom=2;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;" value="+upload_stream(callback: any): any" vertex="1">
+          <mxGeometry height="24" width="333" y="132" as="geometry" />
         </mxCell>
-        <mxCell id="c_CloudinarySDK" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;utility&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;CloudinarySDK&lt;/b&gt;" vertex="1">
-          <mxGeometry x="1060" y="258" width="320" height="124" as="geometry" />
-        </mxCell>
-        <mxCell id="c_CloudinarySDK_f0" parent="c_CloudinarySDK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
-          <mxGeometry y="44" width="320" height="24" as="geometry" />
-        </mxCell>
-        <mxCell id="c_CloudinarySDK_sep" parent="c_CloudinarySDK" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="68" width="320" height="8" as="geometry" />
-        </mxCell>
-        <mxCell id="c_CloudinarySDK_m0" parent="c_CloudinarySDK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+config(options: object): any" vertex="1">
-          <mxGeometry y="76" width="320" height="24" as="geometry" />
-        </mxCell>
-        <mxCell id="c_CloudinarySDK_m1" parent="c_CloudinarySDK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+upload_stream(callback: any): any" vertex="1">
-          <mxGeometry y="100" width="320" height="24" as="geometry" />
-        </mxCell>
-        <mxCell id="e1" edge="1" parent="1" source="c_CloudinaryController" target="c_CloudinaryService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=classicThin;endFill=1;endSize=10;" value="Association">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e2" edge="1" parent="1" source="c_CloudinaryService" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e3" edge="1" parent="1" source="c_CloudinaryProvider" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
+        <UserObject label="Association" mermaidId="e:CloudinaryController-&gt;CloudinaryService#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=light-dark(#ECECFF,#1f2020);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Association" id="19">
+          <mxCell edge="1" parent="1" source="2" style="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=light-dark(#ECECFF,#1f2020);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="6">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Dependency" mermaidId="e:CloudinaryService-&gt;CloudinarySDK#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=light-dark(#ECECFF,#1f2020);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.09;entryY=0;" mermaidBaseValue="Dependency" id="20">
+          <mxCell edge="1" parent="1" source="6" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=light-dark(#ECECFF,#1f2020);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.09;entryY=0;fixDash=1;" target="14">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="252" y="431" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Dependency" mermaidId="e:CloudinaryProvider-&gt;CloudinarySDK#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=light-dark(#ECECFF,#1f2020);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.91;entryY=0;" mermaidBaseValue="Dependency" id="21">
+          <mxCell edge="1" parent="1" source="9" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=light-dark(#ECECFF,#1f2020);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.91;entryY=0;fixDash=1;" target="14">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="646" y="431" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
       </root>
     </mxGraphModel>
   </diagram>
