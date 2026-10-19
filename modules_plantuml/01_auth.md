@@ -39,15 +39,13 @@ class AuthService {
 
 class RegisterDto {
   +email: string
+  +username: string?
   +password: string
-  +fullName: string
-  +phoneNumber?: string
-  +roleId?: number
-  +facilityId?: number
+  +full_name: string
 }
 
 class LoginDto {
-  +email: string
+  +identifier: string
   +password: string
 }
 

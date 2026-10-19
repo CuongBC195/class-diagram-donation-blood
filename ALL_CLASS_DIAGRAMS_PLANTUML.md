@@ -122,15 +122,13 @@ class AuthService {
 
 class RegisterDto {
   +email: string
+  +username: string?
   +password: string
-  +fullName: string
-  +phoneNumber?: string
-  +roleId?: number
-  +facilityId?: number
+  +full_name: string
 }
 
 class LoginDto {
-  +email: string
+  +identifier: string
   +password: string
 }
 
@@ -2898,7 +2896,6 @@ PrismaService *-- blood_request_donor_matches : Composition
 users "1" o-- "0..1" donor_profiles : Aggregation
 blood_requests "1" o-- "0..*" blood_request_donor_matches : Aggregation
 users "1" o-- "0..*" blood_request_donor_matches : Aggregation
-blood_requests "0..1" o-- "0..*" donor_availability_slots : Aggregation
 @enduml
 ```
 
@@ -3249,7 +3246,7 @@ class blood_request_inventory_allocations {
   +allocation_id: Int
   +request_id: Int
   +inventory_id: Int
-  +units_allocated: Int
+  +allocated_by: Int?
   ...
 }
 
@@ -8428,11 +8425,9 @@ hide empty members
 
 class SystemSettingsController {
   -systemSettingsService: SystemSettingsService
-  ...
   +getSettings(query: any): Promise<any>
   +upsertSetting(dto: UpsertSettingDto): Promise<any>
   +deleteSetting(id: number): Promise<any>
-  ...
 }
 
 class UpsertSettingDto {
@@ -8443,11 +8438,9 @@ class UpsertSettingDto {
 
 class SystemSettingsService {
   -prisma: PrismaService
-  ...
   +getSettings(query: any): Promise<any>
   +upsertSetting(dto: UpsertSettingDto): Promise<any>
   +deleteSetting(id: number): Promise<any>
-  ...
 }
 
 interface OnModuleInit {

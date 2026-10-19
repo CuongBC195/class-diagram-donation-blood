@@ -1938,19 +1938,6 @@
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e26" edge="1" parent="1" source="c_blood_requests" target="c_donor_availability_slots" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e26_src_card" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e26">
-          <mxGeometry x="-0.75" relative="1" as="geometry">
-            <mxPoint as="offset" y="-10" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e26_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e26">
-          <mxGeometry x="0.75" relative="1" as="geometry">
-            <mxPoint as="offset" y="-10" />
-          </mxGeometry>
-        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
@@ -2940,7 +2927,7 @@
         <mxCell id="c_blood_request_inventory_allocations_f2" parent="c_blood_request_inventory_allocations" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+inventory_id: Int" vertex="1">
           <mxGeometry y="80" width="320" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_blood_request_inventory_allocations_f3" parent="c_blood_request_inventory_allocations" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+units_allocated: Int" vertex="1">
+        <mxCell id="c_blood_request_inventory_allocations_f3" parent="c_blood_request_inventory_allocations" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+allocated_by: Int?" vertex="1">
           <mxGeometry y="104" width="320" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_blood_request_inventory_allocations_f4" parent="c_blood_request_inventory_allocations" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">

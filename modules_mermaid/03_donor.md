@@ -652,7 +652,6 @@ PrismaService *-- blood_request_donor_matches : Composition
 users "1" o-- "0..1" donor_profiles : Aggregation
 blood_requests "1" o-- "0..*" blood_request_donor_matches : Aggregation
 users "1" o-- "0..*" blood_request_donor_matches : Aggregation
-blood_requests "0..1" o-- "0..*" donor_availability_slots : Aggregation
 ```
 
 ## 3.3.2.4 Class Diagram - View My Slots and History (`donor_history_slots`)
@@ -997,7 +996,7 @@ class blood_request_inventory_allocations {
   +allocation_id: Int
   +request_id: Int
   +inventory_id: Int
-  +units_allocated: Int
+  +allocated_by: Int?
   ...
 }
 

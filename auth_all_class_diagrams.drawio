@@ -77,36 +77,30 @@
           <mxGeometry y="280" width="480" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_RegisterDto" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;RegisterDto&lt;/b&gt;" vertex="1">
-          <mxGeometry x="730" y="90" width="280" height="208" as="geometry" />
+          <mxGeometry x="730" y="90" width="280" height="160" as="geometry" />
         </mxCell>
         <mxCell id="c_RegisterDto_f0" parent="c_RegisterDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+email: string" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_RegisterDto_f1" parent="c_RegisterDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+password: string" vertex="1">
+        <mxCell id="c_RegisterDto_f1" parent="c_RegisterDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+username: string?" vertex="1">
           <mxGeometry y="56" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_RegisterDto_f2" parent="c_RegisterDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+fullName: string" vertex="1">
+        <mxCell id="c_RegisterDto_f2" parent="c_RegisterDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+password: string" vertex="1">
           <mxGeometry y="80" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_RegisterDto_f3" parent="c_RegisterDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+phoneNumber?: string" vertex="1">
+        <mxCell id="c_RegisterDto_f3" parent="c_RegisterDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+full_name: string" vertex="1">
           <mxGeometry y="104" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_RegisterDto_f4" parent="c_RegisterDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+roleId?: number" vertex="1">
-          <mxGeometry y="128" width="280" height="24" as="geometry" />
-        </mxCell>
-        <mxCell id="c_RegisterDto_f5" parent="c_RegisterDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+facilityId?: number" vertex="1">
-          <mxGeometry y="152" width="280" height="24" as="geometry" />
-        </mxCell>
         <mxCell id="c_RegisterDto_sep" parent="c_RegisterDto" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="176" width="280" height="8" as="geometry" />
+          <mxGeometry y="128" width="280" height="8" as="geometry" />
         </mxCell>
         <mxCell id="c_RegisterDto_m0" parent="c_RegisterDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
-          <mxGeometry y="184" width="280" height="24" as="geometry" />
+          <mxGeometry y="136" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_LoginDto" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;LoginDto&lt;/b&gt;" vertex="1">
           <mxGeometry x="1060" y="90" width="280" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="c_LoginDto_f0" parent="c_LoginDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+email: string" vertex="1">
+        <mxCell id="c_LoginDto_f0" parent="c_LoginDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+identifier: string" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_LoginDto_f1" parent="c_LoginDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+password: string" vertex="1">

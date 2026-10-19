@@ -85,11 +85,9 @@ hide empty members
 
 class SystemSettingsController {
   -systemSettingsService: SystemSettingsService
-  ...
   +getSettings(query: any): Promise<any>
   +upsertSetting(dto: UpsertSettingDto): Promise<any>
   +deleteSetting(id: number): Promise<any>
-  ...
 }
 
 class UpsertSettingDto {
@@ -100,11 +98,9 @@ class UpsertSettingDto {
 
 class SystemSettingsService {
   -prisma: PrismaService
-  ...
   +getSettings(query: any): Promise<any>
   +upsertSetting(dto: UpsertSettingDto): Promise<any>
   +deleteSetting(id: number): Promise<any>
-  ...
 }
 
 interface OnModuleInit {
