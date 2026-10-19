@@ -61,13 +61,10 @@
         <mxCell id="e1" edge="1" parent="1" source="c_CloudinaryController" target="c_CloudinaryService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=classicThin;endFill=1;endSize=10;" value="Association">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e2" edge="1" parent="1" source="c_CloudinaryService" target="c_CloudinaryProvider" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
+        <mxCell id="e2" edge="1" parent="1" source="c_CloudinaryService" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e3" edge="1" parent="1" source="c_CloudinaryService" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e4" edge="1" parent="1" source="c_CloudinaryProvider" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
+        <mxCell id="e3" edge="1" parent="1" source="c_CloudinaryProvider" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
@@ -135,13 +132,10 @@
         <mxCell id="e1" edge="1" parent="1" source="c_CloudinaryController" target="c_CloudinaryService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=classicThin;endFill=1;endSize=10;" value="Association">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e2" edge="1" parent="1" source="c_CloudinaryService" target="c_CloudinaryProvider" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
+        <mxCell id="e2" edge="1" parent="1" source="c_CloudinaryService" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e3" edge="1" parent="1" source="c_CloudinaryService" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e4" edge="1" parent="1" source="c_CloudinaryProvider" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
+        <mxCell id="e3" edge="1" parent="1" source="c_CloudinaryProvider" target="c_CloudinarySDK" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>

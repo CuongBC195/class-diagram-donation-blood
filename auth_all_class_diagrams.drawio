@@ -265,17 +265,17 @@
         <mxCell id="c_JwtStrategy_m0" parent="c_JwtStrategy" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+validate(payload: any): Promise&amp;lt;any&amp;gt;" vertex="1">
           <mxGeometry y="64" width="340" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_PassportStrategy" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;PassportStrategy&lt;/b&gt;" vertex="1">
-          <mxGeometry x="1840" y="954" width="280" height="100" as="geometry" />
+        <mxCell id="c_PassportStrategy" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;PassportStrategy&lt;/b&gt;" vertex="1">
+          <mxGeometry x="590" y="786" width="280" height="88" as="geometry" />
         </mxCell>
         <mxCell id="c_PassportStrategy_f0" parent="c_PassportStrategy" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
-          <mxGeometry y="44" width="280" height="24" as="geometry" />
+          <mxGeometry y="32" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PassportStrategy_sep" parent="c_PassportStrategy" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="68" width="280" height="8" as="geometry" />
+          <mxGeometry y="56" width="280" height="8" as="geometry" />
         </mxCell>
         <mxCell id="c_PassportStrategy_m0" parent="c_PassportStrategy" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
-          <mxGeometry y="76" width="280" height="24" as="geometry" />
+          <mxGeometry y="64" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_OnModuleInit" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OnModuleInit&lt;/b&gt;" vertex="1">
           <mxGeometry x="1140" y="954" width="280" height="100" as="geometry" />

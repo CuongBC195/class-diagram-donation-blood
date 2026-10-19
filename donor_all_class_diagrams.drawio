@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Antigravity" version="21.0.0" pages="7">
   <diagram id="donor_overview" name="Donor Overview">
-    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3200" pageHeight="2662" math="0" shadow="0">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3200" pageHeight="3430" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -265,8 +265,218 @@
         <mxCell id="c_DonorService_m15" parent="c_DonorService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+importExcel(buffer: Buffer, user: any): Promise&amp;lt;any&amp;gt;" vertex="1">
           <mxGeometry y="448" width="560" height="24" as="geometry" />
         </mxCell>
+        <mxCell id="c_blood_requests" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;blood_requests&lt;/b&gt;" vertex="1">
+          <mxGeometry x="160" y="1770" width="280" height="208" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_requests_f0" parent="c_blood_requests" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+request_id: Int" vertex="1">
+          <mxGeometry y="32" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_requests_f1" parent="c_blood_requests" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+request_code: String" vertex="1">
+          <mxGeometry y="56" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_requests_f2" parent="c_blood_requests" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+blood_type_id: Int" vertex="1">
+          <mxGeometry y="80" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_requests_f3" parent="c_blood_requests" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+component_id: Int" vertex="1">
+          <mxGeometry y="104" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_requests_f4" parent="c_blood_requests" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+status_id: Int" vertex="1">
+          <mxGeometry y="128" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_requests_f5" parent="c_blood_requests" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+          <mxGeometry y="152" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_requests_sep" parent="c_blood_requests" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="176" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_requests_m0" parent="c_blood_requests" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="184" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_compatibility" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;blood_compatibility&lt;/b&gt;" vertex="1">
+          <mxGeometry x="480" y="1770" width="280" height="208" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_compatibility_f0" parent="c_blood_compatibility" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+compatibility_id: Int" vertex="1">
+          <mxGeometry y="32" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_compatibility_f1" parent="c_blood_compatibility" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+component_id: Int" vertex="1">
+          <mxGeometry y="56" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_compatibility_f2" parent="c_blood_compatibility" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+donor_blood_type_id: Int" vertex="1">
+          <mxGeometry y="80" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_compatibility_f3" parent="c_blood_compatibility" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+recipient_blood_type_id: Int" vertex="1">
+          <mxGeometry y="104" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_compatibility_f4" parent="c_blood_compatibility" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+is_compatible: Boolean" vertex="1">
+          <mxGeometry y="128" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_compatibility_f5" parent="c_blood_compatibility" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+          <mxGeometry y="152" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_compatibility_sep" parent="c_blood_compatibility" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="176" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_compatibility_m0" parent="c_blood_compatibility" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="184" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_donor_matches" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;blood_request_donor_matches&lt;/b&gt;" vertex="1">
+          <mxGeometry x="800" y="1770" width="280" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_donor_matches_f0" parent="c_blood_request_donor_matches" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+match_id: Int" vertex="1">
+          <mxGeometry y="32" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_donor_matches_f1" parent="c_blood_request_donor_matches" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+request_id: Int" vertex="1">
+          <mxGeometry y="56" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_donor_matches_f2" parent="c_blood_request_donor_matches" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+donor_user_id: Int" vertex="1">
+          <mxGeometry y="80" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_donor_matches_f3" parent="c_blood_request_donor_matches" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+match_status: String" vertex="1">
+          <mxGeometry y="104" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_donor_matches_f4" parent="c_blood_request_donor_matches" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+          <mxGeometry y="128" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_donor_matches_sep" parent="c_blood_request_donor_matches" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="152" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_donor_matches_m0" parent="c_blood_request_donor_matches" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="160" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_statuses" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;blood_request_statuses&lt;/b&gt;" vertex="1">
+          <mxGeometry x="1120" y="1770" width="280" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_statuses_f0" parent="c_blood_request_statuses" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+status_id: Int" vertex="1">
+          <mxGeometry y="32" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_statuses_f1" parent="c_blood_request_statuses" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+status_code: String" vertex="1">
+          <mxGeometry y="56" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_statuses_f2" parent="c_blood_request_statuses" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+status_name: String" vertex="1">
+          <mxGeometry y="80" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_statuses_f3" parent="c_blood_request_statuses" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+          <mxGeometry y="104" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_statuses_sep" parent="c_blood_request_statuses" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="128" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_statuses_m0" parent="c_blood_request_statuses" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="136" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_inventory_allocations" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;blood_request_inventory_allocations&lt;/b&gt;" vertex="1">
+          <mxGeometry x="1440" y="1770" width="320" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_inventory_allocations_f0" parent="c_blood_request_inventory_allocations" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+allocation_id: Int" vertex="1">
+          <mxGeometry y="32" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_inventory_allocations_f1" parent="c_blood_request_inventory_allocations" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+request_id: Int" vertex="1">
+          <mxGeometry y="56" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_inventory_allocations_f2" parent="c_blood_request_inventory_allocations" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+inventory_id: Int" vertex="1">
+          <mxGeometry y="80" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_inventory_allocations_f3" parent="c_blood_request_inventory_allocations" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+allocated_by: Int?" vertex="1">
+          <mxGeometry y="104" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_inventory_allocations_f4" parent="c_blood_request_inventory_allocations" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+          <mxGeometry y="128" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_inventory_allocations_sep" parent="c_blood_request_inventory_allocations" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="152" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_request_inventory_allocations_m0" parent="c_blood_request_inventory_allocations" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="160" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_inventory_transactions" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;inventory_transactions&lt;/b&gt;" vertex="1">
+          <mxGeometry x="160" y="2058" width="280" height="208" as="geometry" />
+        </mxCell>
+        <mxCell id="c_inventory_transactions_f0" parent="c_inventory_transactions" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+transaction_id: Int" vertex="1">
+          <mxGeometry y="32" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_inventory_transactions_f1" parent="c_inventory_transactions" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+inventory_id: Int" vertex="1">
+          <mxGeometry y="56" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_inventory_transactions_f2" parent="c_inventory_transactions" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+transaction_type: String" vertex="1">
+          <mxGeometry y="80" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_inventory_transactions_f3" parent="c_inventory_transactions" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+reference_type: String?" vertex="1">
+          <mxGeometry y="104" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_inventory_transactions_f4" parent="c_inventory_transactions" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+reference_id: Int?" vertex="1">
+          <mxGeometry y="128" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_inventory_transactions_f5" parent="c_inventory_transactions" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+          <mxGeometry y="152" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_inventory_transactions_sep" parent="c_inventory_transactions" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="176" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_inventory_transactions_m0" parent="c_inventory_transactions" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="184" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_donation_interval_rules" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;donation_interval_rules&lt;/b&gt;" vertex="1">
+          <mxGeometry x="480" y="2058" width="280" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c_donation_interval_rules_f0" parent="c_donation_interval_rules" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+rule_id: Int" vertex="1">
+          <mxGeometry y="32" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_donation_interval_rules_f1" parent="c_donation_interval_rules" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+component_id: Int" vertex="1">
+          <mxGeometry y="56" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_donation_interval_rules_f2" parent="c_donation_interval_rules" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+min_interval_days: Int" vertex="1">
+          <mxGeometry y="80" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_donation_interval_rules_f3" parent="c_donation_interval_rules" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+          <mxGeometry y="104" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_donation_interval_rules_sep" parent="c_donation_interval_rules" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="128" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_donation_interval_rules_m0" parent="c_donation_interval_rules" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="136" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_components" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;blood_components&lt;/b&gt;" vertex="1">
+          <mxGeometry x="800" y="2058" width="280" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_components_f0" parent="c_blood_components" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+component_id: Int" vertex="1">
+          <mxGeometry y="32" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_components_f1" parent="c_blood_components" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+component_code: String" vertex="1">
+          <mxGeometry y="56" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_components_f2" parent="c_blood_components" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+component_name: String" vertex="1">
+          <mxGeometry y="80" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_components_f3" parent="c_blood_components" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+          <mxGeometry y="104" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_components_sep" parent="c_blood_components" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="128" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_components_m0" parent="c_blood_components" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="136" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ExcelUtil" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;utility&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ExcelUtil&lt;/b&gt;" vertex="1">
+          <mxGeometry x="810" y="618" width="560" height="148" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ExcelUtil_f0" parent="c_ExcelUtil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="44" width="560" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ExcelUtil_sep" parent="c_ExcelUtil" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="68" width="560" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ExcelUtil_m0" parent="c_ExcelUtil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+generateExcel(data: any[], sheetName: string): Buffer" vertex="1">
+          <mxGeometry y="76" width="560" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ExcelUtil_m1" parent="c_ExcelUtil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+generateTemplate(headers: string[], sheetName: string): Buffer" vertex="1">
+          <mxGeometry y="100" width="560" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ExcelUtil_m2" parent="c_ExcelUtil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+parseExcel(buffer: Buffer): any[]" vertex="1">
+          <mxGeometry y="124" width="560" height="24" as="geometry" />
+        </mxCell>
         <mxCell id="c_NotificationsService" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;NotificationsService&lt;/b&gt;" vertex="1">
-          <mxGeometry x="810" y="618" width="560" height="136" as="geometry" />
+          <mxGeometry x="1420" y="618" width="560" height="136" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationsService_f0" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="-prisma: PrismaService" vertex="1">
           <mxGeometry y="32" width="560" height="24" as="geometry" />
@@ -284,7 +494,7 @@
           <mxGeometry y="112" width="560" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_OnModuleInit" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OnModuleInit&lt;/b&gt;" vertex="1">
-          <mxGeometry x="1220" y="1170" width="280" height="100" as="geometry" />
+          <mxGeometry x="1240" y="1170" width="280" height="100" as="geometry" />
         </mxCell>
         <mxCell id="c_OnModuleInit_f0" parent="c_OnModuleInit" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
           <mxGeometry y="44" width="280" height="24" as="geometry" />
@@ -296,7 +506,7 @@
           <mxGeometry y="76" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_OnModuleDestroy" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OnModuleDestroy&lt;/b&gt;" vertex="1">
-          <mxGeometry x="1550" y="1170" width="320" height="100" as="geometry" />
+          <mxGeometry x="1570" y="1170" width="320" height="100" as="geometry" />
         </mxCell>
         <mxCell id="c_OnModuleDestroy_f0" parent="c_OnModuleDestroy" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
           <mxGeometry y="44" width="320" height="24" as="geometry" />
@@ -329,49 +539,73 @@
           <mxGeometry y="136" width="380" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;PrismaService&lt;/b&gt;" vertex="1">
-          <mxGeometry x="630" y="1170" width="540" height="328" as="geometry" />
+          <mxGeometry x="630" y="1170" width="560" height="520" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_f0" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+users: PrismaUserDelegate" vertex="1">
-          <mxGeometry y="32" width="540" height="24" as="geometry" />
+          <mxGeometry y="32" width="560" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_f1" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+donor_profiles: PrismaDonorProfileDelegate" vertex="1">
-          <mxGeometry y="56" width="540" height="24" as="geometry" />
+          <mxGeometry y="56" width="560" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_f2" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+donor_availability_slots: PrismaAvailabilitySlotDelegate" vertex="1">
-          <mxGeometry y="80" width="540" height="24" as="geometry" />
+          <mxGeometry y="80" width="560" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_f3" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+facility_donation_schedules: PrismaDonationScheduleDelegate" vertex="1">
-          <mxGeometry y="104" width="540" height="24" as="geometry" />
+          <mxGeometry y="104" width="560" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_f4" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+donations: PrismaDonationDelegate" vertex="1">
-          <mxGeometry y="128" width="540" height="24" as="geometry" />
+          <mxGeometry y="128" width="560" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_f5" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+blood_inventory: PrismaBloodInventoryDelegate" vertex="1">
-          <mxGeometry y="152" width="540" height="24" as="geometry" />
+          <mxGeometry y="152" width="560" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_f6" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+medical_facilities: PrismaMedicalFacilityDelegate" vertex="1">
-          <mxGeometry y="176" width="540" height="24" as="geometry" />
+          <mxGeometry y="176" width="560" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_f7" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+blood_types: PrismaBloodTypeDelegate" vertex="1">
-          <mxGeometry y="200" width="540" height="24" as="geometry" />
+          <mxGeometry y="200" width="560" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_f8" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notifications: PrismaNotificationDelegate" vertex="1">
-          <mxGeometry y="224" width="540" height="24" as="geometry" />
+          <mxGeometry y="224" width="560" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_PrismaService_f9" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
-          <mxGeometry y="248" width="540" height="24" as="geometry" />
+        <mxCell id="c_PrismaService_f9" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+blood_requests: PrismaBloodRequestDelegate" vertex="1">
+          <mxGeometry y="248" width="560" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PrismaService_f10" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+blood_compatibility: PrismaBloodCompatibilityDelegate" vertex="1">
+          <mxGeometry y="272" width="560" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PrismaService_f11" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+blood_request_donor_matches: PrismaDonorMatchDelegate" vertex="1">
+          <mxGeometry y="296" width="560" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PrismaService_f12" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+blood_request_statuses: PrismaBloodRequestStatusDelegate" vertex="1">
+          <mxGeometry y="320" width="560" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PrismaService_f13" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+blood_request_inventory_allocations: PrismaInventoryAllocationDelegate" vertex="1">
+          <mxGeometry y="344" width="560" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PrismaService_f14" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+inventory_transactions: PrismaInventoryTransactionDelegate" vertex="1">
+          <mxGeometry y="368" width="560" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PrismaService_f15" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+donation_interval_rules: PrismaDonationIntervalRuleDelegate" vertex="1">
+          <mxGeometry y="392" width="560" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PrismaService_f16" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+blood_components: PrismaBloodComponentDelegate" vertex="1">
+          <mxGeometry y="416" width="560" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PrismaService_f17" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+          <mxGeometry y="440" width="560" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_sep" parent="c_PrismaService" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="272" width="540" height="8" as="geometry" />
+          <mxGeometry y="464" width="560" height="8" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_m0" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+onModuleInit(): Promise&amp;lt;void&amp;gt;" vertex="1">
-          <mxGeometry y="280" width="540" height="24" as="geometry" />
+          <mxGeometry y="472" width="560" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_m1" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+onModuleDestroy(): Promise&amp;lt;void&amp;gt;" vertex="1">
-          <mxGeometry y="304" width="540" height="24" as="geometry" />
+          <mxGeometry y="496" width="560" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_users" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;users&lt;/b&gt;" vertex="1">
-          <mxGeometry x="160" y="1578" width="320" height="232" as="geometry" />
+          <mxGeometry x="1120" y="2058" width="320" height="232" as="geometry" />
         </mxCell>
         <mxCell id="c_users_f0" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+user_id: Int" vertex="1">
           <mxGeometry y="32" width="320" height="24" as="geometry" />
@@ -401,7 +635,7 @@
           <mxGeometry y="208" width="320" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_donor_profiles" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;donor_profiles&lt;/b&gt;" vertex="1">
-          <mxGeometry x="520" y="1578" width="320" height="376" as="geometry" />
+          <mxGeometry x="1480" y="2058" width="320" height="376" as="geometry" />
         </mxCell>
         <mxCell id="c_donor_profiles_f0" parent="c_donor_profiles" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+donor_profile_id: Int" vertex="1">
           <mxGeometry y="32" width="320" height="24" as="geometry" />
@@ -449,7 +683,7 @@
           <mxGeometry y="352" width="320" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_donor_availability_slots" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;donor_availability_slots&lt;/b&gt;" vertex="1">
-          <mxGeometry x="880" y="1578" width="280" height="304" as="geometry" />
+          <mxGeometry x="160" y="2514" width="280" height="304" as="geometry" />
         </mxCell>
         <mxCell id="c_donor_availability_slots_f0" parent="c_donor_availability_slots" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+slot_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -488,7 +722,7 @@
           <mxGeometry y="280" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_facility_donation_schedules" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;facility_donation_schedules&lt;/b&gt;" vertex="1">
-          <mxGeometry x="1200" y="1578" width="280" height="280" as="geometry" />
+          <mxGeometry x="480" y="2514" width="280" height="280" as="geometry" />
         </mxCell>
         <mxCell id="c_facility_donation_schedules_f0" parent="c_facility_donation_schedules" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+schedule_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -524,7 +758,7 @@
           <mxGeometry y="256" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_donations" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;donations&lt;/b&gt;" vertex="1">
-          <mxGeometry x="1520" y="1578" width="280" height="328" as="geometry" />
+          <mxGeometry x="800" y="2514" width="280" height="328" as="geometry" />
         </mxCell>
         <mxCell id="c_donations_f0" parent="c_donations" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+donation_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -566,7 +800,7 @@
           <mxGeometry y="304" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_blood_inventory" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;blood_inventory&lt;/b&gt;" vertex="1">
-          <mxGeometry x="160" y="2034" width="280" height="328" as="geometry" />
+          <mxGeometry x="1120" y="2514" width="280" height="328" as="geometry" />
         </mxCell>
         <mxCell id="c_blood_inventory_f0" parent="c_blood_inventory" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+inventory_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -608,7 +842,7 @@
           <mxGeometry y="304" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_medical_facilities" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;medical_facilities&lt;/b&gt;" vertex="1">
-          <mxGeometry x="480" y="2034" width="280" height="208" as="geometry" />
+          <mxGeometry x="1440" y="2514" width="280" height="208" as="geometry" />
         </mxCell>
         <mxCell id="c_medical_facilities_f0" parent="c_medical_facilities" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+facility_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -635,7 +869,7 @@
           <mxGeometry y="184" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_blood_types" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;blood_types&lt;/b&gt;" vertex="1">
-          <mxGeometry x="800" y="2034" width="280" height="184" as="geometry" />
+          <mxGeometry x="160" y="2922" width="280" height="184" as="geometry" />
         </mxCell>
         <mxCell id="c_blood_types_f0" parent="c_blood_types" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+blood_type_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -659,7 +893,7 @@
           <mxGeometry y="160" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_notifications" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;notifications&lt;/b&gt;" vertex="1">
-          <mxGeometry x="1120" y="2034" width="280" height="208" as="geometry" />
+          <mxGeometry x="480" y="2922" width="280" height="208" as="geometry" />
         </mxCell>
         <mxCell id="c_notifications_f0" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notification_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -724,59 +958,49 @@
         <mxCell id="e13" edge="1" parent="1" source="c_DonorService" target="c_PaginationDto" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e14" edge="1" parent="1" source="c_NotificationsService" target="c_PrismaService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=classicThin;endFill=1;endSize=10;" value="Association">
+        <mxCell id="e14" edge="1" parent="1" source="c_DonorService" target="c_ExcelUtil" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e15" edge="1" parent="1" source="c_PrismaService" target="c_PrismaClient" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=block;endFill=0;endSize=16;" value="Inheritance">
+        <mxCell id="e15" edge="1" parent="1" source="c_NotificationsService" target="c_PrismaService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=classicThin;endFill=1;endSize=10;" value="Association">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e16" edge="1" parent="1" source="c_PrismaService" target="c_OnModuleInit" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=block;endFill=0;endSize=16;" value="Implements">
+        <mxCell id="e16" edge="1" parent="1" source="c_PrismaService" target="c_PrismaClient" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=block;endFill=0;endSize=16;" value="Inheritance">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e17" edge="1" parent="1" source="c_PrismaService" target="c_OnModuleDestroy" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=block;endFill=0;endSize=16;" value="Implements">
+        <mxCell id="e17" edge="1" parent="1" source="c_PrismaService" target="c_OnModuleInit" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=block;endFill=0;endSize=16;" value="Implements">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e18" edge="1" parent="1" source="c_PrismaService" target="c_users" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+        <mxCell id="e18" edge="1" parent="1" source="c_PrismaService" target="c_OnModuleDestroy" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=block;endFill=0;endSize=16;" value="Implements">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e19" edge="1" parent="1" source="c_PrismaService" target="c_donor_profiles" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+        <mxCell id="e19" edge="1" parent="1" source="c_PrismaService" target="c_users" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e20" edge="1" parent="1" source="c_PrismaService" target="c_donor_availability_slots" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+        <mxCell id="e20" edge="1" parent="1" source="c_PrismaService" target="c_donor_profiles" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e21" edge="1" parent="1" source="c_PrismaService" target="c_facility_donation_schedules" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+        <mxCell id="e21" edge="1" parent="1" source="c_PrismaService" target="c_donor_availability_slots" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e22" edge="1" parent="1" source="c_PrismaService" target="c_donations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+        <mxCell id="e22" edge="1" parent="1" source="c_PrismaService" target="c_facility_donation_schedules" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e23" edge="1" parent="1" source="c_PrismaService" target="c_blood_inventory" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+        <mxCell id="e23" edge="1" parent="1" source="c_PrismaService" target="c_donations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e24" edge="1" parent="1" source="c_PrismaService" target="c_medical_facilities" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+        <mxCell id="e24" edge="1" parent="1" source="c_PrismaService" target="c_blood_inventory" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e25" edge="1" parent="1" source="c_PrismaService" target="c_blood_types" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+        <mxCell id="e25" edge="1" parent="1" source="c_PrismaService" target="c_medical_facilities" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e26" edge="1" parent="1" source="c_PrismaService" target="c_notifications" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+        <mxCell id="e26" edge="1" parent="1" source="c_PrismaService" target="c_blood_types" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e27" edge="1" parent="1" source="c_users" target="c_donor_profiles" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e27" edge="1" parent="1" source="c_PrismaService" target="c_notifications" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e27_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e27">
-          <mxGeometry x="-0.75" relative="1" as="geometry">
-            <mxPoint as="offset" y="-10" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e27_tgt_card" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e27">
-          <mxGeometry x="0.75" relative="1" as="geometry">
-            <mxPoint as="offset" y="-10" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e28" edge="1" parent="1" source="c_blood_types" target="c_donor_profiles" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e28" edge="1" parent="1" source="c_users" target="c_donor_profiles" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e28_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e28">
@@ -784,12 +1008,12 @@
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e28_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e28">
+        <mxCell id="e28_tgt_card" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e28">
           <mxGeometry x="0.75" relative="1" as="geometry">
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e29" edge="1" parent="1" source="c_users" target="c_donor_availability_slots" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e29" edge="1" parent="1" source="c_blood_types" target="c_donor_profiles" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e29_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e29">
@@ -802,7 +1026,7 @@
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e30" edge="1" parent="1" source="c_facility_donation_schedules" target="c_donor_availability_slots" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e30" edge="1" parent="1" source="c_users" target="c_donor_availability_slots" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e30_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e30">
@@ -815,7 +1039,7 @@
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e31" edge="1" parent="1" source="c_medical_facilities" target="c_facility_donation_schedules" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e31" edge="1" parent="1" source="c_facility_donation_schedules" target="c_donor_availability_slots" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e31_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e31">
@@ -828,7 +1052,7 @@
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e32" edge="1" parent="1" source="c_users" target="c_donations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e32" edge="1" parent="1" source="c_medical_facilities" target="c_facility_donation_schedules" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e32_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e32">
@@ -841,7 +1065,7 @@
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e33" edge="1" parent="1" source="c_medical_facilities" target="c_donations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e33" edge="1" parent="1" source="c_users" target="c_donations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e33_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e33">
@@ -854,10 +1078,10 @@
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e34" edge="1" parent="1" source="c_donations" target="c_blood_inventory" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e34" edge="1" parent="1" source="c_medical_facilities" target="c_donations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e34_src_card" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e34">
+        <mxCell id="e34_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e34">
           <mxGeometry x="-0.75" relative="1" as="geometry">
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
@@ -867,15 +1091,182 @@
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e35" edge="1" parent="1" source="c_users" target="c_notifications" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e35" edge="1" parent="1" source="c_donations" target="c_blood_inventory" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e35_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e35">
+        <mxCell id="e35_src_card" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e35">
           <mxGeometry x="-0.75" relative="1" as="geometry">
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
         </mxCell>
         <mxCell id="e35_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e35">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e36" edge="1" parent="1" source="c_users" target="c_notifications" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e36_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e36">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e36_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e36">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e37" edge="1" parent="1" source="c_PrismaService" target="c_blood_requests" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e38" edge="1" parent="1" source="c_PrismaService" target="c_blood_compatibility" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e39" edge="1" parent="1" source="c_PrismaService" target="c_blood_request_donor_matches" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e40" edge="1" parent="1" source="c_PrismaService" target="c_blood_request_statuses" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e41" edge="1" parent="1" source="c_PrismaService" target="c_blood_request_inventory_allocations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e42" edge="1" parent="1" source="c_PrismaService" target="c_inventory_transactions" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e43" edge="1" parent="1" source="c_PrismaService" target="c_donation_interval_rules" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e44" edge="1" parent="1" source="c_PrismaService" target="c_blood_components" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e45" edge="1" parent="1" source="c_blood_requests" target="c_blood_request_donor_matches" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e45_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e45">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e45_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e45">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e46" edge="1" parent="1" source="c_users" target="c_blood_request_donor_matches" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e46_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e46">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e46_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e46">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e47" edge="1" parent="1" source="c_blood_request_statuses" target="c_blood_requests" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e47_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e47">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e47_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e47">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e48" edge="1" parent="1" source="c_blood_requests" target="c_blood_request_inventory_allocations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e48_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e48">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e48_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e48">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e49" edge="1" parent="1" source="c_blood_inventory" target="c_blood_request_inventory_allocations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e49_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e49">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e49_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e49">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e50" edge="1" parent="1" source="c_blood_inventory" target="c_inventory_transactions" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e50_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e50">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e50_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e50">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e51" edge="1" parent="1" source="c_blood_components" target="c_donations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e51_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e51">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e51_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e51">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e52" edge="1" parent="1" source="c_blood_components" target="c_blood_compatibility" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e52_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e52">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e52_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e52">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e53" edge="1" parent="1" source="c_blood_types" target="c_blood_compatibility" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e53_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e53">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e53_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e53">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e54" edge="1" parent="1" source="c_blood_components" target="c_donation_interval_rules" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e54_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e54">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e54_tgt_card" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e54">
           <mxGeometry x="0.75" relative="1" as="geometry">
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
@@ -2040,7 +2431,7 @@
           <mxGeometry y="112" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;PrismaService&lt;/b&gt;" vertex="1">
-          <mxGeometry x="530" y="618" width="540" height="232" as="geometry" />
+          <mxGeometry x="530" y="618" width="540" height="280" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_f0" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+users: PrismaUserDelegate" vertex="1">
           <mxGeometry y="32" width="540" height="24" as="geometry" />
@@ -2054,23 +2445,65 @@
         <mxCell id="c_PrismaService_f3" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+donations: PrismaDonationDelegate" vertex="1">
           <mxGeometry y="104" width="540" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_PrismaService_f4" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+medical_facilities: PrismaMedicalFacilityDelegate" vertex="1">
+        <mxCell id="c_PrismaService_f4" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+blood_types: PrismaBloodTypeDelegate" vertex="1">
           <mxGeometry y="128" width="540" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_PrismaService_f5" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+        <mxCell id="c_PrismaService_f5" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+blood_components: PrismaBloodComponentDelegate" vertex="1">
           <mxGeometry y="152" width="540" height="24" as="geometry" />
         </mxCell>
+        <mxCell id="c_PrismaService_f6" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+medical_facilities: PrismaMedicalFacilityDelegate" vertex="1">
+          <mxGeometry y="176" width="540" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PrismaService_f7" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+          <mxGeometry y="200" width="540" height="24" as="geometry" />
+        </mxCell>
         <mxCell id="c_PrismaService_sep" parent="c_PrismaService" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="176" width="540" height="8" as="geometry" />
+          <mxGeometry y="224" width="540" height="8" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_m0" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+onModuleInit(): Promise&amp;lt;void&amp;gt;" vertex="1">
-          <mxGeometry y="184" width="540" height="24" as="geometry" />
+          <mxGeometry y="232" width="540" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_m1" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+onModuleDestroy(): Promise&amp;lt;void&amp;gt;" vertex="1">
-          <mxGeometry y="208" width="540" height="24" as="geometry" />
+          <mxGeometry y="256" width="540" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_types" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;blood_types&lt;/b&gt;" vertex="1">
+          <mxGeometry x="160" y="978" width="280" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_types_f0" parent="c_blood_types" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+blood_type_id: Int" vertex="1">
+          <mxGeometry y="32" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_types_f1" parent="c_blood_types" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+blood_type_code: String" vertex="1">
+          <mxGeometry y="56" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_types_f2" parent="c_blood_types" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+          <mxGeometry y="80" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_types_sep" parent="c_blood_types" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="104" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_types_m0" parent="c_blood_types" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="112" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_components" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;blood_components&lt;/b&gt;" vertex="1">
+          <mxGeometry x="480" y="978" width="280" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_components_f0" parent="c_blood_components" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+component_id: Int" vertex="1">
+          <mxGeometry y="32" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_components_f1" parent="c_blood_components" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+component_name: String" vertex="1">
+          <mxGeometry y="56" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_components_f2" parent="c_blood_components" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+          <mxGeometry y="80" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_components_sep" parent="c_blood_components" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="104" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_blood_components_m0" parent="c_blood_components" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="112" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_users" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;users&lt;/b&gt;" vertex="1">
-          <mxGeometry x="160" y="930" width="280" height="160" as="geometry" />
+          <mxGeometry x="800" y="978" width="280" height="160" as="geometry" />
         </mxCell>
         <mxCell id="c_users_f0" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+user_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -2091,7 +2524,7 @@
           <mxGeometry y="136" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_donor_availability_slots" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;donor_availability_slots&lt;/b&gt;" vertex="1">
-          <mxGeometry x="480" y="930" width="280" height="232" as="geometry" />
+          <mxGeometry x="1120" y="978" width="280" height="232" as="geometry" />
         </mxCell>
         <mxCell id="c_donor_availability_slots_f0" parent="c_donor_availability_slots" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+slot_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -2121,7 +2554,7 @@
           <mxGeometry y="208" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_facility_donation_schedules" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;facility_donation_schedules&lt;/b&gt;" vertex="1">
-          <mxGeometry x="800" y="930" width="280" height="184" as="geometry" />
+          <mxGeometry x="1440" y="978" width="280" height="184" as="geometry" />
         </mxCell>
         <mxCell id="c_facility_donation_schedules_f0" parent="c_facility_donation_schedules" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+schedule_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -2145,7 +2578,7 @@
           <mxGeometry y="160" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_donations" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;donations&lt;/b&gt;" vertex="1">
-          <mxGeometry x="1120" y="930" width="280" height="256" as="geometry" />
+          <mxGeometry x="160" y="1290" width="280" height="256" as="geometry" />
         </mxCell>
         <mxCell id="c_donations_f0" parent="c_donations" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+donation_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -2178,7 +2611,7 @@
           <mxGeometry y="232" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_medical_facilities" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;medical_facilities&lt;/b&gt;" vertex="1">
-          <mxGeometry x="1440" y="930" width="280" height="160" as="geometry" />
+          <mxGeometry x="480" y="1290" width="280" height="160" as="geometry" />
         </mxCell>
         <mxCell id="c_medical_facilities_f0" parent="c_medical_facilities" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+facility_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -2225,36 +2658,16 @@
         <mxCell id="e9" edge="1" parent="1" source="c_PrismaService" target="c_donations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e10" edge="1" parent="1" source="c_PrismaService" target="c_medical_facilities" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+        <mxCell id="e10" edge="1" parent="1" source="c_PrismaService" target="c_blood_types" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e11" edge="1" parent="1" source="c_users" target="c_donor_availability_slots" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e11" edge="1" parent="1" source="c_PrismaService" target="c_blood_components" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e11_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e11">
-          <mxGeometry x="-0.75" relative="1" as="geometry">
-            <mxPoint as="offset" y="-10" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e11_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e11">
-          <mxGeometry x="0.75" relative="1" as="geometry">
-            <mxPoint as="offset" y="-10" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e12" edge="1" parent="1" source="c_facility_donation_schedules" target="c_donor_availability_slots" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e12" edge="1" parent="1" source="c_PrismaService" target="c_medical_facilities" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e12_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e12">
-          <mxGeometry x="-0.75" relative="1" as="geometry">
-            <mxPoint as="offset" y="-10" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e12_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e12">
-          <mxGeometry x="0.75" relative="1" as="geometry">
-            <mxPoint as="offset" y="-10" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e13" edge="1" parent="1" source="c_medical_facilities" target="c_facility_donation_schedules" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e13" edge="1" parent="1" source="c_users" target="c_donor_availability_slots" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e13_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e13">
@@ -2267,7 +2680,7 @@
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e14" edge="1" parent="1" source="c_users" target="c_donations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e14" edge="1" parent="1" source="c_facility_donation_schedules" target="c_donor_availability_slots" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e14_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e14">
@@ -2280,7 +2693,7 @@
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e15" edge="1" parent="1" source="c_medical_facilities" target="c_donations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e15" edge="1" parent="1" source="c_blood_types" target="c_donations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e15_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e15">
@@ -2289,6 +2702,58 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="e15_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e15">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="c_blood_components" target="c_donations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e16">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e16">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="c_medical_facilities" target="c_facility_donation_schedules" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e17">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e17">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="c_users" target="c_donations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e18">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e18">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="c_medical_facilities" target="c_donations" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e19">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e19">
           <mxGeometry x="0.75" relative="1" as="geometry">
             <mxPoint as="offset" y="-10" />
           </mxGeometry>

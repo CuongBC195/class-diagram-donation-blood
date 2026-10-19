@@ -22,8 +22,8 @@ class BlogController {
   +updateCategory(id: number, dto: UpdateCategoryDto): Promise~any~
   +deleteCategory(id: number): Promise~any~
   +createPost(req: any, dto: CreatePostDto): Promise~any~
-  +updatePost(id: number, dto: UpdatePostDto): Promise~any~
-  +deletePost(id: number): Promise~any~
+  +updatePost(postId: number, dto: UpdatePostDto): Promise~any~
+  +deletePost(postId: number): Promise~any~
   +getAdminComments(query: any): Promise~any~
   +approveComment(id: number, isApproved: boolean): Promise~any~
   +deleteAdminComment(id: number): Promise~any~
@@ -38,11 +38,11 @@ class BlogService {
   +getAllPosts(query: BlogFilterDto): Promise~any~
   +getPostBySlug(slug: string): Promise~any~
   +getRelatedPosts(slug: string): Promise~any~
-  +createPost(authorId: number, dto: CreatePostDto): Promise~any~
-  +updatePost(id: number, dto: UpdatePostDto): Promise~any~
-  +deletePost(id: number): Promise~any~
+  +createPost(userId: number, dto: CreatePostDto): Promise~any~
+  +updatePost(postId: number, dto: UpdatePostDto): Promise~any~
+  +deletePost(postId: number): Promise~any~
   +getComments(postId: number, query: any): Promise~any~
-  +addComment(postId: number, userId: number, body: AddCommentDto): Promise~any~
+  +addComment(postId: number, userId: number | null, data: AddCommentDto): Promise~any~
   +editComment(commentId: number, userId: number, content: string): Promise~any~
   +deleteMyComment(commentId: number, userId: number): Promise~any~
   +getAdminComments(query: any): Promise~any~
@@ -250,9 +250,18 @@ class PrismaClient {
 
 class PrismaService {
   +blog_categories: PrismaBlogCategoryDelegate
+  +blog_posts: PrismaBlogPostDelegate
   ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
+}
+
+class blog_posts {
+  +post_id: Int
+  +category_id: Int
+  +title: String
+  +slug: String
+  ...
 }
 
 class blog_categories {
@@ -275,6 +284,9 @@ PrismaService ..|> OnModuleInit : Implements
 PrismaService ..|> OnModuleDestroy : Implements
 
 PrismaService *-- blog_categories : Composition
+PrismaService *-- blog_posts : Composition
+
+blog_categories "1" o-- "0..*" blog_posts : Aggregation
 ```
 
 ## 3.8.2.2 Class Diagram - View and Manage Blog Posts (`blog_posts`)
@@ -291,8 +303,8 @@ class BlogController {
   +getPostBySlug(slug: string): Promise~any~
   +getRelatedPosts(slug: string): Promise~any~
   +createPost(req: any, dto: CreatePostDto): Promise~any~
-  +updatePost(id: number, dto: UpdatePostDto): Promise~any~
-  +deletePost(id: number): Promise~any~
+  +updatePost(postId: number, dto: UpdatePostDto): Promise~any~
+  +deletePost(postId: number): Promise~any~
   ...
 }
 
@@ -329,9 +341,9 @@ class BlogService {
   +getAllPosts(query: BlogFilterDto): Promise~any~
   +getPostBySlug(slug: string): Promise~any~
   +getRelatedPosts(slug: string): Promise~any~
-  +createPost(authorId: number, dto: CreatePostDto): Promise~any~
-  +updatePost(id: number, dto: UpdatePostDto): Promise~any~
-  +deletePost(id: number): Promise~any~
+  +createPost(userId: number, dto: CreatePostDto): Promise~any~
+  +updatePost(postId: number, dto: UpdatePostDto): Promise~any~
+  +deletePost(postId: number): Promise~any~
   ...
 }
 
@@ -438,7 +450,7 @@ class BlogService {
   -prisma: PrismaService
   ...
   +getComments(postId: number, query: any): Promise~any~
-  +addComment(postId: number, userId: number, body: AddCommentDto): Promise~any~
+  +addComment(postId: number, userId: number | null, data: AddCommentDto): Promise~any~
   +editComment(commentId: number, userId: number, content: string): Promise~any~
   +deleteMyComment(commentId: number, userId: number): Promise~any~
   ...

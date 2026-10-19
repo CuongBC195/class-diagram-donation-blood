@@ -30,10 +30,28 @@ class ReceiveBloodDto {
   +component_id: number
   +bag_code: string
   +volume_ml: number
-  +collection_date: string
-  +expiry_date: string
+  +collection_date: Date
+  +expiry_date: Date
   +source_donation_id: number?
   +notes: string?
+}
+
+class UpdateBloodDto {
+  +facility_id: number?
+  +blood_type_id: number?
+  +component_id: number?
+  +bag_code: string?
+  +volume_ml: number?
+  +collection_date: Date?
+  +expiry_date: Date?
+  +source_donation_id: number?
+  +notes: string?
+}
+
+class ExcelUtil <<utility>> {
+  +generateExcel(data: any[], sheetName: string): Buffer
+  +generateTemplate(headers: string[], sheetName: string): Buffer
+  +parseExcel(buffer: Buffer): any[]
 }
 
 class DiscardBloodDto {
@@ -147,9 +165,12 @@ class donations {
 
 InventoryController --> InventoryService : Association
 InventoryController ..> ReceiveBloodDto : Dependency
+InventoryController ..> UpdateBloodDto : Dependency
 InventoryController ..> DiscardBloodDto : Dependency
 InventoryService --> PrismaService : Association
 InventoryService ..> ReceiveBloodDto : Dependency
+InventoryService ..> UpdateBloodDto : Dependency
+InventoryService ..> ExcelUtil : Dependency
 InventoryService ..> DiscardBloodDto : Dependency
 PrismaService --|> PrismaClient : Inheritance
 PrismaService ..|> OnModuleInit : Implements
@@ -291,8 +312,8 @@ class ReceiveBloodDto {
   +component_id: number
   +bag_code: string
   +volume_ml: number
-  +collection_date: string
-  +expiry_date: string
+  +collection_date: Date
+  +expiry_date: Date
   +source_donation_id: number?
   +notes: string?
 }
@@ -389,8 +410,9 @@ class UpdateBloodDto {
   +component_id: number?
   +bag_code: string?
   +volume_ml: number?
-  +collection_date: string?
-  +expiry_date: string?
+  +collection_date: Date?
+  +expiry_date: Date?
+  +source_donation_id: number?
   +notes: string?
 }
 

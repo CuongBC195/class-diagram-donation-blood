@@ -23,10 +23,10 @@ class UsersController {
   +exportExcel(query: UserFilterDto, res: Response): Promise<void>
   +downloadTemplate(res: Response): Promise<void>
   +importExcel(file: Express.Multer.File, req: any): Promise<any>
-  +getUserById(id: number): Promise<any>
+  +getUserById(userId: number): Promise<any>
   +createUser(dto: CreateUserAdminDto): Promise<any>
   +updateUser(id: number, dto: UpdateUserAdminDto): Promise<any>
-  +toggleLockUser(id: number): Promise<any>
+  +toggleLockUser(userId: number): Promise<any>
 }
 
 class UsersService {
@@ -43,10 +43,10 @@ class UsersService {
   +exportExcel(query: UserFilterDto): Promise<Buffer>
   +getTemplate(): Promise<Buffer>
   +importExcel(buffer: Buffer, staffId: number): Promise<any>
-  +getUserById(id: number): Promise<any>
+  +getUserById(userId: number): Promise<any>
   +createUserAdmin(dto: CreateUserAdminDto): Promise<any>
-  +updateUserAdmin(id: number, dto: UpdateUserAdminDto): Promise<any>
-  +toggleLockUser(id: number): Promise<any>
+  +updateUserAdmin(userId: number, dto: UpdateUserAdminDto): Promise<any>
+  +toggleLockUser(userId: number): Promise<any>
 }
 
 class UserFilterDto {
@@ -91,6 +91,9 @@ class CreateUserAdminDto {
   +province_id: number?
   +ward_id: number?
   +blood_type_id: number?
+  +is_donor_registered: boolean?
+  +is_available_for_donation: boolean?
+  +is_email_verified: boolean?
   +facility_id: number?
   +role_id: number
   +donor_profile: DonorProfileInputDto?
@@ -109,6 +112,9 @@ class UpdateUserAdminDto {
   +province_id: number?
   +ward_id: number?
   +blood_type_id: number?
+  +is_donor_registered: boolean?
+  +is_available_for_donation: boolean?
+  +is_email_verified: boolean?
   +facility_id: number?
   +role_id: number?
   +is_active: boolean?
@@ -131,6 +137,18 @@ class NotificationsService {
   -prisma: PrismaService
   +createNotification(dto: CreateNotificationDto): Promise<any>
   ...
+}
+
+class Bcrypt <<utility>> {
+  +hash(data: string, saltOrRounds: any): Promise<string>
+  +genSalt(rounds: number): Promise<string>
+  ...
+}
+
+class ExcelUtil <<utility>> {
+  +generateExcel(data: any[], sheetName: string): Buffer
+  +generateTemplate(headers: string[], sheetName: string): Buffer
+  +parseExcel(buffer: Buffer): any[]
 }
 
 interface OnModuleInit {
@@ -265,6 +283,8 @@ UsersController ..> ChangePasswordVerifyDto : Dependency
 UsersController ..> CreateUserAdminDto : Dependency
 UsersController ..> UpdateUserAdminDto : Dependency
 UsersService --> PrismaService : Association
+UsersService ..> Bcrypt : Dependency
+UsersService ..> ExcelUtil : Dependency
 UsersService --> CloudinaryService : Association
 UsersService --> MailService : Association
 UsersService --> NotificationsService : Association
@@ -684,10 +704,10 @@ class UsersController {
   -usersService: UsersService
   ...
   +getAllUsers(query: UserFilterDto): Promise<any>
-  +getUserById(id: number): Promise<any>
+  +getUserById(userId: number): Promise<any>
   +createUser(dto: CreateUserAdminDto): Promise<any>
   +updateUser(id: number, dto: UpdateUserAdminDto): Promise<any>
-  +toggleLockUser(id: number): Promise<any>
+  +toggleLockUser(userId: number): Promise<any>
   ...
 }
 
@@ -728,6 +748,9 @@ class CreateUserAdminDto {
   +province_id: number?
   +ward_id: number?
   +blood_type_id: number?
+  +is_donor_registered: boolean?
+  +is_available_for_donation: boolean?
+  +is_email_verified: boolean?
   +facility_id: number?
   +role_id: number
   +donor_profile: DonorProfileInputDto?
@@ -746,6 +769,9 @@ class UpdateUserAdminDto {
   +province_id: number?
   +ward_id: number?
   +blood_type_id: number?
+  +is_donor_registered: boolean?
+  +is_available_for_donation: boolean?
+  +is_email_verified: boolean?
   +facility_id: number?
   +role_id: number?
   +is_active: boolean?
@@ -756,10 +782,10 @@ class UsersService {
   -prisma: PrismaService
   ...
   +getAllUsers(query: UserFilterDto): Promise<any>
-  +getUserById(id: number): Promise<any>
+  +getUserById(userId: number): Promise<any>
   +createUserAdmin(dto: CreateUserAdminDto): Promise<any>
-  +updateUserAdmin(id: number, dto: UpdateUserAdminDto): Promise<any>
-  +toggleLockUser(id: number): Promise<any>
+  +updateUserAdmin(userId: number, dto: UpdateUserAdminDto): Promise<any>
+  +toggleLockUser(userId: number): Promise<any>
   ...
 }
 
@@ -789,6 +815,10 @@ class PrismaService {
   +roles: PrismaRoleDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
   +donor_profiles: PrismaDonorProfileDelegate
+  +provinces: PrismaProvinceDelegate
+  +wards: PrismaWardDelegate
+  +blood_types: PrismaBloodTypeDelegate
+  +donations: PrismaDonationDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
@@ -830,6 +860,37 @@ class medical_facilities {
   ...
 }
 
+class provinces {
+  +province_id: Int
+  +province_code: String?
+  +province_name: String
+  ...
+}
+
+class wards {
+  +ward_id: Int
+  +province_id: Int
+  +ward_name: String
+  ...
+}
+
+class blood_types {
+  +blood_type_id: Int
+  +blood_type_code: String
+  +abo: String
+  +rh_factor: String
+  ...
+}
+
+class donations {
+  +donation_id: Int
+  +facility_id: Int
+  +donor_user_id: Int
+  +volume_ml: Int
+  +donation_date: DateTime
+  ...
+}
+
 class donor_profiles {
   +donor_profile_id: Int
   +user_id: Int
@@ -859,6 +920,15 @@ PrismaService *-- donor_profiles : Composition
 roles "1" o-- "0..*" users : Aggregation
 medical_facilities "0..1" o-- "0..*" users : Aggregation
 users "1" o-- "0..1" donor_profiles : Aggregation
+PrismaService *-- provinces : Composition
+PrismaService *-- wards : Composition
+PrismaService *-- blood_types : Composition
+PrismaService *-- donations : Composition
+provinces "1" o-- "0..*" wards : Aggregation
+provinces "0..1" o-- "0..*" users : Aggregation
+wards "0..1" o-- "0..*" users : Aggregation
+blood_types "0..1" o-- "0..*" users : Aggregation
+users "1" o-- "0..*" donations : Aggregation
 @enduml
 ```
 

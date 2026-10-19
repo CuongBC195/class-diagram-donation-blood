@@ -1,6 +1,6 @@
 # BloodLink Backend Class Diagrams (PlantUML Format)
 
-> Full 61 Class Diagrams across all 13 modules, 100% aligned with NestJS backend source code and Prisma schema.
+> Full 55 Class Diagrams across all 13 modules, 100% aligned with NestJS backend source code and Prisma schema.
 > Compatible with PlantUML server, IntelliJ/VSCode PlantUML extension, and AI analyzers.
 
 ## Table of Contents
@@ -186,7 +186,7 @@ class JwtStrategy {
   +validate(payload: any): Promise<any>
 }
 
-interface PassportStrategy {
+class PassportStrategy {
 }
 
 interface OnModuleInit {
@@ -1274,10 +1274,10 @@ class UsersController {
   +exportExcel(query: UserFilterDto, res: Response): Promise<void>
   +downloadTemplate(res: Response): Promise<void>
   +importExcel(file: Express.Multer.File, req: any): Promise<any>
-  +getUserById(id: number): Promise<any>
+  +getUserById(userId: number): Promise<any>
   +createUser(dto: CreateUserAdminDto): Promise<any>
   +updateUser(id: number, dto: UpdateUserAdminDto): Promise<any>
-  +toggleLockUser(id: number): Promise<any>
+  +toggleLockUser(userId: number): Promise<any>
 }
 
 class UsersService {
@@ -1294,10 +1294,10 @@ class UsersService {
   +exportExcel(query: UserFilterDto): Promise<Buffer>
   +getTemplate(): Promise<Buffer>
   +importExcel(buffer: Buffer, staffId: number): Promise<any>
-  +getUserById(id: number): Promise<any>
+  +getUserById(userId: number): Promise<any>
   +createUserAdmin(dto: CreateUserAdminDto): Promise<any>
-  +updateUserAdmin(id: number, dto: UpdateUserAdminDto): Promise<any>
-  +toggleLockUser(id: number): Promise<any>
+  +updateUserAdmin(userId: number, dto: UpdateUserAdminDto): Promise<any>
+  +toggleLockUser(userId: number): Promise<any>
 }
 
 class UserFilterDto {
@@ -1342,6 +1342,9 @@ class CreateUserAdminDto {
   +province_id: number?
   +ward_id: number?
   +blood_type_id: number?
+  +is_donor_registered: boolean?
+  +is_available_for_donation: boolean?
+  +is_email_verified: boolean?
   +facility_id: number?
   +role_id: number
   +donor_profile: DonorProfileInputDto?
@@ -1360,6 +1363,9 @@ class UpdateUserAdminDto {
   +province_id: number?
   +ward_id: number?
   +blood_type_id: number?
+  +is_donor_registered: boolean?
+  +is_available_for_donation: boolean?
+  +is_email_verified: boolean?
   +facility_id: number?
   +role_id: number?
   +is_active: boolean?
@@ -1382,6 +1388,18 @@ class NotificationsService {
   -prisma: PrismaService
   +createNotification(dto: CreateNotificationDto): Promise<any>
   ...
+}
+
+class Bcrypt <<utility>> {
+  +hash(data: string, saltOrRounds: any): Promise<string>
+  +genSalt(rounds: number): Promise<string>
+  ...
+}
+
+class ExcelUtil <<utility>> {
+  +generateExcel(data: any[], sheetName: string): Buffer
+  +generateTemplate(headers: string[], sheetName: string): Buffer
+  +parseExcel(buffer: Buffer): any[]
 }
 
 interface OnModuleInit {
@@ -1516,6 +1534,8 @@ UsersController ..> ChangePasswordVerifyDto : Dependency
 UsersController ..> CreateUserAdminDto : Dependency
 UsersController ..> UpdateUserAdminDto : Dependency
 UsersService --> PrismaService : Association
+UsersService ..> Bcrypt : Dependency
+UsersService ..> ExcelUtil : Dependency
 UsersService --> CloudinaryService : Association
 UsersService --> MailService : Association
 UsersService --> NotificationsService : Association
@@ -1943,10 +1963,10 @@ class UsersController {
   -usersService: UsersService
   ...
   +getAllUsers(query: UserFilterDto): Promise<any>
-  +getUserById(id: number): Promise<any>
+  +getUserById(userId: number): Promise<any>
   +createUser(dto: CreateUserAdminDto): Promise<any>
   +updateUser(id: number, dto: UpdateUserAdminDto): Promise<any>
-  +toggleLockUser(id: number): Promise<any>
+  +toggleLockUser(userId: number): Promise<any>
   ...
 }
 
@@ -1987,6 +2007,9 @@ class CreateUserAdminDto {
   +province_id: number?
   +ward_id: number?
   +blood_type_id: number?
+  +is_donor_registered: boolean?
+  +is_available_for_donation: boolean?
+  +is_email_verified: boolean?
   +facility_id: number?
   +role_id: number
   +donor_profile: DonorProfileInputDto?
@@ -2005,6 +2028,9 @@ class UpdateUserAdminDto {
   +province_id: number?
   +ward_id: number?
   +blood_type_id: number?
+  +is_donor_registered: boolean?
+  +is_available_for_donation: boolean?
+  +is_email_verified: boolean?
   +facility_id: number?
   +role_id: number?
   +is_active: boolean?
@@ -2015,10 +2041,10 @@ class UsersService {
   -prisma: PrismaService
   ...
   +getAllUsers(query: UserFilterDto): Promise<any>
-  +getUserById(id: number): Promise<any>
+  +getUserById(userId: number): Promise<any>
   +createUserAdmin(dto: CreateUserAdminDto): Promise<any>
-  +updateUserAdmin(id: number, dto: UpdateUserAdminDto): Promise<any>
-  +toggleLockUser(id: number): Promise<any>
+  +updateUserAdmin(userId: number, dto: UpdateUserAdminDto): Promise<any>
+  +toggleLockUser(userId: number): Promise<any>
   ...
 }
 
@@ -2048,6 +2074,10 @@ class PrismaService {
   +roles: PrismaRoleDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
   +donor_profiles: PrismaDonorProfileDelegate
+  +provinces: PrismaProvinceDelegate
+  +wards: PrismaWardDelegate
+  +blood_types: PrismaBloodTypeDelegate
+  +donations: PrismaDonationDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
@@ -2089,6 +2119,37 @@ class medical_facilities {
   ...
 }
 
+class provinces {
+  +province_id: Int
+  +province_code: String?
+  +province_name: String
+  ...
+}
+
+class wards {
+  +ward_id: Int
+  +province_id: Int
+  +ward_name: String
+  ...
+}
+
+class blood_types {
+  +blood_type_id: Int
+  +blood_type_code: String
+  +abo: String
+  +rh_factor: String
+  ...
+}
+
+class donations {
+  +donation_id: Int
+  +facility_id: Int
+  +donor_user_id: Int
+  +volume_ml: Int
+  +donation_date: DateTime
+  ...
+}
+
 class donor_profiles {
   +donor_profile_id: Int
   +user_id: Int
@@ -2118,6 +2179,15 @@ PrismaService *-- donor_profiles : Composition
 roles "1" o-- "0..*" users : Aggregation
 medical_facilities "0..1" o-- "0..*" users : Aggregation
 users "1" o-- "0..1" donor_profiles : Aggregation
+PrismaService *-- provinces : Composition
+PrismaService *-- wards : Composition
+PrismaService *-- blood_types : Composition
+PrismaService *-- donations : Composition
+provinces "1" o-- "0..*" wards : Aggregation
+provinces "0..1" o-- "0..*" users : Aggregation
+wards "0..1" o-- "0..*" users : Aggregation
+blood_types "0..1" o-- "0..*" users : Aggregation
+users "1" o-- "0..*" donations : Aggregation
 @enduml
 ```
 
@@ -2346,6 +2416,76 @@ class DonorService {
   +importExcel(buffer: Buffer, user: any): Promise<any>
 }
 
+class blood_requests {
+  +request_id: Int
+  +request_code: String
+  +blood_type_id: Int
+  +component_id: Int
+  +status_id: Int
+  ...
+}
+
+class blood_compatibility {
+  +compatibility_id: Int
+  +component_id: Int
+  +donor_blood_type_id: Int
+  +recipient_blood_type_id: Int
+  +is_compatible: Boolean
+  ...
+}
+
+class blood_request_donor_matches {
+  +match_id: Int
+  +request_id: Int
+  +donor_user_id: Int
+  +match_status: String
+  ...
+}
+
+class blood_request_statuses {
+  +status_id: Int
+  +status_code: String
+  +status_name: String
+  ...
+}
+
+class blood_request_inventory_allocations {
+  +allocation_id: Int
+  +request_id: Int
+  +inventory_id: Int
+  +allocated_by: Int?
+  ...
+}
+
+class inventory_transactions {
+  +transaction_id: Int
+  +inventory_id: Int
+  +transaction_type: String
+  +reference_type: String?
+  +reference_id: Int?
+  ...
+}
+
+class donation_interval_rules {
+  +rule_id: Int
+  +component_id: Int
+  +min_interval_days: Int
+  ...
+}
+
+class blood_components {
+  +component_id: Int
+  +component_code: String
+  +component_name: String
+  ...
+}
+
+class ExcelUtil <<utility>> {
+  +generateExcel(data: any[], sheetName: string): Buffer
+  +generateTemplate(headers: string[], sheetName: string): Buffer
+  +parseExcel(buffer: Buffer): any[]
+}
+
 class NotificationsService {
   -prisma: PrismaService
   +createNotification(dto: CreateNotificationDto): Promise<any>
@@ -2378,6 +2518,14 @@ class PrismaService {
   +medical_facilities: PrismaMedicalFacilityDelegate
   +blood_types: PrismaBloodTypeDelegate
   +notifications: PrismaNotificationDelegate
+  +blood_requests: PrismaBloodRequestDelegate
+  +blood_compatibility: PrismaBloodCompatibilityDelegate
+  +blood_request_donor_matches: PrismaDonorMatchDelegate
+  +blood_request_statuses: PrismaBloodRequestStatusDelegate
+  +blood_request_inventory_allocations: PrismaInventoryAllocationDelegate
+  +inventory_transactions: PrismaInventoryTransactionDelegate
+  +donation_interval_rules: PrismaDonationIntervalRuleDelegate
+  +blood_components: PrismaBloodComponentDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
@@ -2501,6 +2649,7 @@ DonorService ..> UpdateSlotStatusDto : Dependency
 DonorService ..> RecordDonationDto : Dependency
 DonorService ..> UpdateDonorProfileDto : Dependency
 DonorService ..> PaginationDto : Dependency
+DonorService ..> ExcelUtil : Dependency
 NotificationsService --> PrismaService : Association
 PrismaService --|> PrismaClient : Inheritance
 PrismaService ..|> OnModuleInit : Implements
@@ -2523,6 +2672,24 @@ users "1" o-- "0..*" donations : Aggregation
 medical_facilities "1" o-- "0..*" donations : Aggregation
 donations "0..1" o-- "0..*" blood_inventory : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
+PrismaService *-- blood_requests : Composition
+PrismaService *-- blood_compatibility : Composition
+PrismaService *-- blood_request_donor_matches : Composition
+PrismaService *-- blood_request_statuses : Composition
+PrismaService *-- blood_request_inventory_allocations : Composition
+PrismaService *-- inventory_transactions : Composition
+PrismaService *-- donation_interval_rules : Composition
+PrismaService *-- blood_components : Composition
+blood_requests "1" o-- "0..*" blood_request_donor_matches : Aggregation
+users "1" o-- "0..*" blood_request_donor_matches : Aggregation
+blood_request_statuses "1" o-- "0..*" blood_requests : Aggregation
+blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
+blood_inventory "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
+blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
+blood_components "1" o-- "0..*" donations : Aggregation
+blood_components "1" o-- "0..*" blood_compatibility : Aggregation
+blood_types "1" o-- "0..*" blood_compatibility : Aggregation
+blood_components "1" o-- "0..1" donation_interval_rules : Aggregation
 @enduml
 ```
 
@@ -2949,10 +3116,24 @@ class PrismaService {
   +donor_availability_slots: PrismaAvailabilitySlotDelegate
   +facility_donation_schedules: PrismaDonationScheduleDelegate
   +donations: PrismaDonationDelegate
+  +blood_types: PrismaBloodTypeDelegate
+  +blood_components: PrismaBloodComponentDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
+}
+
+class blood_types {
+  +blood_type_id: Int
+  +blood_type_code: String
+  ...
+}
+
+class blood_components {
+  +component_id: Int
+  +component_name: String
+  ...
 }
 
 class users {
@@ -3007,9 +3188,13 @@ PrismaService *-- users : Composition
 PrismaService *-- donor_availability_slots : Composition
 PrismaService *-- facility_donation_schedules : Composition
 PrismaService *-- donations : Composition
+PrismaService *-- blood_types : Composition
+PrismaService *-- blood_components : Composition
 PrismaService *-- medical_facilities : Composition
 users "1" o-- "0..*" donor_availability_slots : Aggregation
 facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+blood_types "1" o-- "0..*" donations : Aggregation
+blood_components "1" o-- "0..*" donations : Aggregation
 medical_facilities "1" o-- "0..*" facility_donation_schedules : Aggregation
 users "1" o-- "0..*" donations : Aggregation
 medical_facilities "1" o-- "0..*" donations : Aggregation
@@ -3433,6 +3618,33 @@ class EventEmitter2 {
   +emit(event: string, payload: any): boolean
 }
 
+class donor_availability_slots {
+  +slot_id: Int
+  +user_id: Int
+  +schedule_id: Int?
+  +status: String
+  ...
+}
+
+class provinces {
+  +province_id: Int
+  +province_name: String
+  ...
+}
+
+class wards {
+  +ward_id: Int
+  +province_id: Int
+  +ward_name: String
+  ...
+}
+
+class ExcelUtil <<utility>> {
+  +generateExcel(data: any[], sheetName: string): Buffer
+  +generateTemplate(headers: string[], sheetName: string): Buffer
+  +parseExcel(buffer: Buffer): any[]
+}
+
 class NotificationsService {
   -prisma: PrismaService
   +createNotification(dto: CreateNotificationDto): Promise<any>
@@ -3469,6 +3681,9 @@ class PrismaService {
   +blood_request_statuses: PrismaRequestStatusDelegate
   +users: PrismaUserDelegate
   +notifications: PrismaNotificationDelegate
+  +donor_availability_slots: PrismaAvailabilitySlotDelegate
+  +provinces: PrismaProvinceDelegate
+  +wards: PrismaWardDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
@@ -3648,6 +3863,13 @@ blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
+PrismaService *-- donor_availability_slots : Composition
+PrismaService *-- provinces : Composition
+PrismaService *-- wards : Composition
+provinces "1" o-- "0..*" wards : Aggregation
+provinces "0..1" o-- "0..*" blood_requests : Aggregation
+wards "0..1" o-- "0..*" blood_requests : Aggregation
+blood_requests "0..1" o-- "0..*" donor_availability_slots : Aggregation
 @enduml
 ```
 
@@ -4038,10 +4260,18 @@ class PrismaClient {
 class PrismaService {
   +blood_requests: PrismaBloodRequestDelegate
   +blood_request_status_history: PrismaStatusHistoryDelegate
+  +blood_request_inventory_allocations: PrismaAllocationDelegate
   +blood_request_statuses: PrismaRequestStatusDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
+}
+
+class blood_request_inventory_allocations {
+  +allocation_id: Int
+  +request_id: Int
+  +inventory_id: Int
+  ...
 }
 
 class blood_requests {
@@ -4079,8 +4309,10 @@ PrismaService ..|> OnModuleInit : Implements
 PrismaService ..|> OnModuleDestroy : Implements
 PrismaService *-- blood_requests : Composition
 PrismaService *-- blood_request_status_history : Composition
+PrismaService *-- blood_request_inventory_allocations : Composition
 PrismaService *-- blood_request_statuses : Composition
 blood_requests "1" o-- "0..*" blood_request_status_history : Aggregation
+blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_request_statuses "1" o-- "0..*" blood_requests : Aggregation
 @enduml
 ```
@@ -4162,9 +4394,26 @@ class PrismaService {
   +inventory_transactions: PrismaInventoryTransactionDelegate
   +blood_request_status_history: PrismaStatusHistoryDelegate
   +notifications: PrismaNotificationDelegate
+  +blood_request_statuses: PrismaStatusDelegate
+  +blood_request_donor_matches: PrismaDonorMatchDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
+}
+
+class blood_request_statuses {
+  +status_id: Int
+  +status_code: String
+  +status_name: String
+  ...
+}
+
+class blood_request_donor_matches {
+  +match_id: Int
+  +request_id: Int
+  +donor_user_id: Int
+  +match_status: String
+  ...
 }
 
 class users {
@@ -4251,11 +4500,16 @@ PrismaService *-- blood_request_inventory_allocations : Composition
 PrismaService *-- inventory_transactions : Composition
 PrismaService *-- blood_request_status_history : Composition
 PrismaService *-- notifications : Composition
+PrismaService *-- blood_request_statuses : Composition
+PrismaService *-- blood_request_donor_matches : Composition
 blood_requests "1" o-- "0..*" blood_request_status_history : Aggregation
 blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
+blood_request_statuses "1" o-- "0..*" blood_requests : Aggregation
+blood_requests "1" o-- "0..*" blood_request_donor_matches : Aggregation
+users "1" o-- "0..*" blood_request_donor_matches : Aggregation
 @enduml
 ```
 
@@ -4315,9 +4569,38 @@ class PrismaService {
   +blood_inventory: PrismaBloodInventoryDelegate
   +inventory_transactions: PrismaInventoryTransactionDelegate
   +blood_request_status_history: PrismaStatusHistoryDelegate
+  +blood_request_statuses: PrismaStatusDelegate
+  +users: PrismaUserDelegate
+  +blood_types: PrismaBloodTypeDelegate
+  +blood_components: PrismaBloodComponentDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
+}
+
+class blood_request_statuses {
+  +status_id: Int
+  +status_code: String
+  +status_name: String
+  ...
+}
+
+class users {
+  +user_id: Int
+  +full_name: String
+  ...
+}
+
+class blood_types {
+  +blood_type_id: Int
+  +blood_type_code: String
+  ...
+}
+
+class blood_components {
+  +component_id: Int
+  +component_name: String
+  ...
 }
 
 class blood_requests {
@@ -4380,9 +4663,17 @@ PrismaService *-- blood_inventory : Composition
 PrismaService *-- blood_request_inventory_allocations : Composition
 PrismaService *-- inventory_transactions : Composition
 PrismaService *-- blood_request_status_history : Composition
+PrismaService *-- blood_request_statuses : Composition
+PrismaService *-- users : Composition
+PrismaService *-- blood_types : Composition
+PrismaService *-- blood_components : Composition
 blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
+blood_request_statuses "1" o-- "0..*" blood_requests : Aggregation
+users "0..1" o-- "0..*" blood_request_inventory_allocations : Aggregation
+blood_types "1" o-- "0..*" blood_inventory : Aggregation
+blood_components "1" o-- "0..*" blood_inventory : Aggregation
 blood_requests "1" o-- "0..*" blood_request_status_history : Aggregation
 @enduml
 ```
@@ -4637,10 +4928,28 @@ class ReceiveBloodDto {
   +component_id: number
   +bag_code: string
   +volume_ml: number
-  +collection_date: string
-  +expiry_date: string
+  +collection_date: Date
+  +expiry_date: Date
   +source_donation_id: number?
   +notes: string?
+}
+
+class UpdateBloodDto {
+  +facility_id: number?
+  +blood_type_id: number?
+  +component_id: number?
+  +bag_code: string?
+  +volume_ml: number?
+  +collection_date: Date?
+  +expiry_date: Date?
+  +source_donation_id: number?
+  +notes: string?
+}
+
+class ExcelUtil <<utility>> {
+  +generateExcel(data: any[], sheetName: string): Buffer
+  +generateTemplate(headers: string[], sheetName: string): Buffer
+  +parseExcel(buffer: Buffer): any[]
 }
 
 class DiscardBloodDto {
@@ -4754,9 +5063,12 @@ class donations {
 
 InventoryController --> InventoryService : Association
 InventoryController ..> ReceiveBloodDto : Dependency
+InventoryController ..> UpdateBloodDto : Dependency
 InventoryController ..> DiscardBloodDto : Dependency
 InventoryService --> PrismaService : Association
 InventoryService ..> ReceiveBloodDto : Dependency
+InventoryService ..> UpdateBloodDto : Dependency
+InventoryService ..> ExcelUtil : Dependency
 InventoryService ..> DiscardBloodDto : Dependency
 PrismaService --|> PrismaClient : Inheritance
 PrismaService ..|> OnModuleInit : Implements
@@ -4902,8 +5214,8 @@ class ReceiveBloodDto {
   +component_id: number
   +bag_code: string
   +volume_ml: number
-  +collection_date: string
-  +expiry_date: string
+  +collection_date: Date
+  +expiry_date: Date
   +source_donation_id: number?
   +notes: string?
 }
@@ -5002,8 +5314,9 @@ class UpdateBloodDto {
   +component_id: number?
   +bag_code: string?
   +volume_ml: number?
-  +collection_date: string?
-  +expiry_date: string?
+  +collection_date: Date?
+  +expiry_date: Date?
+  +source_donation_id: number?
   +notes: string?
 }
 
@@ -5300,6 +5613,7 @@ class ScheduleFilterDto {
 }
 
 class SchedulesService {
+  -logger: Logger
   -prisma: PrismaService
   -notificationsService: NotificationsService
   +onModuleInit(): Promise<void>
@@ -5318,6 +5632,18 @@ class NotificationsService {
   -prisma: PrismaService
   +createNotification(dto: CreateNotificationDto): Promise<any>
   ...
+}
+
+class blood_types {
+  +blood_type_id: Int
+  +blood_type_code: String
+  ...
+}
+
+class ExcelUtil <<utility>> {
+  +generateExcel(data: any[], sheetName: string): Buffer
+  +generateTemplate(headers: string[], sheetName: string): Buffer
+  +parseExcel(buffer: Buffer): any[]
 }
 
 interface OnModuleInit {
@@ -5340,6 +5666,7 @@ class PrismaService {
   +medical_facilities: PrismaMedicalFacilityDelegate
   +users: PrismaUserDelegate
   +notifications: PrismaNotificationDelegate
+  +blood_types: PrismaBloodTypeDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
@@ -5405,6 +5732,7 @@ SchedulesService ..|> OnModuleInit : Implements
 SchedulesService ..> ScheduleFilterDto : Dependency
 SchedulesService ..> CreateScheduleDto : Dependency
 SchedulesService ..> UpdateScheduleDto : Dependency
+SchedulesService ..> ExcelUtil : Dependency
 NotificationsService --> PrismaService : Association
 PrismaService --|> PrismaClient : Inheritance
 PrismaService ..|> OnModuleInit : Implements
@@ -5414,10 +5742,12 @@ PrismaService *-- donor_availability_slots : Composition
 PrismaService *-- medical_facilities : Composition
 PrismaService *-- users : Composition
 PrismaService *-- notifications : Composition
+PrismaService *-- blood_types : Composition
 medical_facilities "1" o-- "0..*" facility_donation_schedules : Aggregation
 facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
+blood_types "0..1" o-- "0..*" users : Aggregation
 @enduml
 ```
 
@@ -5474,6 +5804,7 @@ class ScheduleFilterDto {
 }
 
 class SchedulesService {
+  -logger: Logger
   -prisma: PrismaService
   ...
   +onModuleInit(): Promise<void>
@@ -5592,6 +5923,7 @@ enum NotificationType {
 }
 
 class SchedulesService {
+  -logger: Logger
   -prisma: PrismaService
   -notificationsService: NotificationsService
   ...
@@ -6312,9 +6644,18 @@ class PrismaClient {
 class PrismaService {
   +blood_types: PrismaBloodTypeDelegate
   +blood_components: PrismaBloodComponentDelegate
+  +donation_interval_rules: PrismaIntervalRuleDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
+}
+
+class donation_interval_rules {
+  +rule_id: Int
+  +component_id: Int
+  +min_interval_days: Int
+  +is_active: Boolean
+  ...
 }
 
 class blood_types {
@@ -6351,8 +6692,10 @@ MasterDataService ..> UpdateBloodComponentDto : Dependency
 PrismaService --|> PrismaClient : Inheritance
 PrismaService ..|> OnModuleInit : Implements
 PrismaService ..|> OnModuleDestroy : Implements
+blood_components "1" o-- "0..1" donation_interval_rules : Aggregation
 PrismaService *-- blood_types : Composition
 PrismaService *-- blood_components : Composition
+PrismaService *-- donation_interval_rules : Composition
 @enduml
 ```
 
@@ -6725,8 +7068,8 @@ class BlogController {
   +updateCategory(id: number, dto: UpdateCategoryDto): Promise<any>
   +deleteCategory(id: number): Promise<any>
   +createPost(req: any, dto: CreatePostDto): Promise<any>
-  +updatePost(id: number, dto: UpdatePostDto): Promise<any>
-  +deletePost(id: number): Promise<any>
+  +updatePost(postId: number, dto: UpdatePostDto): Promise<any>
+  +deletePost(postId: number): Promise<any>
   +getAdminComments(query: any): Promise<any>
   +approveComment(id: number, isApproved: boolean): Promise<any>
   +deleteAdminComment(id: number): Promise<any>
@@ -6741,11 +7084,11 @@ class BlogService {
   +getAllPosts(query: BlogFilterDto): Promise<any>
   +getPostBySlug(slug: string): Promise<any>
   +getRelatedPosts(slug: string): Promise<any>
-  +createPost(authorId: number, dto: CreatePostDto): Promise<any>
-  +updatePost(id: number, dto: UpdatePostDto): Promise<any>
-  +deletePost(id: number): Promise<any>
+  +createPost(userId: number, dto: CreatePostDto): Promise<any>
+  +updatePost(postId: number, dto: UpdatePostDto): Promise<any>
+  +deletePost(postId: number): Promise<any>
   +getComments(postId: number, query: any): Promise<any>
-  +addComment(postId: number, userId: number, body: AddCommentDto): Promise<any>
+  +addComment(postId: number, userId: number | null, data: AddCommentDto): Promise<any>
   +editComment(commentId: number, userId: number, content: string): Promise<any>
   +deleteMyComment(commentId: number, userId: number): Promise<any>
   +getAdminComments(query: any): Promise<any>
@@ -6952,9 +7295,18 @@ class PrismaClient {
 
 class PrismaService {
   +blog_categories: PrismaBlogCategoryDelegate
+  +blog_posts: PrismaBlogPostDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
+}
+
+class blog_posts {
+  +post_id: Int
+  +category_id: Int
+  +title: String
+  +slug: String
+  ...
 }
 
 class blog_categories {
@@ -6974,6 +7326,8 @@ PrismaService --|> PrismaClient : Inheritance
 PrismaService ..|> OnModuleInit : Implements
 PrismaService ..|> OnModuleDestroy : Implements
 PrismaService *-- blog_categories : Composition
+PrismaService *-- blog_posts : Composition
+blog_categories "1" o-- "0..*" blog_posts : Aggregation
 @enduml
 ```
 
@@ -6997,8 +7351,8 @@ class BlogController {
   +getPostBySlug(slug: string): Promise<any>
   +getRelatedPosts(slug: string): Promise<any>
   +createPost(req: any, dto: CreatePostDto): Promise<any>
-  +updatePost(id: number, dto: UpdatePostDto): Promise<any>
-  +deletePost(id: number): Promise<any>
+  +updatePost(postId: number, dto: UpdatePostDto): Promise<any>
+  +deletePost(postId: number): Promise<any>
   ...
 }
 
@@ -7035,9 +7389,9 @@ class BlogService {
   +getAllPosts(query: BlogFilterDto): Promise<any>
   +getPostBySlug(slug: string): Promise<any>
   +getRelatedPosts(slug: string): Promise<any>
-  +createPost(authorId: number, dto: CreatePostDto): Promise<any>
-  +updatePost(id: number, dto: UpdatePostDto): Promise<any>
-  +deletePost(id: number): Promise<any>
+  +createPost(userId: number, dto: CreatePostDto): Promise<any>
+  +updatePost(postId: number, dto: UpdatePostDto): Promise<any>
+  +deletePost(postId: number): Promise<any>
   ...
 }
 
@@ -7145,7 +7499,7 @@ class BlogService {
   -prisma: PrismaService
   ...
   +getComments(postId: number, query: any): Promise<any>
-  +addComment(postId: number, userId: number, body: AddCommentDto): Promise<any>
+  +addComment(postId: number, userId: number | null, data: AddCommentDto): Promise<any>
   +editComment(commentId: number, userId: number, content: string): Promise<any>
   +deleteMyComment(commentId: number, userId: number): Promise<any>
   ...
@@ -8518,7 +8872,6 @@ class CloudinarySDK <<utility>> {
 }
 
 CloudinaryController --> CloudinaryService : Association
-CloudinaryService ..> CloudinaryProvider : Dependency
 CloudinaryService ..> CloudinarySDK : Dependency
 CloudinaryProvider ..> CloudinarySDK : Dependency
 @enduml
@@ -8557,7 +8910,6 @@ class CloudinarySDK <<utility>> {
 }
 
 CloudinaryController --> CloudinaryService : Association
-CloudinaryService ..> CloudinaryProvider : Dependency
 CloudinaryService ..> CloudinarySDK : Dependency
 CloudinaryProvider ..> CloudinarySDK : Dependency
 @enduml

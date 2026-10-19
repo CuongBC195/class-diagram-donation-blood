@@ -30,7 +30,6 @@ class CloudinarySDK {
 }
 
 CloudinaryController --> CloudinaryService : Association
-CloudinaryService ..> CloudinaryProvider : Dependency
 CloudinaryService ..> CloudinarySDK : Dependency
 CloudinaryProvider ..> CloudinarySDK : Dependency
 ```
@@ -64,7 +63,6 @@ class CloudinarySDK {
 }
 
 CloudinaryController --> CloudinaryService : Association
-CloudinaryService ..> CloudinaryProvider : Dependency
 CloudinaryService ..> CloudinarySDK : Dependency
 CloudinaryProvider ..> CloudinarySDK : Dependency
 ```

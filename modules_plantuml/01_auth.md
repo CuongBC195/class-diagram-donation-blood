@@ -103,7 +103,7 @@ class JwtStrategy {
   +validate(payload: any): Promise<any>
 }
 
-interface PassportStrategy {
+class PassportStrategy {
 }
 
 interface OnModuleInit {

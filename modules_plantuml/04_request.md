@@ -93,6 +93,33 @@ class EventEmitter2 {
   +emit(event: string, payload: any): boolean
 }
 
+class donor_availability_slots {
+  +slot_id: Int
+  +user_id: Int
+  +schedule_id: Int?
+  +status: String
+  ...
+}
+
+class provinces {
+  +province_id: Int
+  +province_name: String
+  ...
+}
+
+class wards {
+  +ward_id: Int
+  +province_id: Int
+  +ward_name: String
+  ...
+}
+
+class ExcelUtil <<utility>> {
+  +generateExcel(data: any[], sheetName: string): Buffer
+  +generateTemplate(headers: string[], sheetName: string): Buffer
+  +parseExcel(buffer: Buffer): any[]
+}
+
 class NotificationsService {
   -prisma: PrismaService
   +createNotification(dto: CreateNotificationDto): Promise<any>
@@ -129,6 +156,9 @@ class PrismaService {
   +blood_request_statuses: PrismaRequestStatusDelegate
   +users: PrismaUserDelegate
   +notifications: PrismaNotificationDelegate
+  +donor_availability_slots: PrismaAvailabilitySlotDelegate
+  +provinces: PrismaProvinceDelegate
+  +wards: PrismaWardDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
@@ -308,6 +338,13 @@ blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
+PrismaService *-- donor_availability_slots : Composition
+PrismaService *-- provinces : Composition
+PrismaService *-- wards : Composition
+provinces "1" o-- "0..*" wards : Aggregation
+provinces "0..1" o-- "0..*" blood_requests : Aggregation
+wards "0..1" o-- "0..*" blood_requests : Aggregation
+blood_requests "0..1" o-- "0..*" donor_availability_slots : Aggregation
 @enduml
 ```
 
@@ -692,10 +729,18 @@ class PrismaClient {
 class PrismaService {
   +blood_requests: PrismaBloodRequestDelegate
   +blood_request_status_history: PrismaStatusHistoryDelegate
+  +blood_request_inventory_allocations: PrismaAllocationDelegate
   +blood_request_statuses: PrismaRequestStatusDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
+}
+
+class blood_request_inventory_allocations {
+  +allocation_id: Int
+  +request_id: Int
+  +inventory_id: Int
+  ...
 }
 
 class blood_requests {
@@ -733,8 +778,10 @@ PrismaService ..|> OnModuleInit : Implements
 PrismaService ..|> OnModuleDestroy : Implements
 PrismaService *-- blood_requests : Composition
 PrismaService *-- blood_request_status_history : Composition
+PrismaService *-- blood_request_inventory_allocations : Composition
 PrismaService *-- blood_request_statuses : Composition
 blood_requests "1" o-- "0..*" blood_request_status_history : Aggregation
+blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_request_statuses "1" o-- "0..*" blood_requests : Aggregation
 @enduml
 ```
@@ -814,9 +861,26 @@ class PrismaService {
   +inventory_transactions: PrismaInventoryTransactionDelegate
   +blood_request_status_history: PrismaStatusHistoryDelegate
   +notifications: PrismaNotificationDelegate
+  +blood_request_statuses: PrismaStatusDelegate
+  +blood_request_donor_matches: PrismaDonorMatchDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
+}
+
+class blood_request_statuses {
+  +status_id: Int
+  +status_code: String
+  +status_name: String
+  ...
+}
+
+class blood_request_donor_matches {
+  +match_id: Int
+  +request_id: Int
+  +donor_user_id: Int
+  +match_status: String
+  ...
 }
 
 class users {
@@ -903,11 +967,16 @@ PrismaService *-- blood_request_inventory_allocations : Composition
 PrismaService *-- inventory_transactions : Composition
 PrismaService *-- blood_request_status_history : Composition
 PrismaService *-- notifications : Composition
+PrismaService *-- blood_request_statuses : Composition
+PrismaService *-- blood_request_donor_matches : Composition
 blood_requests "1" o-- "0..*" blood_request_status_history : Aggregation
 blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
+blood_request_statuses "1" o-- "0..*" blood_requests : Aggregation
+blood_requests "1" o-- "0..*" blood_request_donor_matches : Aggregation
+users "1" o-- "0..*" blood_request_donor_matches : Aggregation
 @enduml
 ```
 
@@ -965,9 +1034,38 @@ class PrismaService {
   +blood_inventory: PrismaBloodInventoryDelegate
   +inventory_transactions: PrismaInventoryTransactionDelegate
   +blood_request_status_history: PrismaStatusHistoryDelegate
+  +blood_request_statuses: PrismaStatusDelegate
+  +users: PrismaUserDelegate
+  +blood_types: PrismaBloodTypeDelegate
+  +blood_components: PrismaBloodComponentDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
+}
+
+class blood_request_statuses {
+  +status_id: Int
+  +status_code: String
+  +status_name: String
+  ...
+}
+
+class users {
+  +user_id: Int
+  +full_name: String
+  ...
+}
+
+class blood_types {
+  +blood_type_id: Int
+  +blood_type_code: String
+  ...
+}
+
+class blood_components {
+  +component_id: Int
+  +component_name: String
+  ...
 }
 
 class blood_requests {
@@ -1030,9 +1128,17 @@ PrismaService *-- blood_inventory : Composition
 PrismaService *-- blood_request_inventory_allocations : Composition
 PrismaService *-- inventory_transactions : Composition
 PrismaService *-- blood_request_status_history : Composition
+PrismaService *-- blood_request_statuses : Composition
+PrismaService *-- users : Composition
+PrismaService *-- blood_types : Composition
+PrismaService *-- blood_components : Composition
 blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
+blood_request_statuses "1" o-- "0..*" blood_requests : Aggregation
+users "0..1" o-- "0..*" blood_request_inventory_allocations : Aggregation
+blood_types "1" o-- "0..*" blood_inventory : Aggregation
+blood_components "1" o-- "0..*" blood_inventory : Aggregation
 blood_requests "1" o-- "0..*" blood_request_status_history : Aggregation
 @enduml
 ```

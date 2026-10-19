@@ -100,7 +100,6 @@ class JwtStrategy {
 }
 
 class PassportStrategy {
-  <<interface>>
 }
 
 class OnModuleInit {

@@ -96,6 +96,77 @@ class DonorService {
   +importExcel(buffer: Buffer, user: any): Promise~any~
 }
 
+class blood_requests {
+  +request_id: Int
+  +request_code: String
+  +blood_type_id: Int
+  +component_id: Int
+  +status_id: Int
+  ...
+}
+
+class blood_compatibility {
+  +compatibility_id: Int
+  +component_id: Int
+  +donor_blood_type_id: Int
+  +recipient_blood_type_id: Int
+  +is_compatible: Boolean
+  ...
+}
+
+class blood_request_donor_matches {
+  +match_id: Int
+  +request_id: Int
+  +donor_user_id: Int
+  +match_status: String
+  ...
+}
+
+class blood_request_statuses {
+  +status_id: Int
+  +status_code: String
+  +status_name: String
+  ...
+}
+
+class blood_request_inventory_allocations {
+  +allocation_id: Int
+  +request_id: Int
+  +inventory_id: Int
+  +allocated_by: Int?
+  ...
+}
+
+class inventory_transactions {
+  +transaction_id: Int
+  +inventory_id: Int
+  +transaction_type: String
+  +reference_type: String?
+  +reference_id: Int?
+  ...
+}
+
+class donation_interval_rules {
+  +rule_id: Int
+  +component_id: Int
+  +min_interval_days: Int
+  ...
+}
+
+class blood_components {
+  +component_id: Int
+  +component_code: String
+  +component_name: String
+  ...
+}
+
+class ExcelUtil {
+  <<utility>>
+  +generateExcel(data: any[], sheetName: string): Buffer
+  +generateTemplate(headers: string[], sheetName: string): Buffer
+  +parseExcel(buffer: Buffer): any[]
+}
+
 class NotificationsService {
   -prisma: PrismaService
   +createNotification(dto: CreateNotificationDto): Promise~any~
@@ -130,6 +201,14 @@ class PrismaService {
   +medical_facilities: PrismaMedicalFacilityDelegate
   +blood_types: PrismaBloodTypeDelegate
   +notifications: PrismaNotificationDelegate
+  +blood_requests: PrismaBloodRequestDelegate
+  +blood_compatibility: PrismaBloodCompatibilityDelegate
+  +blood_request_donor_matches: PrismaDonorMatchDelegate
+  +blood_request_statuses: PrismaBloodRequestStatusDelegate
+  +blood_request_inventory_allocations: PrismaInventoryAllocationDelegate
+  +inventory_transactions: PrismaInventoryTransactionDelegate
+  +donation_interval_rules: PrismaDonationIntervalRuleDelegate
+  +blood_components: PrismaBloodComponentDelegate
   ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
@@ -254,6 +333,7 @@ DonorService ..> UpdateSlotStatusDto : Dependency
 DonorService ..> RecordDonationDto : Dependency
 DonorService ..> UpdateDonorProfileDto : Dependency
 DonorService ..> PaginationDto : Dependency
+DonorService ..> ExcelUtil : Dependency
 
 NotificationsService --> PrismaService : Association
 
@@ -280,6 +360,25 @@ users "1" o-- "0..*" donations : Aggregation
 medical_facilities "1" o-- "0..*" donations : Aggregation
 donations "0..1" o-- "0..*" blood_inventory : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
+PrismaService *-- blood_requests : Composition
+PrismaService *-- blood_compatibility : Composition
+PrismaService *-- blood_request_donor_matches : Composition
+PrismaService *-- blood_request_statuses : Composition
+PrismaService *-- blood_request_inventory_allocations : Composition
+PrismaService *-- inventory_transactions : Composition
+PrismaService *-- donation_interval_rules : Composition
+PrismaService *-- blood_components : Composition
+
+blood_requests "1" o-- "0..*" blood_request_donor_matches : Aggregation
+users "1" o-- "0..*" blood_request_donor_matches : Aggregation
+blood_request_statuses "1" o-- "0..*" blood_requests : Aggregation
+blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
+blood_inventory "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
+blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
+blood_components "1" o-- "0..*" donations : Aggregation
+blood_components "1" o-- "0..*" blood_compatibility : Aggregation
+blood_types "1" o-- "0..*" blood_compatibility : Aggregation
+blood_components "1" o-- "0..1" donation_interval_rules : Aggregation
 ```
 
 ## 3.3.2.1 Class Diagram - Register and Update Donor Profile (`donor_profile`)
@@ -700,10 +799,24 @@ class PrismaService {
   +donor_availability_slots: PrismaAvailabilitySlotDelegate
   +facility_donation_schedules: PrismaDonationScheduleDelegate
   +donations: PrismaDonationDelegate
+  +blood_types: PrismaBloodTypeDelegate
+  +blood_components: PrismaBloodComponentDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
   ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
+}
+
+class blood_types {
+  +blood_type_id: Int
+  +blood_type_code: String
+  ...
+}
+
+class blood_components {
+  +component_id: Int
+  +component_name: String
+  ...
 }
 
 class users {
@@ -761,10 +874,14 @@ PrismaService *-- users : Composition
 PrismaService *-- donor_availability_slots : Composition
 PrismaService *-- facility_donation_schedules : Composition
 PrismaService *-- donations : Composition
+PrismaService *-- blood_types : Composition
+PrismaService *-- blood_components : Composition
 PrismaService *-- medical_facilities : Composition
 
 users "1" o-- "0..*" donor_availability_slots : Aggregation
 facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+blood_types "1" o-- "0..*" donations : Aggregation
+blood_components "1" o-- "0..*" donations : Aggregation
 medical_facilities "1" o-- "0..*" facility_donation_schedules : Aggregation
 users "1" o-- "0..*" donations : Aggregation
 medical_facilities "1" o-- "0..*" donations : Aggregation

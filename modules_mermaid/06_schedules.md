@@ -49,6 +49,7 @@ class ScheduleFilterDto {
 }
 
 class SchedulesService {
+  -logger: Logger
   -prisma: PrismaService
   -notificationsService: NotificationsService
   +onModuleInit(): Promise~void~
@@ -67,6 +68,19 @@ class NotificationsService {
   -prisma: PrismaService
   +createNotification(dto: CreateNotificationDto): Promise~any~
   ...
+}
+
+class blood_types {
+  +blood_type_id: Int
+  +blood_type_code: String
+  ...
+}
+
+class ExcelUtil {
+  <<utility>>
+  +generateExcel(data: any[], sheetName: string): Buffer
+  +generateTemplate(headers: string[], sheetName: string): Buffer
+  +parseExcel(buffer: Buffer): any[]
 }
 
 class OnModuleInit {
@@ -91,6 +105,7 @@ class PrismaService {
   +medical_facilities: PrismaMedicalFacilityDelegate
   +users: PrismaUserDelegate
   +notifications: PrismaNotificationDelegate
+  +blood_types: PrismaBloodTypeDelegate
   ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
@@ -157,6 +172,7 @@ SchedulesService ..|> OnModuleInit : Implements
 SchedulesService ..> ScheduleFilterDto : Dependency
 SchedulesService ..> CreateScheduleDto : Dependency
 SchedulesService ..> UpdateScheduleDto : Dependency
+SchedulesService ..> ExcelUtil : Dependency
 
 NotificationsService --> PrismaService : Association
 
@@ -169,11 +185,13 @@ PrismaService *-- donor_availability_slots : Composition
 PrismaService *-- medical_facilities : Composition
 PrismaService *-- users : Composition
 PrismaService *-- notifications : Composition
+PrismaService *-- blood_types : Composition
 
 medical_facilities "1" o-- "0..*" facility_donation_schedules : Aggregation
 facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
+blood_types "0..1" o-- "0..*" users : Aggregation
 ```
 
 ## 3.6.2.1 Class Diagram - View and Manage Donation Schedules (`schedules_crud`)
@@ -223,6 +241,7 @@ class ScheduleFilterDto {
 }
 
 class SchedulesService {
+  -logger: Logger
   -prisma: PrismaService
   ...
   +onModuleInit(): Promise~void~
@@ -341,6 +360,7 @@ class NotificationType {
 }
 
 class SchedulesService {
+  -logger: Logger
   -prisma: PrismaService
   -notificationsService: NotificationsService
   ...

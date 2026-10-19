@@ -611,9 +611,18 @@ class PrismaClient {
 class PrismaService {
   +blood_types: PrismaBloodTypeDelegate
   +blood_components: PrismaBloodComponentDelegate
+  +donation_interval_rules: PrismaIntervalRuleDelegate
   ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
+}
+
+class donation_interval_rules {
+  +rule_id: Int
+  +component_id: Int
+  +min_interval_days: Int
+  +is_active: Boolean
+  ...
 }
 
 class blood_types {
@@ -653,8 +662,11 @@ PrismaService --|> PrismaClient : Inheritance
 PrismaService ..|> OnModuleInit : Implements
 PrismaService ..|> OnModuleDestroy : Implements
 
+blood_components "1" o-- "0..1" donation_interval_rules : Aggregation
+
 PrismaService *-- blood_types : Composition
 PrismaService *-- blood_components : Composition
+PrismaService *-- donation_interval_rules : Composition
 ```
 
 ## 3.7.2.3 Class Diagram - Manage Blood Compatibility Rules (`master_data_compatibility`)
