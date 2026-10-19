@@ -37,8 +37,56 @@
         <mxCell id="c_NotificationsController_m6" parent="c_NotificationsController" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+markAsRead(id: number): Promise&amp;lt;any&amp;gt;" vertex="1">
           <mxGeometry y="208" width="540" height="24" as="geometry" />
         </mxCell>
+        <mxCell id="c_CreateNotificationDto" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;CreateNotificationDto&lt;/b&gt;" vertex="1">
+          <mxGeometry x="790" y="90" width="280" height="208" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CreateNotificationDto_f0" parent="c_CreateNotificationDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+user_ids: number[]" vertex="1">
+          <mxGeometry y="32" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CreateNotificationDto_f1" parent="c_CreateNotificationDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+title: string" vertex="1">
+          <mxGeometry y="56" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CreateNotificationDto_f2" parent="c_CreateNotificationDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+message: string" vertex="1">
+          <mxGeometry y="80" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CreateNotificationDto_f3" parent="c_CreateNotificationDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notification_type: string" vertex="1">
+          <mxGeometry y="104" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CreateNotificationDto_f4" parent="c_CreateNotificationDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+reference_type: string?" vertex="1">
+          <mxGeometry y="128" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CreateNotificationDto_f5" parent="c_CreateNotificationDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+reference_id: number?" vertex="1">
+          <mxGeometry y="152" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CreateNotificationDto_sep" parent="c_CreateNotificationDto" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="176" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CreateNotificationDto_m0" parent="c_CreateNotificationDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="184" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_NotificationType" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;NotificationType&lt;/b&gt;" vertex="1">
+          <mxGeometry x="810" y="402" width="280" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="c_NotificationType_f0" parent="c_NotificationType" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="INFO" vertex="1">
+          <mxGeometry y="44" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_NotificationType_f1" parent="c_NotificationType" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="SUCCESS" vertex="1">
+          <mxGeometry y="68" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_NotificationType_f2" parent="c_NotificationType" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="WARNING" vertex="1">
+          <mxGeometry y="92" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_NotificationType_f3" parent="c_NotificationType" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="SYSTEM" vertex="1">
+          <mxGeometry y="116" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_NotificationType_sep" parent="c_NotificationType" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="140" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_NotificationType_m0" parent="c_NotificationType" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="148" width="280" height="24" as="geometry" />
+        </mxCell>
         <mxCell id="c_NotificationsService" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;NotificationsService&lt;/b&gt;" vertex="1">
-          <mxGeometry x="200" y="402" width="560" height="256" as="geometry" />
+          <mxGeometry x="200" y="402" width="560" height="232" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationsService_f0" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="-prisma: PrismaService" vertex="1">
           <mxGeometry y="32" width="560" height="24" as="geometry" />
@@ -46,32 +94,29 @@
         <mxCell id="c_NotificationsService_sep" parent="c_NotificationsService" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
           <mxGeometry y="56" width="560" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="c_NotificationsService_m0" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+getMyNotifications(userId: number, query: any): Promise&amp;lt;any&amp;gt;" vertex="1">
+        <mxCell id="c_NotificationsService_m0" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+createNotification(dto: CreateNotificationDto): Promise&amp;lt;any&amp;gt;" vertex="1">
           <mxGeometry y="64" width="560" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_NotificationsService_m1" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+getUnreadCount(userId: number): Promise&amp;lt;number&amp;gt;" vertex="1">
+        <mxCell id="c_NotificationsService_m1" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notifyAdmins(title: string, message: string, type: string, reference_type?: string, reference_id?: number): Promise&amp;lt;void&amp;gt;" vertex="1">
           <mxGeometry y="88" width="560" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_NotificationsService_m2" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+markAllAsRead(userId: number): Promise&amp;lt;any&amp;gt;" vertex="1">
+        <mxCell id="c_NotificationsService_m2" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+getNotifications(query: any): Promise&amp;lt;any&amp;gt;" vertex="1">
           <mxGeometry y="112" width="560" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_NotificationsService_m3" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+markAsRead(id: number): Promise&amp;lt;any&amp;gt;" vertex="1">
+        <mxCell id="c_NotificationsService_m3" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+deleteNotification(id: number): Promise&amp;lt;any&amp;gt;" vertex="1">
           <mxGeometry y="136" width="560" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_NotificationsService_m4" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+createNotification(dto: CreateNotificationDto): Promise&amp;lt;any&amp;gt;" vertex="1">
+        <mxCell id="c_NotificationsService_m4" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+markAsRead(id: number): Promise&amp;lt;any&amp;gt;" vertex="1">
           <mxGeometry y="160" width="560" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_NotificationsService_m5" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+getNotifications(query: any): Promise&amp;lt;any&amp;gt;" vertex="1">
+        <mxCell id="c_NotificationsService_m5" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+getUnreadCount(userId: number): Promise&amp;lt;any&amp;gt;" vertex="1">
           <mxGeometry y="184" width="560" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_NotificationsService_m6" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+deleteNotification(id: number): Promise&amp;lt;any&amp;gt;" vertex="1">
+        <mxCell id="c_NotificationsService_m6" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+markAllAsRead(userId: number): Promise&amp;lt;any&amp;gt;" vertex="1">
           <mxGeometry y="208" width="560" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_NotificationsService_m7" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notifyAdmins(title: string, message: string, type: string, reference_type?: string, reference_id?: number): Promise&amp;lt;void&amp;gt;" vertex="1">
-          <mxGeometry y="232" width="560" height="24" as="geometry" />
-        </mxCell>
         <mxCell id="c_OnModuleInit" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OnModuleInit&lt;/b&gt;" vertex="1">
-          <mxGeometry x="960" y="738" width="280" height="100" as="geometry" />
+          <mxGeometry x="960" y="714" width="280" height="100" as="geometry" />
         </mxCell>
         <mxCell id="c_OnModuleInit_f0" parent="c_OnModuleInit" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
           <mxGeometry y="44" width="280" height="24" as="geometry" />
@@ -83,7 +128,7 @@
           <mxGeometry y="76" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_OnModuleDestroy" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OnModuleDestroy&lt;/b&gt;" vertex="1">
-          <mxGeometry x="1290" y="738" width="320" height="100" as="geometry" />
+          <mxGeometry x="1290" y="714" width="320" height="100" as="geometry" />
         </mxCell>
         <mxCell id="c_OnModuleDestroy_f0" parent="c_OnModuleDestroy" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
           <mxGeometry y="44" width="320" height="24" as="geometry" />
@@ -95,7 +140,7 @@
           <mxGeometry y="76" width="320" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaClient" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;PrismaClient&lt;/b&gt;" vertex="1">
-          <mxGeometry x="200" y="738" width="280" height="136" as="geometry" />
+          <mxGeometry x="200" y="714" width="280" height="136" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaClient_f0" parent="c_PrismaClient" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -113,7 +158,7 @@
           <mxGeometry y="112" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;PrismaService&lt;/b&gt;" vertex="1">
-          <mxGeometry x="530" y="738" width="380" height="160" as="geometry" />
+          <mxGeometry x="530" y="714" width="380" height="160" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_f0" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notifications: PrismaNotificationDelegate" vertex="1">
           <mxGeometry y="32" width="380" height="24" as="geometry" />
@@ -134,9 +179,9 @@
           <mxGeometry y="136" width="380" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_notifications" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;notifications&lt;/b&gt;" vertex="1">
-          <mxGeometry x="160" y="978" width="280" height="280" as="geometry" />
+          <mxGeometry x="160" y="954" width="280" height="304" as="geometry" />
         </mxCell>
-        <mxCell id="c_notifications_f0" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notification_id: BigInt" vertex="1">
+        <mxCell id="c_notifications_f0" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notification_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_notifications_f1" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+user_id: Int" vertex="1">
@@ -151,75 +196,90 @@
         <mxCell id="c_notifications_f4" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notification_type: String" vertex="1">
           <mxGeometry y="128" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_notifications_f5" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+is_read: Boolean" vertex="1">
+        <mxCell id="c_notifications_f5" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+reference_type: String?" vertex="1">
           <mxGeometry y="152" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_notifications_f6" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+created_at: DateTime" vertex="1">
+        <mxCell id="c_notifications_f6" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+reference_id: Int?" vertex="1">
           <mxGeometry y="176" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_notifications_f7" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+user: users" vertex="1">
+        <mxCell id="c_notifications_f7" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+is_read: Boolean" vertex="1">
           <mxGeometry y="200" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_notifications_f8" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+        <mxCell id="c_notifications_f8" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+created_at: DateTime" vertex="1">
           <mxGeometry y="224" width="280" height="24" as="geometry" />
         </mxCell>
+        <mxCell id="c_notifications_f9" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+read_at: DateTime?" vertex="1">
+          <mxGeometry y="248" width="280" height="24" as="geometry" />
+        </mxCell>
         <mxCell id="c_notifications_sep" parent="c_notifications" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="248" width="280" height="8" as="geometry" />
+          <mxGeometry y="272" width="280" height="8" as="geometry" />
         </mxCell>
         <mxCell id="c_notifications_m0" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
-          <mxGeometry y="256" width="280" height="24" as="geometry" />
+          <mxGeometry y="280" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_users" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;users&lt;/b&gt;" vertex="1">
-          <mxGeometry x="480" y="978" width="280" height="160" as="geometry" />
+          <mxGeometry x="480" y="954" width="280" height="184" as="geometry" />
         </mxCell>
         <mxCell id="c_users_f0" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+user_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_users_f1" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+full_name: String" vertex="1">
+        <mxCell id="c_users_f1" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+role_id: Int" vertex="1">
           <mxGeometry y="56" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_users_f2" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+email: String" vertex="1">
+        <mxCell id="c_users_f2" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+full_name: String" vertex="1">
           <mxGeometry y="80" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_users_f3" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+        <mxCell id="c_users_f3" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+email: String" vertex="1">
           <mxGeometry y="104" width="280" height="24" as="geometry" />
         </mxCell>
+        <mxCell id="c_users_f4" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+is_active: Boolean" vertex="1">
+          <mxGeometry y="128" width="280" height="24" as="geometry" />
+        </mxCell>
         <mxCell id="c_users_sep" parent="c_users" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="128" width="280" height="8" as="geometry" />
+          <mxGeometry y="152" width="280" height="8" as="geometry" />
         </mxCell>
         <mxCell id="c_users_m0" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
-          <mxGeometry y="136" width="280" height="24" as="geometry" />
+          <mxGeometry y="160" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="e1" edge="1" parent="1" source="c_NotificationsController" target="c_NotificationsService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=classicThin;endFill=1;endSize=10;" value="Association">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e2" edge="1" parent="1" source="c_NotificationsService" target="c_PrismaService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=classicThin;endFill=1;endSize=10;" value="Association">
+        <mxCell id="e2" edge="1" parent="1" source="c_NotificationsController" target="c_CreateNotificationDto" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e3" edge="1" parent="1" source="c_PrismaService" target="c_PrismaClient" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=block;endFill=0;endSize=16;" value="Inheritance">
+        <mxCell id="e3" edge="1" parent="1" source="c_NotificationsService" target="c_PrismaService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=classicThin;endFill=1;endSize=10;" value="Association">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e4" edge="1" parent="1" source="c_PrismaService" target="c_OnModuleInit" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=block;endFill=0;endSize=16;" value="Implements">
+        <mxCell id="e4" edge="1" parent="1" source="c_NotificationsService" target="c_CreateNotificationDto" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e5" edge="1" parent="1" source="c_PrismaService" target="c_OnModuleDestroy" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=block;endFill=0;endSize=16;" value="Implements">
+        <mxCell id="e5" edge="1" parent="1" source="c_NotificationsService" target="c_NotificationType" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=classicThin;endFill=1;endSize=10;" value="Dependency">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e6" edge="1" parent="1" source="c_PrismaService" target="c_notifications" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+        <mxCell id="e6" edge="1" parent="1" source="c_PrismaService" target="c_PrismaClient" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=block;endFill=0;endSize=16;" value="Inheritance">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e7" edge="1" parent="1" source="c_PrismaService" target="c_users" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+        <mxCell id="e7" edge="1" parent="1" source="c_PrismaService" target="c_OnModuleInit" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=block;endFill=0;endSize=16;" value="Implements">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e8" edge="1" parent="1" source="c_users" target="c_notifications" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+        <mxCell id="e8" edge="1" parent="1" source="c_PrismaService" target="c_OnModuleDestroy" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=1;endArrow=block;endFill=0;endSize=16;" value="Implements">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e8_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e8">
+        <mxCell id="e9" edge="1" parent="1" source="c_PrismaService" target="c_notifications" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="c_PrismaService" target="c_users" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="c_users" target="c_notifications" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e11">
           <mxGeometry x="-0.75" relative="1" as="geometry">
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e8_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e8">
+        <mxCell id="e11_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e11">
           <mxGeometry x="0.75" relative="1" as="geometry">
             <mxPoint as="offset" y="-10" />
           </mxGeometry>
@@ -263,31 +323,31 @@
           <mxGeometry y="184" width="500" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationsService" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;NotificationsService&lt;/b&gt;" vertex="1">
-          <mxGeometry x="200" y="378" width="440" height="208" as="geometry" />
+          <mxGeometry x="200" y="378" width="420" height="208" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationsService_f0" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="-prisma: PrismaService" vertex="1">
-          <mxGeometry y="32" width="440" height="24" as="geometry" />
+          <mxGeometry y="32" width="420" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationsService_f1" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
-          <mxGeometry y="56" width="440" height="24" as="geometry" />
+          <mxGeometry y="56" width="420" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationsService_sep" parent="c_NotificationsService" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="80" width="440" height="8" as="geometry" />
+          <mxGeometry y="80" width="420" height="8" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationsService_m0" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+getNotifications(query: any): Promise&amp;lt;any&amp;gt;" vertex="1">
-          <mxGeometry y="88" width="440" height="24" as="geometry" />
+          <mxGeometry y="88" width="420" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_NotificationsService_m1" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+getUnreadCount(userId: number): Promise&amp;lt;number&amp;gt;" vertex="1">
-          <mxGeometry y="112" width="440" height="24" as="geometry" />
+        <mxCell id="c_NotificationsService_m1" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+getUnreadCount(userId: number): Promise&amp;lt;any&amp;gt;" vertex="1">
+          <mxGeometry y="112" width="420" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationsService_m2" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+markAllAsRead(userId: number): Promise&amp;lt;any&amp;gt;" vertex="1">
-          <mxGeometry y="136" width="440" height="24" as="geometry" />
+          <mxGeometry y="136" width="420" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationsService_m3" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+markAsRead(id: number): Promise&amp;lt;any&amp;gt;" vertex="1">
-          <mxGeometry y="160" width="440" height="24" as="geometry" />
+          <mxGeometry y="160" width="420" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationsService_m4" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
-          <mxGeometry y="184" width="440" height="24" as="geometry" />
+          <mxGeometry y="184" width="420" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_OnModuleInit" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OnModuleInit&lt;/b&gt;" vertex="1">
           <mxGeometry x="960" y="666" width="280" height="100" as="geometry" />
@@ -332,27 +392,30 @@
           <mxGeometry y="112" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;PrismaService&lt;/b&gt;" vertex="1">
-          <mxGeometry x="530" y="666" width="380" height="136" as="geometry" />
+          <mxGeometry x="530" y="666" width="380" height="160" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_f0" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notifications: PrismaNotificationDelegate" vertex="1">
           <mxGeometry y="32" width="380" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_PrismaService_f1" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+        <mxCell id="c_PrismaService_f1" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+users: PrismaUserDelegate" vertex="1">
           <mxGeometry y="56" width="380" height="24" as="geometry" />
         </mxCell>
+        <mxCell id="c_PrismaService_f2" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+          <mxGeometry y="80" width="380" height="24" as="geometry" />
+        </mxCell>
         <mxCell id="c_PrismaService_sep" parent="c_PrismaService" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="80" width="380" height="8" as="geometry" />
+          <mxGeometry y="104" width="380" height="8" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_m0" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+onModuleInit(): Promise&amp;lt;void&amp;gt;" vertex="1">
-          <mxGeometry y="88" width="380" height="24" as="geometry" />
-        </mxCell>
-        <mxCell id="c_PrismaService_m1" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+onModuleDestroy(): Promise&amp;lt;void&amp;gt;" vertex="1">
           <mxGeometry y="112" width="380" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_notifications" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;notifications&lt;/b&gt;" vertex="1">
-          <mxGeometry x="160" y="882" width="280" height="208" as="geometry" />
+        <mxCell id="c_PrismaService_m1" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+onModuleDestroy(): Promise&amp;lt;void&amp;gt;" vertex="1">
+          <mxGeometry y="136" width="380" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_notifications_f0" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notification_id: BigInt" vertex="1">
+        <mxCell id="c_notifications" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;notifications&lt;/b&gt;" vertex="1">
+          <mxGeometry x="160" y="906" width="280" height="256" as="geometry" />
+        </mxCell>
+        <mxCell id="c_notifications_f0" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notification_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_notifications_f1" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+user_id: Int" vertex="1">
@@ -364,17 +427,41 @@
         <mxCell id="c_notifications_f3" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+message: String" vertex="1">
           <mxGeometry y="104" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_notifications_f4" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+is_read: Boolean" vertex="1">
+        <mxCell id="c_notifications_f4" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notification_type: String" vertex="1">
           <mxGeometry y="128" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_notifications_f5" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+        <mxCell id="c_notifications_f5" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+is_read: Boolean" vertex="1">
           <mxGeometry y="152" width="280" height="24" as="geometry" />
         </mxCell>
+        <mxCell id="c_notifications_f6" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+created_at: DateTime" vertex="1">
+          <mxGeometry y="176" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_notifications_f7" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+read_at: DateTime?" vertex="1">
+          <mxGeometry y="200" width="280" height="24" as="geometry" />
+        </mxCell>
         <mxCell id="c_notifications_sep" parent="c_notifications" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="176" width="280" height="8" as="geometry" />
+          <mxGeometry y="224" width="280" height="8" as="geometry" />
         </mxCell>
         <mxCell id="c_notifications_m0" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
-          <mxGeometry y="184" width="280" height="24" as="geometry" />
+          <mxGeometry y="232" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_users" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;users&lt;/b&gt;" vertex="1">
+          <mxGeometry x="480" y="906" width="280" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="c_users_f0" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+user_id: Int" vertex="1">
+          <mxGeometry y="32" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_users_f1" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+full_name: String" vertex="1">
+          <mxGeometry y="56" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_users_f2" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+email: String" vertex="1">
+          <mxGeometry y="80" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_users_sep" parent="c_users" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry y="104" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_users_m0" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
+          <mxGeometry y="112" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="e1" edge="1" parent="1" source="c_NotificationsController" target="c_NotificationsService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=classicThin;endFill=1;endSize=10;" value="Association">
           <mxGeometry relative="1" as="geometry" />
@@ -393,6 +480,22 @@
         </mxCell>
         <mxCell id="e6" edge="1" parent="1" source="c_PrismaService" target="c_notifications" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="c_PrismaService" target="c_users" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" value="Composition">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="c_users" target="c_notifications" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" value="Aggregation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8_src_card" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e8">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8_tgt_card" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;fontColor=#000000;" vertex="1" connectable="0" parent="e8">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
@@ -430,7 +533,7 @@
           <mxGeometry y="160" width="540" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_CreateNotificationDto" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;CreateNotificationDto&lt;/b&gt;" vertex="1">
-          <mxGeometry x="790" y="90" width="280" height="160" as="geometry" />
+          <mxGeometry x="790" y="90" width="280" height="208" as="geometry" />
         </mxCell>
         <mxCell id="c_CreateNotificationDto_f0" parent="c_CreateNotificationDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+user_ids: number[]" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -444,32 +547,41 @@
         <mxCell id="c_CreateNotificationDto_f3" parent="c_CreateNotificationDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notification_type: string" vertex="1">
           <mxGeometry y="104" width="280" height="24" as="geometry" />
         </mxCell>
+        <mxCell id="c_CreateNotificationDto_f4" parent="c_CreateNotificationDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+reference_type: string?" vertex="1">
+          <mxGeometry y="128" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_CreateNotificationDto_f5" parent="c_CreateNotificationDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+reference_id: number?" vertex="1">
+          <mxGeometry y="152" width="280" height="24" as="geometry" />
+        </mxCell>
         <mxCell id="c_CreateNotificationDto_sep" parent="c_CreateNotificationDto" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="128" width="280" height="8" as="geometry" />
+          <mxGeometry y="176" width="280" height="8" as="geometry" />
         </mxCell>
         <mxCell id="c_CreateNotificationDto_m0" parent="c_CreateNotificationDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
-          <mxGeometry y="136" width="280" height="24" as="geometry" />
+          <mxGeometry y="184" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationType" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;NotificationType&lt;/b&gt;" vertex="1">
-          <mxGeometry x="810" y="354" width="280" height="148" as="geometry" />
+          <mxGeometry x="810" y="378" width="280" height="172" as="geometry" />
         </mxCell>
-        <mxCell id="c_NotificationType_f0" parent="c_NotificationType" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="SUCCESS" vertex="1">
+        <mxCell id="c_NotificationType_f0" parent="c_NotificationType" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="INFO" vertex="1">
           <mxGeometry y="44" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_NotificationType_f1" parent="c_NotificationType" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="INFO" vertex="1">
+        <mxCell id="c_NotificationType_f1" parent="c_NotificationType" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="SUCCESS" vertex="1">
           <mxGeometry y="68" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationType_f2" parent="c_NotificationType" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="WARNING" vertex="1">
           <mxGeometry y="92" width="280" height="24" as="geometry" />
         </mxCell>
+        <mxCell id="c_NotificationType_f3" parent="c_NotificationType" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="SYSTEM" vertex="1">
+          <mxGeometry y="116" width="280" height="24" as="geometry" />
+        </mxCell>
         <mxCell id="c_NotificationType_sep" parent="c_NotificationType" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="116" width="280" height="8" as="geometry" />
+          <mxGeometry y="140" width="280" height="8" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationType_m0" parent="c_NotificationType" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
-          <mxGeometry y="124" width="280" height="24" as="geometry" />
+          <mxGeometry y="148" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationsService" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;NotificationsService&lt;/b&gt;" vertex="1">
-          <mxGeometry x="200" y="354" width="560" height="208" as="geometry" />
+          <mxGeometry x="200" y="378" width="560" height="208" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationsService_f0" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="-prisma: PrismaService" vertex="1">
           <mxGeometry y="32" width="560" height="24" as="geometry" />
@@ -483,20 +595,20 @@
         <mxCell id="c_NotificationsService_m0" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+createNotification(dto: CreateNotificationDto): Promise&amp;lt;any&amp;gt;" vertex="1">
           <mxGeometry y="88" width="560" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_NotificationsService_m1" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+getNotifications(query: any): Promise&amp;lt;any&amp;gt;" vertex="1">
+        <mxCell id="c_NotificationsService_m1" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notifyAdmins(title: string, message: string, type: string, reference_type?: string, reference_id?: number): Promise&amp;lt;void&amp;gt;" vertex="1">
           <mxGeometry y="112" width="560" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_NotificationsService_m2" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+deleteNotification(id: number): Promise&amp;lt;any&amp;gt;" vertex="1">
+        <mxCell id="c_NotificationsService_m2" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+getNotifications(query: any): Promise&amp;lt;any&amp;gt;" vertex="1">
           <mxGeometry y="136" width="560" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_NotificationsService_m3" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notifyAdmins(title: string, message: string, type: string, reference_type?: string, reference_id?: number): Promise&amp;lt;void&amp;gt;" vertex="1">
+        <mxCell id="c_NotificationsService_m3" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+deleteNotification(id: number): Promise&amp;lt;any&amp;gt;" vertex="1">
           <mxGeometry y="160" width="560" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_NotificationsService_m4" parent="c_NotificationsService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
           <mxGeometry y="184" width="560" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_OnModuleInit" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OnModuleInit&lt;/b&gt;" vertex="1">
-          <mxGeometry x="960" y="642" width="280" height="100" as="geometry" />
+          <mxGeometry x="960" y="666" width="280" height="100" as="geometry" />
         </mxCell>
         <mxCell id="c_OnModuleInit_f0" parent="c_OnModuleInit" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
           <mxGeometry y="44" width="280" height="24" as="geometry" />
@@ -508,7 +620,7 @@
           <mxGeometry y="76" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_OnModuleDestroy" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OnModuleDestroy&lt;/b&gt;" vertex="1">
-          <mxGeometry x="1290" y="642" width="320" height="100" as="geometry" />
+          <mxGeometry x="1290" y="666" width="320" height="100" as="geometry" />
         </mxCell>
         <mxCell id="c_OnModuleDestroy_f0" parent="c_OnModuleDestroy" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
           <mxGeometry y="44" width="320" height="24" as="geometry" />
@@ -520,7 +632,7 @@
           <mxGeometry y="76" width="320" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaClient" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;PrismaClient&lt;/b&gt;" vertex="1">
-          <mxGeometry x="200" y="642" width="280" height="136" as="geometry" />
+          <mxGeometry x="200" y="666" width="280" height="136" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaClient_f0" parent="c_PrismaClient" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
@@ -538,7 +650,7 @@
           <mxGeometry y="112" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;PrismaService&lt;/b&gt;" vertex="1">
-          <mxGeometry x="530" y="642" width="380" height="160" as="geometry" />
+          <mxGeometry x="530" y="666" width="380" height="160" as="geometry" />
         </mxCell>
         <mxCell id="c_PrismaService_f0" parent="c_PrismaService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notifications: PrismaNotificationDelegate" vertex="1">
           <mxGeometry y="32" width="380" height="24" as="geometry" />
@@ -559,9 +671,9 @@
           <mxGeometry y="136" width="380" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_notifications" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;notifications&lt;/b&gt;" vertex="1">
-          <mxGeometry x="160" y="882" width="280" height="208" as="geometry" />
+          <mxGeometry x="160" y="906" width="280" height="280" as="geometry" />
         </mxCell>
-        <mxCell id="c_notifications_f0" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notification_id: BigInt" vertex="1">
+        <mxCell id="c_notifications_f0" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notification_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_notifications_f1" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+user_id: Int" vertex="1">
@@ -576,32 +688,47 @@
         <mxCell id="c_notifications_f4" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+notification_type: String" vertex="1">
           <mxGeometry y="128" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_notifications_f5" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+        <mxCell id="c_notifications_f5" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+reference_type: String?" vertex="1">
           <mxGeometry y="152" width="280" height="24" as="geometry" />
         </mxCell>
+        <mxCell id="c_notifications_f6" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+reference_id: Int?" vertex="1">
+          <mxGeometry y="176" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_notifications_f7" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+is_read: Boolean" vertex="1">
+          <mxGeometry y="200" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_notifications_f8" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+created_at: DateTime" vertex="1">
+          <mxGeometry y="224" width="280" height="24" as="geometry" />
+        </mxCell>
         <mxCell id="c_notifications_sep" parent="c_notifications" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="176" width="280" height="8" as="geometry" />
+          <mxGeometry y="248" width="280" height="8" as="geometry" />
         </mxCell>
         <mxCell id="c_notifications_m0" parent="c_notifications" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
-          <mxGeometry y="184" width="280" height="24" as="geometry" />
+          <mxGeometry y="256" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="c_users" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;swimlaneFillColor=#ffffff;fontColor=#000000;fontFamily=Arial;fontSize=13;" value="&lt;b&gt;users&lt;/b&gt;" vertex="1">
-          <mxGeometry x="480" y="882" width="280" height="136" as="geometry" />
+          <mxGeometry x="480" y="906" width="280" height="184" as="geometry" />
         </mxCell>
         <mxCell id="c_users_f0" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+user_id: Int" vertex="1">
           <mxGeometry y="32" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_users_f1" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+full_name: String" vertex="1">
+        <mxCell id="c_users_f1" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+role_id: Int" vertex="1">
           <mxGeometry y="56" width="280" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="c_users_f2" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="..." vertex="1">
+        <mxCell id="c_users_f2" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+full_name: String" vertex="1">
           <mxGeometry y="80" width="280" height="24" as="geometry" />
         </mxCell>
+        <mxCell id="c_users_f3" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+email: String" vertex="1">
+          <mxGeometry y="104" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c_users_f4" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value="+is_active: Boolean" vertex="1">
+          <mxGeometry y="128" width="280" height="24" as="geometry" />
+        </mxCell>
         <mxCell id="c_users_sep" parent="c_users" style="line;strokeWidth=1;fillColor=none;strokeColor=#000000;align=left;verticalAlign=middle;rotatable=0;portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry y="104" width="280" height="8" as="geometry" />
+          <mxGeometry y="152" width="280" height="8" as="geometry" />
         </mxCell>
         <mxCell id="c_users_m0" parent="c_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=12;fontColor=#000000;" value=" " vertex="1">
-          <mxGeometry y="112" width="280" height="24" as="geometry" />
+          <mxGeometry y="160" width="280" height="24" as="geometry" />
         </mxCell>
         <mxCell id="e1" edge="1" parent="1" source="c_NotificationsController" target="c_NotificationsService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;fontFamily=Arial;fontSize=11;dashed=0;endArrow=classicThin;endFill=1;endSize=10;" value="Association">
           <mxGeometry relative="1" as="geometry" />
