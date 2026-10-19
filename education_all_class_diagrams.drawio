@@ -413,195 +413,123 @@
           <mxGeometry height="24" width="183" y="204" as="geometry" />
         </mxCell>
         <UserObject label="Association" mermaidId="e:EducationController-&gt;EducationService#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.81;entryX=0.5;entryY=0;" mermaidBaseValue="Association" id="128">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.81;entryX=0.5;entryY=0;" target="52">
+          <mxCell edge="1" parent="1" source="2" style="startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.81;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="52">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1146" y="405" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationController-&gt;EducationFilterDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.09;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Dependency" id="129">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.09;exitY=1;entryX=0.5;entryY=0;fixDash=1;" target="15">
+          <mxCell edge="1" parent="1" source="2" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.09;exitY=1;entryX=0.5;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="15">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="144" y="405" />
-                <mxPoint x="144" y="634" />
-                <mxPoint x="144" y="863" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationController-&gt;CreateEducationCategoryDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.36;exitY=1;entryX=0.34;entryY=0;" mermaidBaseValue="Dependency" id="130">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.36;exitY=1;entryX=0.34;entryY=0;fixDash=1;" target="22">
+          <mxCell edge="1" parent="1" source="2" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.36;exitY=1;entryX=0.34;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="22">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="375" y="405" />
-                <mxPoint x="375" y="634" />
-                <mxPoint x="375" y="863" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationController-&gt;UpdateEducationCategoryDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.78;exitY=1;entryX=0.33;entryY=0;" mermaidBaseValue="Dependency" id="131">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.78;exitY=1;entryX=0.33;entryY=0;fixDash=1;" target="27">
+          <mxCell edge="1" parent="1" source="2" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.78;exitY=1;entryX=0.33;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="27">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="718" y="405" />
-                <mxPoint x="718" y="634" />
-                <mxPoint x="718" y="863" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationController-&gt;CreateEducationDocumentDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.69;entryX=0.42;entryY=0;" mermaidBaseValue="Dependency" id="132">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.69;entryX=0.42;entryY=0;fixDash=1;" target="32">
+          <mxCell edge="1" parent="1" source="2" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.69;entryX=0.42;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="32">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1575" y="405" />
-                <mxPoint x="1575" y="634" />
-                <mxPoint x="1575" y="863" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationController-&gt;UpdateEducationDocumentDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.66;entryX=0.12;entryY=0;" mermaidBaseValue="Dependency" id="133">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.66;entryX=0.12;entryY=0;fixDash=1;" target="42">
+          <mxCell edge="1" parent="1" source="2" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.66;entryX=0.12;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="42">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1820" y="405" />
-                <mxPoint x="1820" y="634" />
-                <mxPoint x="1820" y="863" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Association" mermaidId="e:EducationService-&gt;PrismaService#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.66;entryX=0.5;entryY=0;" mermaidBaseValue="Association" id="134">
-          <mxCell edge="1" parent="1" source="52" style="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.66;entryX=0.5;entryY=0;" target="79">
+          <mxCell edge="1" parent="1" source="52" style="startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.66;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="79">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="2463" y="863" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationService-&gt;EducationFilterDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.75;entryX=0.86;entryY=0;" mermaidBaseValue="Dependency" id="135">
-          <mxCell edge="1" parent="1" source="52" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.75;entryX=0.86;entryY=0;fixDash=1;" target="15">
+          <mxCell edge="1" parent="1" source="52" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.75;entryX=0.86;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="15">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="312" y="863" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationService-&gt;CreateEducationCategoryDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.92;entryX=0.77;entryY=0;" mermaidBaseValue="Dependency" id="136">
-          <mxCell edge="1" parent="1" source="52" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.92;entryX=0.77;entryY=0;fixDash=1;" target="22">
+          <mxCell edge="1" parent="1" source="52" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.92;entryX=0.77;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="22">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="654" y="863" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationService-&gt;UpdateEducationCategoryDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.98;entryY=0;" mermaidBaseValue="Dependency" id="137">
-          <mxCell edge="1" parent="1" source="52" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.98;entryY=0;fixDash=1;" target="27">
+          <mxCell edge="1" parent="1" source="52" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.98;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="27">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1146" y="863" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationService-&gt;CreateEducationDocumentDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.84;entryX=0.88;entryY=0;" mermaidBaseValue="Dependency" id="138">
-          <mxCell edge="1" parent="1" source="52" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.84;entryX=0.88;entryY=0;fixDash=1;" target="32">
+          <mxCell edge="1" parent="1" source="52" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.84;entryX=0.88;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="32">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1756" y="863" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationService-&gt;UpdateEducationDocumentDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.71;entryX=0.99;entryY=0;" mermaidBaseValue="Dependency" id="139">
-          <mxCell edge="1" parent="1" source="52" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.71;entryX=0.99;entryY=0;fixDash=1;" target="42">
+          <mxCell edge="1" parent="1" source="52" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.71;entryX=0.99;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="42">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="2165" y="863" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Inheritance" mermaidId="e:PrismaService-&gt;PrismaClient#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.8;entryX=0.5;entryY=0;" mermaidBaseValue="Inheritance" id="140">
-          <mxCell edge="1" parent="1" source="79" style="curved=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.8;entryX=0.5;entryY=0;" target="74">
+          <mxCell edge="1" parent="1" source="79" style="startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.8;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="74">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1737" y="1225" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Implements" mermaidId="e:PrismaService-&gt;OnModuleInit#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.65;entryX=0.5;entryY=0;" mermaidBaseValue="Implements" id="141">
-          <mxCell edge="1" parent="1" source="79" style="curved=1;dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.65;entryX=0.5;entryY=0;fixDash=1;" target="66">
+          <mxCell edge="1" parent="1" source="79" style="dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.65;entryX=0.5;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="66">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1001" y="1225" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Implements" mermaidId="e:PrismaService-&gt;OnModuleDestroy#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.7;entryX=0.5;entryY=0;" mermaidBaseValue="Implements" id="142">
-          <mxCell edge="1" parent="1" source="79" style="curved=1;dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.7;entryX=0.5;entryY=0;fixDash=1;" target="70">
+          <mxCell edge="1" parent="1" source="79" style="dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.7;entryX=0.5;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="70">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1371" y="1225" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Composition" mermaidId="e:PrismaService-&gt;education_document_categories#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.29;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Composition" id="143">
-          <mxCell edge="1" parent="1" source="79" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.29;exitY=1;entryX=0.5;entryY=0;" target="87">
+          <mxCell edge="1" parent="1" source="79" style="startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.29;exitY=1;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="87">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="2281" y="1225" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Composition" mermaidId="e:PrismaService-&gt;education_documents#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.93;entryX=0;entryY=0.33;" mermaidBaseValue="Composition" id="144">
-          <mxCell edge="1" parent="1" source="79" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.93;entryX=0;entryY=0.33;" target="94">
+          <mxCell edge="1" parent="1" source="79" style="startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.93;entryX=0;entryY=0.33;edgeStyle=orthogonalEdgeStyle;" target="94">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1960" y="1225" />
-                <mxPoint x="1960" y="1394" />
-                <mxPoint x="1960" y="1563" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Composition" mermaidId="e:PrismaService-&gt;blood_types#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.77;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Composition" id="145">
-          <mxCell edge="1" parent="1" source="79" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.77;exitY=1;entryX=0.5;entryY=0;" target="111">
+          <mxCell edge="1" parent="1" source="79" style="startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.77;exitY=1;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="111">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="2699" y="1225" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Composition" mermaidId="e:PrismaService-&gt;users#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.93;entryX=0.5;entryY=0;" mermaidBaseValue="Composition" id="146">
-          <mxCell edge="1" parent="1" source="79" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.93;entryX=0.5;entryY=0;" target="120">
+          <mxCell edge="1" parent="1" source="79" style="startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.93;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="120">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="2965" y="1225" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Aggregation" mermaidId="e:education_document_categories-&gt;education_documents#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0;entryY=0.04;" mermaidBaseValue="Aggregation" id="147">
-          <mxCell edge="1" parent="1" source="87" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0;entryY=0.04;" target="94">
+          <mxCell edge="1" parent="1" source="87" style="startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0;entryY=0.04;edgeStyle=orthogonalEdgeStyle;" target="94">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="2281" y="1563" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <mxCell id="148" parent="147" style="edgeLabel;resizable=0;labelBackgroundColor=none;fontSize=11;spacing=8;align=right;verticalAlign=top;" value="1" vertex="1">
@@ -611,12 +539,9 @@
           <mxGeometry relative="1" x="1" as="geometry" />
         </mxCell>
         <UserObject label="Aggregation" mermaidId="e:blood_types-&gt;education_documents#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.15;" mermaidBaseValue="Aggregation" id="150">
-          <mxCell edge="1" parent="1" source="111" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.15;" target="94">
+          <mxCell edge="1" parent="1" source="111" style="startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.15;edgeStyle=orthogonalEdgeStyle;" target="94">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="2699" y="1563" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <mxCell id="151" parent="150" style="edgeLabel;resizable=0;labelBackgroundColor=none;fontSize=11;spacing=8;align=right;verticalAlign=top;" value="0..1" vertex="1">
@@ -626,12 +551,9 @@
           <mxGeometry relative="1" x="1" as="geometry" />
         </mxCell>
         <UserObject label="Aggregation" mermaidId="e:users-&gt;education_documents#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.33;" mermaidBaseValue="Aggregation" id="153">
-          <mxCell edge="1" parent="1" source="120" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.33;" target="94">
+          <mxCell edge="1" parent="1" source="120" style="startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.33;edgeStyle=orthogonalEdgeStyle;" target="94">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="2965" y="1563" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <mxCell id="154" parent="153" style="edgeLabel;resizable=0;labelBackgroundColor=none;fontSize=11;spacing=8;align=right;verticalAlign=top;" value="0..1" vertex="1">
@@ -846,117 +768,75 @@
           <mxGeometry height="24" width="235" y="180" as="geometry" />
         </mxCell>
         <UserObject label="Association" mermaidId="e:EducationController-&gt;EducationService#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.88;entryX=0.5;entryY=0;" mermaidBaseValue="Association" id="61">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.88;entryX=0.5;entryY=0;" target="20">
+          <mxCell edge="1" parent="1" source="2" style="startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.88;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="20">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="927" y="285" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationController-&gt;CreateEducationCategoryDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Dependency" id="62">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.3;exitY=1;entryX=0.5;entryY=0;fixDash=1;" target="10">
+          <mxCell edge="1" parent="1" source="2" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.3;exitY=1;entryX=0.5;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="10">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="168" y="285" />
-                <mxPoint x="168" y="442" />
-                <mxPoint x="168" y="599" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationController-&gt;UpdateEducationCategoryDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.7;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Dependency" id="63">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.7;exitY=1;entryX=0.5;entryY=0;fixDash=1;" target="15">
+          <mxCell edge="1" parent="1" source="2" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.7;exitY=1;entryX=0.5;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="15">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="519" y="285" />
-                <mxPoint x="519" y="442" />
-                <mxPoint x="519" y="599" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Association" mermaidId="e:EducationService-&gt;PrismaService#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.62;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Association" id="64">
-          <mxCell edge="1" parent="1" source="20" style="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.62;exitY=1;entryX=0.5;entryY=0;" target="41">
+          <mxCell edge="1" parent="1" source="20" style="startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.62;exitY=1;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="41">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1031" y="599" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationService-&gt;CreateEducationCategoryDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.96;entryX=1;entryY=0.09;" mermaidBaseValue="Dependency" id="65">
-          <mxCell edge="1" parent="1" source="20" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.96;entryX=1;entryY=0.09;fixDash=1;" target="10">
+          <mxCell edge="1" parent="1" source="20" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.96;entryX=1;entryY=0.09;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="10">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="455" y="599" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationService-&gt;UpdateEducationCategoryDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.2;" mermaidBaseValue="Dependency" id="66">
-          <mxCell edge="1" parent="1" source="20" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.2;fixDash=1;" target="15">
+          <mxCell edge="1" parent="1" source="20" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.2;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="15">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="927" y="599" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Inheritance" mermaidId="e:PrismaService-&gt;PrismaClient#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.42;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Inheritance" id="67">
-          <mxCell edge="1" parent="1" source="41" style="curved=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.42;exitY=1;entryX=0.5;entryY=0;" target="36">
+          <mxCell edge="1" parent="1" source="41" style="startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.42;exitY=1;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="36">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="967" y="865" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Implements" mermaidId="e:PrismaService-&gt;OnModuleInit#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.74;entryX=0.5;entryY=0;" mermaidBaseValue="Implements" id="68">
-          <mxCell edge="1" parent="1" source="41" style="curved=1;dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.74;entryX=0.5;entryY=0;fixDash=1;" target="28">
+          <mxCell edge="1" parent="1" source="41" style="dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.74;entryX=0.5;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="28">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="232" y="865" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Implements" mermaidId="e:PrismaService-&gt;OnModuleDestroy#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.96;entryX=0.5;entryY=0;" mermaidBaseValue="Implements" id="69">
-          <mxCell edge="1" parent="1" source="41" style="curved=1;dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.96;entryX=0.5;entryY=0;fixDash=1;" target="32">
+          <mxCell edge="1" parent="1" source="41" style="dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.96;entryX=0.5;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="32">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="602" y="865" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Composition" mermaidId="e:PrismaService-&gt;education_document_categories#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.91;entryX=0.5;entryY=0;" mermaidBaseValue="Composition" id="70">
-          <mxCell edge="1" parent="1" source="41" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.91;entryX=0.5;entryY=0;" target="47">
+          <mxCell edge="1" parent="1" source="41" style="startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.91;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="47">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1512" y="865" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Composition" mermaidId="e:PrismaService-&gt;education_documents#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.7;exitY=1;entryX=0;entryY=0.19;" mermaidBaseValue="Composition" id="71">
-          <mxCell edge="1" parent="1" source="41" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.7;exitY=1;entryX=0;entryY=0.19;" target="54">
+          <mxCell edge="1" parent="1" source="41" style="startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.7;exitY=1;entryX=0;entryY=0.19;edgeStyle=orthogonalEdgeStyle;" target="54">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1190" y="865" />
-                <mxPoint x="1190" y="1010" />
-                <mxPoint x="1190" y="1155" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Aggregation" mermaidId="e:education_document_categories-&gt;education_documents#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.7;entryY=0;" mermaidBaseValue="Aggregation" id="72">
-          <mxCell edge="1" parent="1" source="47" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.7;entryY=0;" target="54">
+          <mxCell edge="1" parent="1" source="47" style="startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.7;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="54">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1512" y="1155" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <mxCell id="73" parent="72" style="edgeLabel;resizable=0;labelBackgroundColor=none;fontSize=11;spacing=8;align=right;verticalAlign=top;" value="1" vertex="1">
@@ -1315,155 +1195,99 @@
           <mxGeometry height="24" width="183" y="156" as="geometry" />
         </mxCell>
         <UserObject label="Association" mermaidId="e:EducationController-&gt;EducationService#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.86;entryX=0.5;entryY=0;" mermaidBaseValue="Association" id="107">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.86;entryX=0.5;entryY=0;" target="39">
+          <mxCell edge="1" parent="1" source="2" style="startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.86;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="39">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="952" y="333" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationController-&gt;EducationFilterDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Dependency" id="108">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.3;exitY=1;entryX=0.5;entryY=0;fixDash=1;" target="12">
+          <mxCell edge="1" parent="1" source="2" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.3;exitY=1;entryX=0.5;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="12">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="180" y="333" />
-                <mxPoint x="180" y="526" />
-                <mxPoint x="180" y="719" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationController-&gt;CreateEducationDocumentDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.7;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Dependency" id="109">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.7;exitY=1;entryX=0.5;entryY=0;fixDash=1;" target="19">
+          <mxCell edge="1" parent="1" source="2" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.7;exitY=1;entryX=0.5;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="19">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="523" y="333" />
-                <mxPoint x="523" y="526" />
-                <mxPoint x="523" y="719" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationController-&gt;UpdateEducationDocumentDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.71;entryX=0.5;entryY=0;" mermaidBaseValue="Dependency" id="110">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.71;entryX=0.5;entryY=0;fixDash=1;" target="29">
+          <mxCell edge="1" parent="1" source="2" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.71;entryX=0.5;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="29">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1380" y="333" />
-                <mxPoint x="1380" y="526" />
-                <mxPoint x="1380" y="719" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Association" mermaidId="e:EducationService-&gt;PrismaService#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.73;entryX=0.5;entryY=0;" mermaidBaseValue="Association" id="111">
-          <mxCell edge="1" parent="1" source="39" style="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.73;entryX=0.5;entryY=0;" target="63">
+          <mxCell edge="1" parent="1" source="39" style="startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.73;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="63">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1873" y="719" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationService-&gt;EducationFilterDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.94;entryX=1;entryY=0.09;" mermaidBaseValue="Dependency" id="112">
-          <mxCell edge="1" parent="1" source="39" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.94;entryX=1;entryY=0.09;fixDash=1;" target="12">
+          <mxCell edge="1" parent="1" source="39" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.94;entryX=1;entryY=0.09;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="12">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="460" y="719" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationService-&gt;CreateEducationDocumentDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.27;" mermaidBaseValue="Dependency" id="113">
-          <mxCell edge="1" parent="1" source="39" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.27;fixDash=1;" target="19">
+          <mxCell edge="1" parent="1" source="39" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.27;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="19">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="952" y="719" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:EducationService-&gt;UpdateEducationDocumentDto#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.82;entryX=1;entryY=0.09;" mermaidBaseValue="Dependency" id="114">
-          <mxCell edge="1" parent="1" source="39" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.82;entryX=1;entryY=0.09;fixDash=1;" target="29">
+          <mxCell edge="1" parent="1" source="39" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.82;entryX=1;entryY=0.09;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="29">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1623" y="719" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Inheritance" mermaidId="e:PrismaService-&gt;PrismaClient#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.87;entryX=0.5;entryY=0;" mermaidBaseValue="Inheritance" id="115">
-          <mxCell edge="1" parent="1" source="63" style="curved=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.87;entryX=0.5;entryY=0;" target="58">
+          <mxCell edge="1" parent="1" source="63" style="startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.87;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="58">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1283" y="1081" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Implements" mermaidId="e:PrismaService-&gt;OnModuleInit#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.66;entryX=0.5;entryY=0;" mermaidBaseValue="Implements" id="116">
-          <mxCell edge="1" parent="1" source="63" style="curved=1;dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.66;entryX=0.5;entryY=0;fixDash=1;" target="50">
+          <mxCell edge="1" parent="1" source="63" style="dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.66;entryX=0.5;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="50">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="547" y="1081" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Implements" mermaidId="e:PrismaService-&gt;OnModuleDestroy#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.73;entryX=0.5;entryY=0;" mermaidBaseValue="Implements" id="117">
-          <mxCell edge="1" parent="1" source="63" style="curved=1;dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.73;entryX=0.5;entryY=0;fixDash=1;" target="54">
+          <mxCell edge="1" parent="1" source="63" style="dashed=1;startArrow=none;endArrow=mermaidExtension;endSize=17;endFill=0;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0;exitY=0.73;entryX=0.5;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="54">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="917" y="1081" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Composition" mermaidId="e:PrismaService-&gt;education_documents#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.07;exitY=1;entryX=0;entryY=0.3;" mermaidBaseValue="Composition" id="118">
-          <mxCell edge="1" parent="1" source="63" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.07;exitY=1;entryX=0;entryY=0.3;" target="71">
+          <mxCell edge="1" parent="1" source="63" style="startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.07;exitY=1;entryX=0;entryY=0.3;edgeStyle=orthogonalEdgeStyle;" target="71">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1506" y="1081" />
-                <mxPoint x="1506" y="1226" />
-                <mxPoint x="1506" y="1371" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Composition" mermaidId="e:PrismaService-&gt;education_document_categories#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.35;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Composition" id="119">
-          <mxCell edge="1" parent="1" source="63" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.35;exitY=1;entryX=0.5;entryY=0;" target="88">
+          <mxCell edge="1" parent="1" source="63" style="startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.35;exitY=1;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="88">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1740" y="1081" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Composition" mermaidId="e:PrismaService-&gt;blood_types#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.73;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Composition" id="120">
-          <mxCell edge="1" parent="1" source="63" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.73;exitY=1;entryX=0.5;entryY=0;" target="94">
+          <mxCell edge="1" parent="1" source="63" style="startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.73;exitY=1;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="94">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="2070" y="1081" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Composition" mermaidId="e:PrismaService-&gt;users#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.96;entryX=0.5;entryY=0;" mermaidBaseValue="Composition" id="121">
-          <mxCell edge="1" parent="1" source="63" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.96;entryX=0.5;entryY=0;" target="101">
+          <mxCell edge="1" parent="1" source="63" style="startArrow=mermaidDiamond;startSize=17;startFill=1;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=1;exitY=0.96;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="101">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="2336" y="1081" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Aggregation" mermaidId="e:education_document_categories-&gt;education_documents#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0;entryY=0.04;" mermaidBaseValue="Aggregation" id="122">
-          <mxCell edge="1" parent="1" source="88" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0;entryY=0.04;" target="71">
+          <mxCell edge="1" parent="1" source="88" style="startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0;entryY=0.04;edgeStyle=orthogonalEdgeStyle;" target="71">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1740" y="1371" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <mxCell id="123" parent="122" style="edgeLabel;resizable=0;labelBackgroundColor=none;fontSize=11;spacing=8;align=right;verticalAlign=top;" value="1" vertex="1">
@@ -1473,12 +1297,9 @@
           <mxGeometry relative="1" x="1" as="geometry" />
         </mxCell>
         <UserObject label="Aggregation" mermaidId="e:blood_types-&gt;education_documents#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.94;entryY=0;" mermaidBaseValue="Aggregation" id="125">
-          <mxCell edge="1" parent="1" source="94" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.94;entryY=0;" target="71">
+          <mxCell edge="1" parent="1" source="94" style="startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.94;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="71">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="2070" y="1371" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <mxCell id="126" parent="125" style="edgeLabel;resizable=0;labelBackgroundColor=none;fontSize=11;spacing=8;align=right;verticalAlign=top;" value="0..1" vertex="1">
@@ -1488,12 +1309,9 @@
           <mxGeometry relative="1" x="1" as="geometry" />
         </mxCell>
         <UserObject label="Aggregation" mermaidId="e:users-&gt;education_documents#0" mermaidBaseStyle="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.3;" mermaidBaseValue="Aggregation" id="128">
-          <mxCell edge="1" parent="1" source="101" style="curved=1;startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.3;" target="71">
+          <mxCell edge="1" parent="1" source="101" style="startArrow=mermaidDiamond;startSize=17;startFill=0;endArrow=none;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=1;entryY=0.3;edgeStyle=orthogonalEdgeStyle;" target="71">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="2336" y="1371" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <mxCell id="129" parent="128" style="edgeLabel;resizable=0;labelBackgroundColor=none;fontSize=11;spacing=8;align=right;verticalAlign=top;" value="0..1" vertex="1">

@@ -183,7 +183,7 @@ PrismaService *-- users : Composition
 PrismaService *-- notifications : Composition
 PrismaService *-- blood_types : Composition
 medical_facilities "1" o-- "0..*" facility_donation_schedules : Aggregation
-facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+facility_donation_schedules "0..1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 blood_types "0..1" o-- "0..*" users : Aggregation
@@ -317,7 +317,7 @@ PrismaService *-- facility_donation_schedules : Composition
 PrismaService *-- medical_facilities : Composition
 PrismaService *-- donor_availability_slots : Composition
 medical_facilities "1" o-- "0..*" facility_donation_schedules : Aggregation
-facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+facility_donation_schedules "0..1" o-- "0..*" donor_availability_slots : Aggregation
 @enduml
 ```
 
@@ -452,7 +452,7 @@ PrismaService *-- donor_availability_slots : Composition
 PrismaService *-- users : Composition
 PrismaService *-- blood_types : Composition
 PrismaService *-- notifications : Composition
-facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+facility_donation_schedules "0..1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" donor_availability_slots : Aggregation
 blood_types "0..1" o-- "0..*" users : Aggregation
 users "1" o-- "0..*" notifications : Aggregation

@@ -300,6 +300,7 @@ RequestController --> RequestService : Association
 RequestController ..> CreateRequestDto : Dependency
 RequestController ..> UpdateMatchStatusDto : Dependency
 RequestController ..> AllocateInventoryDto : Dependency
+RequestController ..> ExcelUtil : Dependency
 
 RequestService --> PrismaService : Association
 RequestService --> NotificationsService : Association
@@ -307,6 +308,7 @@ RequestService --> EventEmitter2 : Association
 RequestService ..> CreateRequestDto : Dependency
 RequestService ..> UpdateMatchStatusDto : Dependency
 RequestService ..> AllocateInventoryDto : Dependency
+RequestService ..> ExcelUtil : Dependency
 
 NotificationsService --> PrismaService : Association
 
@@ -348,7 +350,7 @@ PrismaService *-- wards : Composition
 provinces "1" o-- "0..*" wards : Aggregation
 provinces "0..1" o-- "0..*" blood_requests : Aggregation
 wards "0..1" o-- "0..*" blood_requests : Aggregation
-blood_requests "0..1" o-- "0..*" donor_availability_slots : Aggregation
+users "1" o-- "0..*" donor_availability_slots : Aggregation
 ```
 
 ## 3.4.2.1 Class Diagram - Create Blood Request (`request_create`)

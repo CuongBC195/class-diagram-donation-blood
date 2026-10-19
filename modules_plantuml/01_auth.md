@@ -231,7 +231,7 @@ PrismaService *-- notifications : Composition
 roles "1" o-- "0..*" users : Aggregation
 medical_facilities "0..1" o-- "0..*" users : Aggregation
 users "0..1" o-- "0..*" user_otps : Aggregation
-otp_types "1" *-- "0..*" user_otps : Composition
+otp_types "1" o-- "0..*" user_otps : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 @enduml
 ```
@@ -373,7 +373,7 @@ PrismaService *-- otp_types : Composition
 PrismaService *-- user_otps : Composition
 roles "1" o-- "0..*" users : Aggregation
 users "0..1" o-- "0..*" user_otps : Aggregation
-otp_types "1" *-- "0..*" user_otps : Composition
+otp_types "1" o-- "0..*" user_otps : Aggregation
 @enduml
 ```
 
@@ -404,6 +404,8 @@ class CreateNotificationDto {
   +title: string
   +message: string
   +notification_type: string
+  +reference_type: string?
+  +reference_id: number?
 }
 
 enum OtpTypeCode {
@@ -513,7 +515,7 @@ PrismaService *-- otp_types : Composition
 PrismaService *-- user_otps : Composition
 PrismaService *-- notifications : Composition
 users "0..1" o-- "0..*" user_otps : Aggregation
-otp_types "1" *-- "0..*" user_otps : Composition
+otp_types "1" o-- "0..*" user_otps : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 @enduml
 ```
@@ -632,7 +634,7 @@ PrismaService *-- users : Composition
 PrismaService *-- otp_types : Composition
 PrismaService *-- user_otps : Composition
 users "0..1" o-- "0..*" user_otps : Aggregation
-otp_types "1" *-- "0..*" user_otps : Composition
+otp_types "1" o-- "0..*" user_otps : Aggregation
 @enduml
 ```
 
@@ -962,7 +964,7 @@ PrismaService *-- users : Composition
 PrismaService *-- otp_types : Composition
 PrismaService *-- user_otps : Composition
 users "0..1" o-- "0..*" user_otps : Aggregation
-otp_types "1" *-- "0..*" user_otps : Composition
+otp_types "1" o-- "0..*" user_otps : Aggregation
 @enduml
 ```
 
@@ -994,6 +996,8 @@ class CreateNotificationDto {
   +title: string
   +message: string
   +notification_type: string
+  +reference_type: string?
+  +reference_id: number?
 }
 
 enum OtpTypeCode {
@@ -1101,7 +1105,7 @@ PrismaService *-- otp_types : Composition
 PrismaService *-- user_otps : Composition
 PrismaService *-- notifications : Composition
 users "0..1" o-- "0..*" user_otps : Aggregation
-otp_types "1" *-- "0..*" user_otps : Composition
+otp_types "1" o-- "0..*" user_otps : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 @enduml
 ```

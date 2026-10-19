@@ -188,7 +188,7 @@ PrismaService *-- blog_comments : Composition
 PrismaService *-- users : Composition
 
 blog_categories "1" o-- "0..*" blog_posts : Aggregation
-users "1" o-- "0..*" blog_posts : Aggregation
+users "0..1" o-- "0..*" blog_posts : Aggregation
 blog_posts "1" o-- "0..*" blog_comments : Aggregation
 users "0..1" o-- "0..*" blog_comments : Aggregation
 blog_comments "0..1" o-- "0..*" blog_comments : Aggregation
@@ -254,7 +254,7 @@ class PrismaService {
 
 class blog_posts {
   +post_id: Int
-  +category_id: Int
+  +blog_category_id: Int
   +title: String
   +slug: String
   ...
@@ -413,7 +413,7 @@ PrismaService *-- blog_posts : Composition
 PrismaService *-- users : Composition
 
 blog_categories "1" o-- "0..*" blog_posts : Aggregation
-users "1" o-- "0..*" blog_posts : Aggregation
+users "0..1" o-- "0..*" blog_posts : Aggregation
 ```
 
 ## 3.8.2.3 Class Diagram - User Comment Interactions (`blog_comments_user`)

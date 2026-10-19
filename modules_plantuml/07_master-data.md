@@ -678,7 +678,11 @@ class MasterDataController {
 class MasterDataFilterDto {
   +page: number?
   +limit: number?
+  +search: string?
+  +status: string?
   +is_active: boolean?
+  +sortBy: string?
+  +sortOrder: string?
 }
 
 class CreateBloodCompatibilityDto {
@@ -799,7 +803,11 @@ class MasterDataController {
 class MasterDataFilterDto {
   +page: number?
   +limit: number?
+  +search: string?
+  +status: string?
   +is_active: boolean?
+  +sortBy: string?
+  +sortOrder: string?
 }
 
 class CreateDonationIntervalRuleDto {

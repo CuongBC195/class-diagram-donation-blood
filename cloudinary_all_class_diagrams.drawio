@@ -64,28 +64,21 @@
           <mxGeometry height="24" width="333" y="132" as="geometry" />
         </mxCell>
         <UserObject label="Association" mermaidId="e:CloudinaryController-&gt;CloudinaryService#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Association" id="19">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="6">
+          <mxCell edge="1" parent="1" source="2" style="startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="6">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points" />
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:CloudinaryService-&gt;CloudinarySDK#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.09;entryY=0;" mermaidBaseValue="Dependency" id="20">
-          <mxCell edge="1" parent="1" source="6" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.09;entryY=0;fixDash=1;" target="14">
+          <mxCell edge="1" parent="1" source="6" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.09;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="14">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="252" y="431" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:CloudinaryProvider-&gt;CloudinarySDK#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.91;entryY=0;" mermaidBaseValue="Dependency" id="21">
-          <mxCell edge="1" parent="1" source="9" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.91;entryY=0;fixDash=1;" target="14">
+          <mxCell edge="1" parent="1" source="9" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.91;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="14">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="646" y="431" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
       </root>
@@ -156,28 +149,21 @@
           <mxGeometry height="24" width="333" y="132" as="geometry" />
         </mxCell>
         <UserObject label="Association" mermaidId="e:CloudinaryController-&gt;CloudinaryService#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Association" id="19">
-          <mxCell edge="1" parent="1" source="2" style="curved=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="6">
+          <mxCell edge="1" parent="1" source="2" style="startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;" target="6">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points" />
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:CloudinaryService-&gt;CloudinarySDK#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.09;entryY=0;" mermaidBaseValue="Dependency" id="20">
-          <mxCell edge="1" parent="1" source="6" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.09;entryY=0;fixDash=1;" target="14">
+          <mxCell edge="1" parent="1" source="6" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.09;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="14">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="252" y="431" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
         <UserObject label="Dependency" mermaidId="e:CloudinaryProvider-&gt;CloudinarySDK#0" mermaidBaseStyle="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.91;entryY=0;" mermaidBaseValue="Dependency" id="21">
-          <mxCell edge="1" parent="1" source="9" style="curved=1;dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.91;entryY=0;fixDash=1;" target="14">
+          <mxCell edge="1" parent="1" source="9" style="dashed=1;startArrow=none;endArrow=classic;endSize=9;strokeColor=#111111;html=1;fontSize=16;labelBackgroundColor=#ffffff;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#111111;exitX=0.5;exitY=1;entryX=0.91;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;" target="14">
             <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="646" y="431" />
-              </Array>
-            </mxGeometry>
+              </mxGeometry>
           </mxCell>
         </UserObject>
       </root>

@@ -320,7 +320,7 @@ PrismaService *-- notifications : Composition
 roles "1" o-- "0..*" users : Aggregation
 medical_facilities "0..1" o-- "0..*" users : Aggregation
 users "0..1" o-- "0..*" user_otps : Aggregation
-otp_types "1" *-- "0..*" user_otps : Composition
+otp_types "1" o-- "0..*" user_otps : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 ```
 
@@ -470,7 +470,7 @@ PrismaService *-- user_otps : Composition
 
 roles "1" o-- "0..*" users : Aggregation
 users "0..1" o-- "0..*" user_otps : Aggregation
-otp_types "1" *-- "0..*" user_otps : Composition
+otp_types "1" o-- "0..*" user_otps : Aggregation
 ```
 
 ---
@@ -498,6 +498,8 @@ class CreateNotificationDto {
   +title: string
   +message: string
   +notification_type: string
+  +reference_type: string?
+  +reference_id: number?
 }
 
 class OtpTypeCode {
@@ -617,7 +619,7 @@ PrismaService *-- user_otps : Composition
 PrismaService *-- notifications : Composition
 
 users "0..1" o-- "0..*" user_otps : Aggregation
-otp_types "1" *-- "0..*" user_otps : Composition
+otp_types "1" o-- "0..*" user_otps : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 ```
 
@@ -743,7 +745,7 @@ PrismaService *-- otp_types : Composition
 PrismaService *-- user_otps : Composition
 
 users "0..1" o-- "0..*" user_otps : Aggregation
-otp_types "1" *-- "0..*" user_otps : Composition
+otp_types "1" o-- "0..*" user_otps : Aggregation
 ```
 
 ---
@@ -1089,7 +1091,7 @@ PrismaService *-- otp_types : Composition
 PrismaService *-- user_otps : Composition
 
 users "0..1" o-- "0..*" user_otps : Aggregation
-otp_types "1" *-- "0..*" user_otps : Composition
+otp_types "1" o-- "0..*" user_otps : Aggregation
 ```
 
 ---
@@ -1118,6 +1120,8 @@ class CreateNotificationDto {
   +title: string
   +message: string
   +notification_type: string
+  +reference_type: string?
+  +reference_id: number?
 }
 
 class OtpTypeCode {
@@ -1235,7 +1239,7 @@ PrismaService *-- user_otps : Composition
 PrismaService *-- notifications : Composition
 
 users "0..1" o-- "0..*" user_otps : Aggregation
-otp_types "1" *-- "0..*" user_otps : Composition
+otp_types "1" o-- "0..*" user_otps : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 ```
 
@@ -1560,7 +1564,7 @@ wards "0..1" o-- "0..*" users : Aggregation
 medical_facilities "0..1" o-- "0..*" users : Aggregation
 users "1" o-- "0..1" donor_profiles : Aggregation
 users "0..1" o-- "0..*" user_otps : Aggregation
-otp_types "1" *-- "0..*" user_otps : Composition
+otp_types "1" o-- "0..*" user_otps : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 ```
 
@@ -1786,6 +1790,8 @@ class CreateNotificationDto {
   +title: string
   +message: string
   +notification_type: string
+  +reference_type: string?
+  +reference_id: number?
 }
 
 class OtpTypeCode {
@@ -1927,7 +1933,7 @@ PrismaService *-- user_otps : Composition
 PrismaService *-- notifications : Composition
 
 users "0..1" o-- "0..*" user_otps : Aggregation
-otp_types "1" *-- "0..*" user_otps : Composition
+otp_types "1" o-- "0..*" user_otps : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 ```
 
@@ -2653,7 +2659,7 @@ PrismaService *-- notifications : Composition
 users "1" o-- "0..1" donor_profiles : Aggregation
 blood_types "1" o-- "0..*" donor_profiles : Aggregation
 users "1" o-- "0..*" donor_availability_slots : Aggregation
-facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+facility_donation_schedules "0..1" o-- "0..*" donor_availability_slots : Aggregation
 medical_facilities "1" o-- "0..*" facility_donation_schedules : Aggregation
 users "1" o-- "0..*" donations : Aggregation
 medical_facilities "1" o-- "0..*" donations : Aggregation
@@ -3037,7 +3043,7 @@ PrismaService *-- donor_availability_slots : Composition
 PrismaService *-- notifications : Composition
 
 users "1" o-- "0..*" donor_availability_slots : Aggregation
-facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+facility_donation_schedules "0..1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 PrismaService *-- donor_profiles : Composition
 PrismaService *-- blood_requests : Composition
@@ -3174,7 +3180,7 @@ PrismaService *-- blood_components : Composition
 PrismaService *-- medical_facilities : Composition
 
 users "1" o-- "0..*" donor_availability_slots : Aggregation
-facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+facility_donation_schedules "0..1" o-- "0..*" donor_availability_slots : Aggregation
 blood_types "1" o-- "0..*" donations : Aggregation
 blood_components "1" o-- "0..*" donations : Aggregation
 medical_facilities "1" o-- "0..*" facility_donation_schedules : Aggregation
@@ -3318,7 +3324,7 @@ PrismaService *-- facility_donation_schedules : Composition
 PrismaService *-- notifications : Composition
 
 users "1" o-- "0..*" donor_availability_slots : Aggregation
-facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+facility_donation_schedules "0..1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 ```
 
@@ -3804,6 +3810,7 @@ RequestController --> RequestService : Association
 RequestController ..> CreateRequestDto : Dependency
 RequestController ..> UpdateMatchStatusDto : Dependency
 RequestController ..> AllocateInventoryDto : Dependency
+RequestController ..> ExcelUtil : Dependency
 
 RequestService --> PrismaService : Association
 RequestService --> NotificationsService : Association
@@ -3811,6 +3818,7 @@ RequestService --> EventEmitter2 : Association
 RequestService ..> CreateRequestDto : Dependency
 RequestService ..> UpdateMatchStatusDto : Dependency
 RequestService ..> AllocateInventoryDto : Dependency
+RequestService ..> ExcelUtil : Dependency
 
 NotificationsService --> PrismaService : Association
 
@@ -3852,7 +3860,7 @@ PrismaService *-- wards : Composition
 provinces "1" o-- "0..*" wards : Aggregation
 provinces "0..1" o-- "0..*" blood_requests : Aggregation
 wards "0..1" o-- "0..*" blood_requests : Aggregation
-blood_requests "0..1" o-- "0..*" donor_availability_slots : Aggregation
+users "1" o-- "0..*" donor_availability_slots : Aggregation
 ```
 
 ---
@@ -5061,7 +5069,7 @@ blood_types "1" o-- "0..*" blood_inventory : Aggregation
 blood_components "1" o-- "0..*" blood_inventory : Aggregation
 donations "0..1" o-- "0..*" blood_inventory : Aggregation
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
-users "1" o-- "0..*" inventory_transactions : Aggregation
+users "0..1" o-- "0..*" inventory_transactions : Aggregation
 ```
 
 ---
@@ -5519,7 +5527,7 @@ PrismaService *-- inventory_transactions : Composition
 PrismaService *-- users : Composition
 
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
-users "1" o-- "0..*" inventory_transactions : Aggregation
+users "0..1" o-- "0..*" inventory_transactions : Aggregation
 ```
 
 ---
@@ -5712,7 +5720,7 @@ PrismaService *-- notifications : Composition
 PrismaService *-- blood_types : Composition
 
 medical_facilities "1" o-- "0..*" facility_donation_schedules : Aggregation
-facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+facility_donation_schedules "0..1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 blood_types "0..1" o-- "0..*" users : Aggregation
@@ -5849,7 +5857,7 @@ PrismaService *-- medical_facilities : Composition
 PrismaService *-- donor_availability_slots : Composition
 
 medical_facilities "1" o-- "0..*" facility_donation_schedules : Aggregation
-facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+facility_donation_schedules "0..1" o-- "0..*" donor_availability_slots : Aggregation
 ```
 
 ---
@@ -5990,7 +5998,7 @@ PrismaService *-- users : Composition
 PrismaService *-- blood_types : Composition
 PrismaService *-- notifications : Composition
 
-facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+facility_donation_schedules "0..1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" donor_availability_slots : Aggregation
 blood_types "0..1" o-- "0..*" users : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
@@ -6686,7 +6694,11 @@ class MasterDataController {
 class MasterDataFilterDto {
   +page: number?
   +limit: number?
+  +search: string?
+  +status: string?
   +is_active: boolean?
+  +sortBy: string?
+  +sortOrder: string?
 }
 
 class CreateBloodCompatibilityDto {
@@ -6810,7 +6822,11 @@ class MasterDataController {
 class MasterDataFilterDto {
   +page: number?
   +limit: number?
+  +search: string?
+  +status: string?
   +is_active: boolean?
+  +sortBy: string?
+  +sortOrder: string?
 }
 
 class CreateDonationIntervalRuleDto {
@@ -7190,7 +7206,7 @@ PrismaService *-- blog_comments : Composition
 PrismaService *-- users : Composition
 
 blog_categories "1" o-- "0..*" blog_posts : Aggregation
-users "1" o-- "0..*" blog_posts : Aggregation
+users "0..1" o-- "0..*" blog_posts : Aggregation
 blog_posts "1" o-- "0..*" blog_comments : Aggregation
 users "0..1" o-- "0..*" blog_comments : Aggregation
 blog_comments "0..1" o-- "0..*" blog_comments : Aggregation
@@ -7258,7 +7274,7 @@ class PrismaService {
 
 class blog_posts {
   +post_id: Int
-  +category_id: Int
+  +blog_category_id: Int
   +title: String
   +slug: String
   ...
@@ -7419,7 +7435,7 @@ PrismaService *-- blog_posts : Composition
 PrismaService *-- users : Composition
 
 blog_categories "1" o-- "0..*" blog_posts : Aggregation
-users "1" o-- "0..*" blog_posts : Aggregation
+users "0..1" o-- "0..*" blog_posts : Aggregation
 ```
 
 ---

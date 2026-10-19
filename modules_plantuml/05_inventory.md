@@ -186,7 +186,7 @@ blood_types "1" o-- "0..*" blood_inventory : Aggregation
 blood_components "1" o-- "0..*" blood_inventory : Aggregation
 donations "0..1" o-- "0..*" blood_inventory : Aggregation
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
-users "1" o-- "0..*" inventory_transactions : Aggregation
+users "0..1" o-- "0..*" inventory_transactions : Aggregation
 @enduml
 ```
 
@@ -629,6 +629,6 @@ PrismaService *-- blood_inventory : Composition
 PrismaService *-- inventory_transactions : Composition
 PrismaService *-- users : Composition
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
-users "1" o-- "0..*" inventory_transactions : Aggregation
+users "0..1" o-- "0..*" inventory_transactions : Aggregation
 @enduml
 ```

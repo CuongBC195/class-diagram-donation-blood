@@ -349,7 +349,7 @@ PrismaService *-- notifications : Composition
 users "1" o-- "0..1" donor_profiles : Aggregation
 blood_types "1" o-- "0..*" donor_profiles : Aggregation
 users "1" o-- "0..*" donor_availability_slots : Aggregation
-facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+facility_donation_schedules "0..1" o-- "0..*" donor_availability_slots : Aggregation
 medical_facilities "1" o-- "0..*" facility_donation_schedules : Aggregation
 users "1" o-- "0..*" donations : Aggregation
 medical_facilities "1" o-- "0..*" donations : Aggregation
@@ -722,7 +722,7 @@ PrismaService *-- facility_donation_schedules : Composition
 PrismaService *-- donor_availability_slots : Composition
 PrismaService *-- notifications : Composition
 users "1" o-- "0..*" donor_availability_slots : Aggregation
-facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+facility_donation_schedules "0..1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 PrismaService *-- donor_profiles : Composition
 PrismaService *-- blood_requests : Composition
@@ -855,7 +855,7 @@ PrismaService *-- blood_types : Composition
 PrismaService *-- blood_components : Composition
 PrismaService *-- medical_facilities : Composition
 users "1" o-- "0..*" donor_availability_slots : Aggregation
-facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+facility_donation_schedules "0..1" o-- "0..*" donor_availability_slots : Aggregation
 blood_types "1" o-- "0..*" donations : Aggregation
 blood_components "1" o-- "0..*" donations : Aggregation
 medical_facilities "1" o-- "0..*" facility_donation_schedules : Aggregation
@@ -995,7 +995,7 @@ PrismaService *-- donor_availability_slots : Composition
 PrismaService *-- facility_donation_schedules : Composition
 PrismaService *-- notifications : Composition
 users "1" o-- "0..*" donor_availability_slots : Aggregation
-facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+facility_donation_schedules "0..1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 @enduml
 ```
