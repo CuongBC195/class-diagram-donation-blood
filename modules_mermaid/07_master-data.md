@@ -72,6 +72,113 @@ class MasterDataService {
   +deleteDonationIntervalRule(id: number): Promise~any~
 }
 
+class MasterDataFilterDto {
+  +page: number?
+  +limit: number?
+  +search: string?
+  +status: string?
+  +sortBy: string?
+  +sortOrder: string?
+  +is_active: boolean?
+}
+
+class CreateFacilityDto {
+  +facility_code: string?
+  +facility_name: string
+  +short_name: string?
+  +address: string
+  +province_id: number?
+  +ward_id: number?
+  +phone: string?
+  +email: string?
+  +website: string?
+  +latitude: number?
+  +longitude: number?
+  +logo_url: string?
+  +is_primary: boolean?
+}
+
+class UpdateFacilityDto {
+  +facility_code: string?
+  +facility_name: string?
+  +short_name: string?
+  +address: string?
+  +province_id: number?
+  +ward_id: number?
+  +phone: string?
+  +email: string?
+  +website: string?
+  +latitude: number?
+  +longitude: number?
+  +logo_url: string?
+  +is_primary: boolean?
+  +is_active: boolean?
+}
+
+class CreateBloodTypeDto {
+  +blood_group: string
+  +rh_factor: string
+  +display_order: number?
+}
+
+class UpdateBloodTypeDto {
+  +blood_group: string?
+  +rh_factor: string?
+  +display_order: number?
+  +is_active: boolean?
+}
+
+class CreateBloodComponentDto {
+  +component_code: string
+  +component_name: string
+  +description: string?
+}
+
+class UpdateBloodComponentDto {
+  +component_code: string?
+  +component_name: string?
+  +description: string?
+  +is_active: boolean?
+}
+
+class CreateBloodCompatibilityDto {
+  +component_id: number
+  +donor_blood_type_id: number
+  +recipient_blood_type_id: number
+  +is_compatible: boolean?
+  +notes: string?
+}
+
+class UpdateBloodCompatibilityDto {
+  +component_id: number
+  +donor_blood_type_id: number
+  +recipient_blood_type_id: number
+  +is_compatible: boolean?
+  +notes: string?
+}
+
+class CreateDonationIntervalRuleDto {
+  +component_id: number
+  +min_interval_days: number
+  +max_donations_per_year: number?
+  +description: string?
+}
+
+class UpdateDonationIntervalRuleDto {
+  +component_id: number?
+  +min_interval_days: number?
+  +max_donations_per_year: number?
+  +description: string?
+  +is_active: boolean?
+}
+
+class ExcelUtil {
+  <<utility>>
+  +generateExcel(data: any[], sheetName: string): Buffer
+  +generateTemplate(headers: string[], sheetName: string): Buffer
+  +parseExcel(buffer: Buffer): any[]
+}
+
 class OnModuleInit {
   <<interface>>
   +onModuleInit(): Promise~void~
@@ -121,18 +228,21 @@ class medical_facilities {
   +is_active: Boolean
   +created_at: DateTime
   +updated_at: DateTime?
+  ...
 }
 
 class provinces {
   +province_id: Int
   +province_code: String?
   +province_name: String
+  ...
 }
 
 class wards {
   +ward_id: Int
   +province_id: Int
   +ward_name: String
+  ...
 }
 
 class blood_types {
@@ -142,6 +252,7 @@ class blood_types {
   +rh_factor: String
   +display_order: Int
   +is_active: Boolean
+  ...
 }
 
 class blood_components {
@@ -150,6 +261,7 @@ class blood_components {
   +component_name: String
   +description: String?
   +is_active: Boolean
+  ...
 }
 
 class blood_compatibility {
@@ -159,6 +271,7 @@ class blood_compatibility {
   +recipient_blood_type_id: Int
   +is_compatible: Boolean
   +notes: String?
+  ...
 }
 
 class donation_interval_rules {
@@ -168,6 +281,7 @@ class donation_interval_rules {
   +max_donations_per_year: Int?
   +description: String?
   +is_active: Boolean
+  ...
 }
 
 class urgency_levels {
@@ -175,6 +289,7 @@ class urgency_levels {
   +urgency_code: String
   +urgency_name: String
   +priority_level: Int
+  ...
 }
 
 class roles {
@@ -184,9 +299,35 @@ class roles {
   +description: String?
   +is_active: Boolean
   +created_at: DateTime
+  ...
 }
 
 MasterDataController --> MasterDataService : Association
+MasterDataController ..> MasterDataFilterDto : Dependency
+MasterDataController ..> CreateFacilityDto : Dependency
+MasterDataController ..> UpdateFacilityDto : Dependency
+MasterDataController ..> CreateBloodTypeDto : Dependency
+MasterDataController ..> UpdateBloodTypeDto : Dependency
+MasterDataController ..> CreateBloodComponentDto : Dependency
+MasterDataController ..> UpdateBloodComponentDto : Dependency
+MasterDataController ..> CreateBloodCompatibilityDto : Dependency
+MasterDataController ..> UpdateBloodCompatibilityDto : Dependency
+MasterDataController ..> CreateDonationIntervalRuleDto : Dependency
+MasterDataController ..> UpdateDonationIntervalRuleDto : Dependency
+
+MasterDataService ..> MasterDataFilterDto : Dependency
+MasterDataService ..> CreateFacilityDto : Dependency
+MasterDataService ..> UpdateFacilityDto : Dependency
+MasterDataService ..> CreateBloodTypeDto : Dependency
+MasterDataService ..> UpdateBloodTypeDto : Dependency
+MasterDataService ..> CreateBloodComponentDto : Dependency
+MasterDataService ..> UpdateBloodComponentDto : Dependency
+MasterDataService ..> CreateBloodCompatibilityDto : Dependency
+MasterDataService ..> UpdateBloodCompatibilityDto : Dependency
+MasterDataService ..> CreateDonationIntervalRuleDto : Dependency
+MasterDataService ..> UpdateDonationIntervalRuleDto : Dependency
+MasterDataService ..> ExcelUtil : Dependency
+
 
 MasterDataService --> PrismaService : Association
 
@@ -340,18 +481,21 @@ class medical_facilities {
   +is_active: Boolean
   +created_at: DateTime
   +updated_at: DateTime?
+  ...
 }
 
 class provinces {
   +province_id: Int
   +province_code: String?
   +province_name: String
+  ...
 }
 
 class wards {
   +ward_id: Int
   +province_id: Int
   +ward_name: String
+  ...
 }
 
 MasterDataController --> MasterDataService : Association
@@ -479,6 +623,7 @@ class blood_types {
   +rh_factor: String
   +display_order: Int
   +is_active: Boolean
+  ...
 }
 
 class blood_components {
@@ -487,6 +632,7 @@ class blood_components {
   +component_name: String
   +description: String?
   +is_active: Boolean
+  ...
 }
 
 MasterDataController --> MasterDataService : Association
@@ -592,6 +738,7 @@ class blood_types {
   +rh_factor: String
   +display_order: Int
   +is_active: Boolean
+  ...
 }
 
 class blood_components {
@@ -600,6 +747,7 @@ class blood_components {
   +component_name: String
   +description: String?
   +is_active: Boolean
+  ...
 }
 
 class blood_compatibility {
@@ -609,6 +757,7 @@ class blood_compatibility {
   +recipient_blood_type_id: Int
   +is_compatible: Boolean
   +notes: String?
+  ...
 }
 
 MasterDataController --> MasterDataService : Association
@@ -711,6 +860,7 @@ class blood_components {
   +component_name: String
   +description: String?
   +is_active: Boolean
+  ...
 }
 
 class donation_interval_rules {
@@ -720,6 +870,7 @@ class donation_interval_rules {
   +max_donations_per_year: Int?
   +description: String?
   +is_active: Boolean
+  ...
 }
 
 MasterDataController --> MasterDataService : Association
@@ -799,12 +950,14 @@ class provinces {
   +province_id: Int
   +province_code: String?
   +province_name: String
+  ...
 }
 
 class wards {
   +ward_id: Int
   +province_id: Int
   +ward_name: String
+  ...
 }
 
 class roles {
@@ -814,6 +967,7 @@ class roles {
   +description: String?
   +is_active: Boolean
   +created_at: DateTime
+  ...
 }
 
 class urgency_levels {
@@ -821,6 +975,7 @@ class urgency_levels {
   +urgency_code: String
   +urgency_name: String
   +priority_level: Int
+  ...
 }
 
 MasterDataController --> MasterDataService : Association

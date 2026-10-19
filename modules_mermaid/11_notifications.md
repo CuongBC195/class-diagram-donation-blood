@@ -82,6 +82,7 @@ class notifications {
   +is_read: Boolean
   +created_at: DateTime
   +read_at: DateTime?
+  ...
 }
 
 class users {
@@ -90,6 +91,7 @@ class users {
   +full_name: String
   +email: String
   +is_active: Boolean
+  ...
 }
 
 NotificationsController --> NotificationsService : Association
@@ -169,12 +171,14 @@ class notifications {
   +is_read: Boolean
   +created_at: DateTime
   +read_at: DateTime?
+  ...
 }
 
 class users {
   +user_id: Int
   +full_name: String
   +email: String
+  ...
 }
 
 NotificationsController --> NotificationsService : Association
@@ -268,6 +272,7 @@ class notifications {
   +reference_id: Int?
   +is_read: Boolean
   +created_at: DateTime
+  ...
 }
 
 class users {
@@ -276,6 +281,7 @@ class users {
   +full_name: String
   +email: String
   +is_active: Boolean
+  ...
 }
 
 NotificationsController --> NotificationsService : Association

@@ -130,6 +130,7 @@ class education_documents {
   +created_by: Int?
   +created_at: DateTime
   +updated_at: DateTime?
+  ...
 }
 
 class blood_types {
@@ -139,6 +140,7 @@ class blood_types {
   +rh_factor: String
   +display_order: Int
   +is_active: Boolean
+  ...
 }
 
 class users {
@@ -146,7 +148,8 @@ class users {
   +full_name: String
   +avatar_url: String?
   +email: String
-  +status: String
+  +is_active: Boolean
+  ...
 }
 
 EducationController --> EducationService : Association
@@ -375,12 +378,14 @@ class education_documents {
   +created_by: Int?
   +created_at: DateTime
   +updated_at: DateTime?
+  ...
 }
 
 class education_document_categories {
   +category_id: Int
   +category_name: String
   +sort_order: Int
+  ...
 }
 
 class blood_types {
@@ -388,12 +393,14 @@ class blood_types {
   +blood_type_code: String
   +abo: String
   +rh_factor: String
+  ...
 }
 
 class users {
   +user_id: Int
   +full_name: String
   +avatar_url: String?
+  ...
 }
 
 EducationController --> EducationService : Association

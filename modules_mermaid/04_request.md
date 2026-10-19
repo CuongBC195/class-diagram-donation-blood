@@ -153,6 +153,7 @@ class blood_requests {
   +needs_donor_match: Boolean
   +assigned_staff_id: Int?
   +created_at: DateTime
+  ...
 }
 
 class blood_request_status_history {
@@ -163,6 +164,7 @@ class blood_request_status_history {
   +changed_by: Int?
   +change_reason: String?
   +created_at: DateTime
+  ...
 }
 
 class blood_request_donor_matches {
@@ -173,6 +175,7 @@ class blood_request_donor_matches {
   +match_status: String
   +contacted_at: DateTime?
   +responded_at: DateTime?
+  ...
 }
 
 class blood_request_inventory_allocations {
@@ -183,6 +186,7 @@ class blood_request_inventory_allocations {
   +is_active: Boolean
   +allocated_at: DateTime
   +released_at: DateTime?
+  ...
 }
 
 class blood_inventory {
@@ -193,6 +197,7 @@ class blood_inventory {
   +bag_code: String
   +volume_ml: Int
   +status_code: String
+  ...
 }
 
 class inventory_transactions {
@@ -202,6 +207,7 @@ class inventory_transactions {
   +reference_type: String?
   +reference_id: Int?
   +performed_by: Int?
+  ...
 }
 
 class medical_facilities {
@@ -210,6 +216,7 @@ class medical_facilities {
   +facility_name: String
   +phone: String?
   +address: String
+  ...
 }
 
 class blood_types {
@@ -217,24 +224,28 @@ class blood_types {
   +blood_type_code: String
   +abo: String
   +rh_factor: String
+  ...
 }
 
 class blood_components {
   +component_id: Int
   +component_code: String
   +component_name: String
+  ...
 }
 
 class urgency_levels {
   +urgency_id: Int
   +urgency_code: String
   +urgency_name: String
+  ...
 }
 
 class blood_request_statuses {
   +status_id: Int
   +status_code: String
   +status_name: String
+  ...
 }
 
 class users {
@@ -243,6 +254,7 @@ class users {
   +email: String
   +phone: String?
   +is_available_for_donation: Boolean
+  ...
 }
 
 class notifications {
@@ -251,6 +263,7 @@ class notifications {
   +title: String
   +message: String
   +notification_type: String
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -297,7 +310,7 @@ users "1" o-- "0..*" blood_request_donor_matches : Aggregation
 blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
-blood_requests "1" o-- "0..*" notifications : Aggregation
+users "1" o-- "0..*" notifications : Aggregation
 ```
 
 ## 3.4.2.1 Class Diagram - Create Blood Request (`request_create`)
@@ -309,8 +322,10 @@ direction TB
 
 class RequestController {
   -requestService: RequestService
+  ...
   +createRequest(req: any, dto: CreateRequestDto): Promise~any~
   +createPublicRequest(req: any, dto: CreateRequestDto): Promise~any~
+  ...
 }
 
 class CreateRequestDto {
@@ -342,8 +357,10 @@ class NotificationType {
 class RequestService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
+  ...
   +createRequest(dto: CreateRequestDto, user: any): Promise~any~
   +createPublicRequest(dto: CreateRequestDto, userId?: number): Promise~any~
+  ...
 }
 
 class NotificationsService {
@@ -397,6 +414,7 @@ class blood_requests {
   +status_id: Int
   +is_emergency: Boolean
   +clinical_notes: String?
+  ...
 }
 
 class blood_request_status_history {
@@ -405,37 +423,44 @@ class blood_request_status_history {
   +to_status_id: Int
   +changed_by: Int?
   +change_reason: String?
+  ...
 }
 
 class users {
   +user_id: Int
   +full_name: String
   +email: String
+  ...
 }
 
 class medical_facilities {
   +facility_id: Int
   +facility_name: String
+  ...
 }
 
 class blood_types {
   +blood_type_id: Int
   +blood_type_code: String
+  ...
 }
 
 class blood_components {
   +component_id: Int
   +component_name: String
+  ...
 }
 
 class urgency_levels {
   +urgency_id: Int
   +urgency_name: String
+  ...
 }
 
 class blood_request_statuses {
   +status_id: Int
   +status_code: String
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -479,18 +504,22 @@ direction TB
 
 class RequestController {
   -requestService: RequestService
+  ...
   +getPublicRequests(query: any): Promise~any~
   +getPublicRequestByCode(code: string): Promise~any~
   +getMyRequests(req: any, query: any): Promise~any~
   +getMyRequestDetail(req: any, id: number): Promise~any~
   +getRequests(query: any, req: any): Promise~any~
+  ...
 }
 
 class RequestService {
   -prisma: PrismaService
+  ...
   +getRequests(query: any, user?: any): Promise~any~
   +getRequestByCode(code: string): Promise~any~
   +getRequestById(requestId: number, userId: number): Promise~any~
+  ...
 }
 
 class OnModuleInit {
@@ -536,31 +565,37 @@ class blood_requests {
   +urgency_id: Int
   +status_id: Int
   +is_emergency: Boolean
+  ...
 }
 
 class medical_facilities {
   +facility_id: Int
   +facility_name: String
+  ...
 }
 
 class blood_types {
   +blood_type_id: Int
   +blood_type_code: String
+  ...
 }
 
 class blood_components {
   +component_id: Int
   +component_name: String
+  ...
 }
 
 class urgency_levels {
   +urgency_id: Int
   +urgency_name: String
+  ...
 }
 
 class blood_request_statuses {
   +status_id: Int
   +status_name: String
+  ...
 }
 
 class blood_request_status_history {
@@ -570,6 +605,7 @@ class blood_request_status_history {
   +to_status_id: Int
   +changed_by: Int?
   +change_reason: String?
+  ...
 }
 
 class donor_availability_slots {
@@ -577,6 +613,7 @@ class donor_availability_slots {
   +user_id: Int
   +notes: String?
   +status: String
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -613,9 +650,11 @@ direction TB
 
 class RequestController {
   -requestService: RequestService
+  ...
   +updateRequest(req: any, id: number, dto: Partial~CreateRequestDto~): Promise~any~
   +deleteRequest(req: any, id: number): Promise~any~
   +cancelRequest(req: any, id: number): Promise~any~
+  ...
 }
 
 class CreateRequestDto {
@@ -631,9 +670,11 @@ class CreateRequestDto {
 
 class RequestService {
   -prisma: PrismaService
+  ...
   +updateRequest(requestId: number, dto: Partial~CreateRequestDto~, user: any): Promise~any~
   +deleteRequest(requestId: number, user: any): Promise~any~
   +cancelRequest(requestId: number, user: any): Promise~any~
+  ...
 }
 
 class OnModuleInit {
@@ -668,6 +709,7 @@ class blood_requests {
   +patient_name: String
   +units_needed: Int
   +status_id: Int
+  ...
 }
 
 class blood_request_status_history {
@@ -677,11 +719,13 @@ class blood_request_status_history {
   +to_status_id: Int
   +changed_by: Int?
   +change_reason: String?
+  ...
 }
 
 class blood_request_statuses {
   +status_id: Int
   +status_code: String
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -711,7 +755,9 @@ direction TB
 
 class RequestController {
   -requestService: RequestService
+  ...
   +processRequest(req: any, id: number): Promise~any~
+  ...
 }
 
 class EventEmitter2 {
@@ -737,8 +783,10 @@ class RequestService {
   -prisma: PrismaService
   -eventEmitter: EventEmitter2
   -notificationsService: NotificationsService
+  ...
   +processRequest(requestId: number, user: any): Promise~any~
   +handleMatchDonorsEvent(payload: any): Promise~void~
+  ...
 }
 
 class NotificationsService {
@@ -765,6 +813,7 @@ class PrismaClient {
 }
 
 class PrismaService {
+  +users: PrismaUserDelegate
   +blood_requests: PrismaBloodRequestDelegate
   +blood_inventory: PrismaBloodInventoryDelegate
   +blood_request_inventory_allocations: PrismaAllocationDelegate
@@ -774,6 +823,13 @@ class PrismaService {
   ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
+}
+
+class users {
+  +user_id: Int
+  +full_name: String
+  +email: String
+  ...
 }
 
 class blood_requests {
@@ -787,6 +843,7 @@ class blood_requests {
   +fulfilled_from_stock: Boolean
   +needs_donor_match: Boolean
   +assigned_staff_id: Int?
+  ...
 }
 
 class blood_inventory {
@@ -795,6 +852,7 @@ class blood_inventory {
   +blood_type_id: Int
   +component_id: Int
   +status_code: String
+  ...
 }
 
 class blood_request_inventory_allocations {
@@ -802,6 +860,7 @@ class blood_request_inventory_allocations {
   +request_id: Int
   +inventory_id: Int
   +allocated_by: Int?
+  ...
 }
 
 class inventory_transactions {
@@ -811,6 +870,7 @@ class inventory_transactions {
   +reference_type: String?
   +reference_id: Int?
   +performed_by: Int?
+  ...
 }
 
 class blood_request_status_history {
@@ -820,6 +880,7 @@ class blood_request_status_history {
   +to_status_id: Int
   +changed_by: Int?
   +change_reason: String?
+  ...
 }
 
 class notifications {
@@ -828,6 +889,7 @@ class notifications {
   +title: String
   +message: String
   +notification_type: String
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -844,6 +906,7 @@ PrismaService --|> PrismaClient : Inheritance
 PrismaService ..|> OnModuleInit : Implements
 PrismaService ..|> OnModuleDestroy : Implements
 
+PrismaService *-- users : Composition
 PrismaService *-- blood_requests : Composition
 PrismaService *-- blood_inventory : Composition
 PrismaService *-- blood_request_inventory_allocations : Composition
@@ -855,7 +918,7 @@ blood_requests "1" o-- "0..*" blood_request_status_history : Aggregation
 blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
-blood_requests "1" o-- "0..*" notifications : Aggregation
+users "1" o-- "0..*" notifications : Aggregation
 ```
 
 ## 3.4.2.5 Class Diagram - Inventory Allocation and Release (`request_allocations`)
@@ -867,9 +930,11 @@ direction TB
 
 class RequestController {
   -requestService: RequestService
+  ...
   +getAllocations(req: any, id: number): Promise~any~
   +allocateInventory(req: any, id: number, dto: AllocateInventoryDto): Promise~any~
   +releaseAllocation(req: any, allocationId: number): Promise~any~
+  ...
 }
 
 class AllocateInventoryDto {
@@ -878,9 +943,11 @@ class AllocateInventoryDto {
 
 class RequestService {
   -prisma: PrismaService
+  ...
   +getAllocations(requestId: number, user?: any): Promise~any~
   +allocateInventory(requestId: number, inventoryIds: number[], user: any): Promise~any~
   +releaseAllocation(allocationId: number, user: any): Promise~any~
+  ...
 }
 
 class OnModuleInit {
@@ -918,12 +985,14 @@ class blood_requests {
   +units_fulfilled: Int
   +status_id: Int
   +completed_at: DateTime?
+  ...
 }
 
 class blood_inventory {
   +inventory_id: Int
   +bag_code: String
   +status_code: String
+  ...
 }
 
 class blood_request_inventory_allocations {
@@ -934,6 +1003,7 @@ class blood_request_inventory_allocations {
   +is_active: Boolean
   +allocated_at: DateTime
   +released_at: DateTime?
+  ...
 }
 
 class inventory_transactions {
@@ -943,6 +1013,7 @@ class inventory_transactions {
   +reference_type: String?
   +reference_id: Int?
   +performed_by: Int?
+  ...
 }
 
 class blood_request_status_history {
@@ -952,6 +1023,7 @@ class blood_request_status_history {
   +to_status_id: Int
   +changed_by: Int?
   +change_reason: String?
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -985,9 +1057,11 @@ direction TB
 
 class RequestController {
   -requestService: RequestService
+  ...
   +getMatches(req: any, id: number): Promise~any~
   +findDonorMatches(req: any, id: number): Promise~any~
   +updateMatchStatus(req: any, matchId: number, dto: UpdateMatchStatusDto): Promise~any~
+  ...
 }
 
 class UpdateMatchStatusDto {
@@ -996,9 +1070,11 @@ class UpdateMatchStatusDto {
 
 class RequestService {
   -prisma: PrismaService
+  ...
   +getMatches(requestId: number, user?: any): Promise~any~
   +findDonorMatches(requestId: number, user?: any): Promise~any~
   +updateMatchStatus(matchId: number, status: string, user?: any): Promise~any~
+  ...
 }
 
 class OnModuleInit {
@@ -1031,6 +1107,7 @@ class blood_requests {
   +request_code: String
   +blood_type_id: Int
   +facility_id: Int
+  ...
 }
 
 class blood_request_donor_matches {
@@ -1041,6 +1118,7 @@ class blood_request_donor_matches {
   +match_status: String
   +contacted_at: DateTime?
   +responded_at: DateTime?
+  ...
 }
 
 class users {
@@ -1050,6 +1128,7 @@ class users {
   +phone: String?
   +blood_type_id: Int?
   +is_available_for_donation: Boolean
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -1079,16 +1158,20 @@ direction TB
 
 class RequestController {
   -requestService: RequestService
+  ...
   +exportExcel(query: any, res: Response, req: any): Promise~void~
   +downloadTemplate(res: Response): Promise~void~
   +importExcel(file: Express.Multer.File, req: any): Promise~any~
+  ...
 }
 
 class RequestService {
   -prisma: PrismaService
+  ...
   +exportExcel(query: any, user?: any): Promise~Buffer~
   +getTemplate(): Promise~Buffer~
   +importExcel(buffer: Buffer, user: any): Promise~any~
+  ...
 }
 
 class ExcelUtil {
@@ -1137,6 +1220,7 @@ class blood_requests {
   +status_id: Int
   +is_emergency: Boolean
   +clinical_notes: String?
+  ...
 }
 
 class blood_request_status_history {
@@ -1145,17 +1229,20 @@ class blood_request_status_history {
   +to_status_id: Int
   +changed_by: Int?
   +change_reason: String?
+  ...
 }
 
 class blood_request_statuses {
   +status_id: Int
   +status_code: String
   +status_name: String
+  ...
 }
 
 class urgency_levels {
   +urgency_id: Int
   +urgency_code: String
+  ...
 }
 
 RequestController --> RequestService : Association

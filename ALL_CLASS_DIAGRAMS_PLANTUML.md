@@ -120,6 +120,43 @@ class AuthService {
   +resetPassword(dto: ResetPasswordDto): Promise<any>
 }
 
+class RegisterDto {
+  +email: string
+  +password: string
+  +fullName: string
+  +phoneNumber?: string
+  +roleId?: number
+  +facilityId?: number
+}
+
+class LoginDto {
+  +email: string
+  +password: string
+}
+
+class OtpDto {
+  +email: string
+  +otp_code: string
+}
+
+class ResendOtpDto {
+  +email: string
+}
+
+class RefreshTokenDto {
+  +refresh_token: string
+}
+
+class ForgotPasswordDto {
+  +email: string
+}
+
+class ResetPasswordDto {
+  +email: string
+  +otp_code: string
+  +new_password: string
+}
+
 class JwtService {
   +sign(payload: object): string
   +verify(token: string): any
@@ -246,6 +283,19 @@ class notifications {
 }
 
 AuthController --> AuthService : Association
+AuthController ..> RegisterDto : Dependency
+AuthController ..> LoginDto : Dependency
+AuthController ..> OtpDto : Dependency
+AuthController ..> ResendOtpDto : Dependency
+AuthController ..> RefreshTokenDto : Dependency
+AuthController ..> ForgotPasswordDto : Dependency
+AuthController ..> ResetPasswordDto : Dependency
+AuthService ..> RegisterDto : Dependency
+AuthService ..> LoginDto : Dependency
+AuthService ..> OtpDto : Dependency
+AuthService ..> ResendOtpDto : Dependency
+AuthService ..> ForgotPasswordDto : Dependency
+AuthService ..> ResetPasswordDto : Dependency
 AuthService --> PrismaService : Association
 AuthService --> JwtService : Association
 AuthService --> MailService : Association
@@ -515,6 +565,7 @@ class users {
   +email: String
   +full_name: String
   +is_email_verified: Boolean
+  +is_active: Boolean
   ...
 }
 
@@ -887,6 +938,8 @@ class users {
   +user_id: Int
   +facility_id: Int?
   +email: String
+  +full_name: String
+  +avatar_url: String?
   +refresh_token: String?
   +role: roles
   +facility: medical_facilities?
@@ -1988,15 +2041,13 @@ interface OnModuleDestroy {
 class PrismaClient {
   +$connect(): Promise<void>
   +$disconnect(): Promise<void>
+  +$transaction(callback: any): Promise<any>
   ...
 }
 
 class PrismaService {
   +users: PrismaUserDelegate
   +roles: PrismaRoleDelegate
-  +blood_types: PrismaBloodTypeDelegate
-  +provinces: PrismaProvinceDelegate
-  +wards: PrismaWardDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
   +donor_profiles: PrismaDonorProfileDelegate
   ...
@@ -2357,6 +2408,7 @@ class donor_profiles {
   +emergency_contact_name: String?
   +emergency_contact_phone: String?
   +is_active: Boolean
+  ...
 }
 
 class donor_availability_slots {
@@ -2369,6 +2421,7 @@ class donor_availability_slots {
   +notes: String?
   +status: String
   +is_active: Boolean
+  ...
 }
 
 class facility_donation_schedules {
@@ -2380,6 +2433,7 @@ class facility_donation_schedules {
   +max_donors: Int
   +current_donors: Int
   +status: String
+  ...
 }
 
 class donations {
@@ -2393,6 +2447,7 @@ class donations {
   +donation_date: DateTime
   +health_check_passed: Boolean
   +status_code: String
+  ...
 }
 
 class blood_inventory {
@@ -2406,6 +2461,7 @@ class blood_inventory {
   +expiry_date: DateTime
   +status_code: String
   +source_donation_id: Int?
+  ...
 }
 
 class medical_facilities {
@@ -2414,6 +2470,7 @@ class medical_facilities {
   +facility_name: String
   +phone: String?
   +address: String
+  ...
 }
 
 class blood_types {
@@ -2421,6 +2478,7 @@ class blood_types {
   +blood_type_code: String
   +abo: String
   +rh_factor: String
+  ...
 }
 
 class notifications {
@@ -2429,6 +2487,7 @@ class notifications {
   +title: String
   +message: String
   +notification_type: String
+  ...
 }
 
 DonorController --> DonorService : Association
@@ -2484,9 +2543,11 @@ hide empty members
 
 class DonorController {
   -donorService: DonorService
+  ...
   +registerDonor(req: any, data: any): Promise<any>
   +getProfile(req: any): Promise<any>
   +updateProfile(req: any, dto: UpdateDonorProfileDto): Promise<any>
+  ...
 }
 
 class UpdateDonorProfileDto {
@@ -2506,9 +2567,11 @@ class UpdateDonorProfileDto {
 
 class DonorService {
   -prisma: PrismaService
+  ...
   +registerDonorProfile(userId: number, data: any): Promise<any>
   +getDonorProfile(userId: number): Promise<any>
   +updateDonorProfile(userId: number, dto: UpdateDonorProfileDto): Promise<any>
+  ...
 }
 
 interface OnModuleInit {
@@ -2546,6 +2609,7 @@ class users {
   +address: String?
   +blood_type_id: Int?
   +is_donor_registered: Boolean
+  ...
 }
 
 class donor_profiles {
@@ -2559,6 +2623,7 @@ class donor_profiles {
   +emergency_contact_phone: String?
   +total_donations: Int
   +is_active: Boolean
+  ...
 }
 
 class blood_types {
@@ -2566,6 +2631,7 @@ class blood_types {
   +blood_type_code: String
   +abo: String
   +rh_factor: String
+  ...
 }
 
 DonorController --> DonorService : Association
@@ -2598,12 +2664,16 @@ hide empty members
 
 class DonorController {
   -donorService: DonorService
+  ...
   +updateAvailability(req: any, body: object): Promise<any>
+  ...
 }
 
 class DonorService {
   -prisma: PrismaService
+  ...
   +updateAvailability(userId: number, isAvailable: boolean): Promise<any>
+  ...
 }
 
 interface OnModuleInit {
@@ -2633,6 +2703,7 @@ class users {
   +email: String
   +is_available_for_donation: Boolean
   +is_donor_registered: Boolean
+  ...
 }
 
 DonorController --> DonorService : Association
@@ -2659,8 +2730,10 @@ hide empty members
 
 class DonorController {
   -donorService: DonorService
+  ...
   +bookSlot(req: any, dto: BookDonationSlotDto): Promise<any>
   +cancelSlot(req: any, id: number): Promise<any>
+  ...
 }
 
 class BookDonationSlotDto {
@@ -2689,8 +2762,10 @@ enum NotificationType {
 class DonorService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
+  ...
   +bookDonationSlot(userId: number, data: BookDonationSlotDto): Promise<any>
   +cancelDonationSlot(userId: number, slotId: number): Promise<any>
+  ...
 }
 
 class NotificationsService {
@@ -2719,6 +2794,10 @@ class PrismaService {
   +facility_donation_schedules: PrismaDonationScheduleDelegate
   +donor_availability_slots: PrismaAvailabilitySlotDelegate
   +notifications: PrismaNotificationDelegate
+  +donor_profiles: PrismaDonorProfileDelegate
+  +blood_requests: PrismaBloodRequestDelegate
+  +blood_compatibility: PrismaBloodCompatibilityDelegate
+  +blood_request_donor_matches: PrismaDonorMatchDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
@@ -2728,6 +2807,7 @@ class users {
   +user_id: Int
   +full_name: String
   +email: String
+  ...
 }
 
 class facility_donation_schedules {
@@ -2737,6 +2817,7 @@ class facility_donation_schedules {
   +max_donors: Int
   +current_donors: Int
   +status: String
+  ...
 }
 
 class donor_availability_slots {
@@ -2746,6 +2827,41 @@ class donor_availability_slots {
   +notes: String?
   +status: String
   +is_active: Boolean
+  ...
+}
+
+class donor_profiles {
+  +donor_profile_id: Int
+  +user_id: Int
+  +blood_type_id: Int
+  +is_active: Boolean
+  ...
+}
+
+class blood_requests {
+  +request_id: Int
+  +request_code: String
+  +blood_type_id: Int
+  +component_id: Int
+  +status_id: Int
+  ...
+}
+
+class blood_compatibility {
+  +compatibility_id: Int
+  +component_id: Int
+  +donor_blood_type_id: Int
+  +recipient_blood_type_id: Int
+  +is_compatible: Boolean
+  ...
+}
+
+class blood_request_donor_matches {
+  +match_id: Int
+  +request_id: Int
+  +donor_user_id: Int
+  +match_status: String
+  ...
 }
 
 class notifications {
@@ -2754,6 +2870,7 @@ class notifications {
   +title: String
   +message: String
   +notification_type: String
+  ...
 }
 
 DonorController --> DonorService : Association
@@ -2774,6 +2891,14 @@ PrismaService *-- notifications : Composition
 users "1" o-- "0..*" donor_availability_slots : Aggregation
 facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
+PrismaService *-- donor_profiles : Composition
+PrismaService *-- blood_requests : Composition
+PrismaService *-- blood_compatibility : Composition
+PrismaService *-- blood_request_donor_matches : Composition
+users "1" o-- "0..1" donor_profiles : Aggregation
+blood_requests "1" o-- "0..*" blood_request_donor_matches : Aggregation
+users "1" o-- "0..*" blood_request_donor_matches : Aggregation
+blood_requests "0..1" o-- "0..*" donor_availability_slots : Aggregation
 @enduml
 ```
 
@@ -2792,16 +2917,20 @@ hide empty members
 
 class DonorController {
   -donorService: DonorService
+  ...
   +getHistory(req: any): Promise<any>
   +getMySlots(req: any): Promise<any>
   +getSchedules(facilityId: string): Promise<any>
+  ...
 }
 
 class DonorService {
   -prisma: PrismaService
+  ...
   +getDonationHistory(userId: number): Promise<any>
   +getMySlots(userId: number): Promise<any>
   +getSchedules(facilityId?: number): Promise<any>
+  ...
 }
 
 interface OnModuleInit {
@@ -2833,6 +2962,7 @@ class users {
   +user_id: Int
   +full_name: String
   +email: String
+  ...
 }
 
 class donor_availability_slots {
@@ -2842,6 +2972,7 @@ class donor_availability_slots {
   +specific_date: DateTime?
   +status: String
   +is_active: Boolean
+  ...
 }
 
 class facility_donation_schedules {
@@ -2849,6 +2980,7 @@ class facility_donation_schedules {
   +facility_id: Int
   +date: DateTime
   +status: String
+  ...
 }
 
 class donations {
@@ -2859,12 +2991,14 @@ class donations {
   +volume_ml: Int
   +donation_date: DateTime
   +status_code: String
+  ...
 }
 
 class medical_facilities {
   +facility_id: Int
   +facility_name: String
   +address: String
+  ...
 }
 
 DonorController --> DonorService : Association
@@ -2900,12 +3034,14 @@ hide empty members
 
 class DonorController {
   -donorService: DonorService
+  ...
   +getSlots(query: PaginationDto, req: any): Promise<any>
   +createSlot(dto: any, req: any): Promise<any>
   +updateSlotStatus(id: number, dto: UpdateSlotStatusDto, req: any): Promise<any>
   +exportExcel(query: any, res: Response, req: any): Promise<void>
   +downloadTemplate(res: Response): Promise<void>
   +importExcel(file: Express.Multer.File, req: any): Promise<any>
+  ...
 }
 
 class PaginationDto {
@@ -2923,12 +3059,14 @@ class UpdateSlotStatusDto {
 class DonorService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
+  ...
   +getSlots(query: PaginationDto, user: any): Promise<any>
   +createAdminSlot(dto: any, user: any): Promise<any>
   +updateSlotStatus(slotId: number, dto: UpdateSlotStatusDto, user: any): Promise<any>
   +exportExcel(query: any, user: any): Promise<Buffer>
   +getTemplate(): Promise<Buffer>
   +importExcel(buffer: Buffer, user: any): Promise<any>
+  ...
 }
 
 class ExcelUtil <<utility>> {
@@ -2967,10 +3105,20 @@ class PrismaService {
   +onModuleDestroy(): Promise<void>
 }
 
+class notifications {
+  +notification_id: Int
+  +user_id: Int
+  +title: String
+  +message: String
+  +notification_type: String
+  ...
+}
+
 class users {
   +user_id: Int
   +full_name: String
   +phone: String?
+  ...
 }
 
 class donor_availability_slots {
@@ -2980,12 +3128,14 @@ class donor_availability_slots {
   +specific_date: DateTime?
   +notes: String?
   +status: String
+  ...
 }
 
 class facility_donation_schedules {
   +schedule_id: Int
   +facility_id: Int
   +date: DateTime
+  ...
 }
 
 DonorController --> DonorService : Association
@@ -2993,6 +3143,7 @@ DonorController ..> PaginationDto : Dependency
 DonorController ..> UpdateSlotStatusDto : Dependency
 DonorService --> PrismaService : Association
 DonorService --> NotificationsService : Association
+NotificationsService --> PrismaService : Association
 DonorService ..> PaginationDto : Dependency
 DonorService ..> UpdateSlotStatusDto : Dependency
 DonorService ..> ExcelUtil : Dependency
@@ -3005,6 +3156,7 @@ PrismaService *-- facility_donation_schedules : Composition
 PrismaService *-- notifications : Composition
 users "1" o-- "0..*" donor_availability_slots : Aggregation
 facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+users "1" o-- "0..*" notifications : Aggregation
 @enduml
 ```
 
@@ -3023,7 +3175,9 @@ hide empty members
 
 class DonorController {
   -donorService: DonorService
+  ...
   +recordDonation(req: any, dto: RecordDonationDto): Promise<any>
+  ...
 }
 
 class RecordDonationDto {
@@ -3040,7 +3194,9 @@ class RecordDonationDto {
 
 class DonorService {
   -prisma: PrismaService
+  ...
   +recordDonation(user: any, dto: RecordDonationDto): Promise<any>
+  ...
 }
 
 interface OnModuleInit {
@@ -3065,14 +3221,49 @@ class PrismaService {
   +inventory_transactions: PrismaInventoryTransactionDelegate
   +donor_profiles: PrismaDonorProfileDelegate
   +blood_requests: PrismaBloodRequestDelegate
+  +blood_request_statuses: PrismaBloodRequestStatusDelegate
+  +blood_request_inventory_allocations: PrismaInventoryAllocationDelegate
+  +donation_interval_rules: PrismaDonationIntervalRuleDelegate
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
 }
 
+class blood_requests {
+  +request_id: Int
+  +request_code: String
+  +blood_type_id: Int
+  +component_id: Int
+  +status_id: Int
+  ...
+}
+
+class blood_request_statuses {
+  +status_id: Int
+  +status_code: String
+  +status_name: String
+  ...
+}
+
+class blood_request_inventory_allocations {
+  +allocation_id: Int
+  +request_id: Int
+  +inventory_id: Int
+  +units_allocated: Int
+  ...
+}
+
+class donation_interval_rules {
+  +rule_id: Int
+  +component_id: Int
+  +min_interval_days: Int
+  ...
+}
+
 class users {
   +user_id: Int
   +full_name: String
+  ...
 }
 
 class donor_profiles {
@@ -3081,6 +3272,7 @@ class donor_profiles {
   +total_donations: Int
   +last_donation_date: DateTime?
   +next_eligible_date: DateTime?
+  ...
 }
 
 class donations {
@@ -3095,6 +3287,7 @@ class donations {
   +health_check_passed: Boolean
   +result_notes: String?
   +status_code: String
+  ...
 }
 
 class blood_inventory {
@@ -3108,6 +3301,7 @@ class blood_inventory {
   +expiry_date: DateTime
   +status_code: String
   +source_donation_id: Int?
+  ...
 }
 
 class inventory_transactions {
@@ -3117,6 +3311,7 @@ class inventory_transactions {
   +reference_type: String?
   +reference_id: Int?
   +performed_by: Int?
+  ...
 }
 
 DonorController --> DonorService : Association
@@ -3135,6 +3330,13 @@ users "1" o-- "0..*" donations : Aggregation
 donations "0..1" o-- "0..*" blood_inventory : Aggregation
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
 users "1" o-- "0..1" donor_profiles : Aggregation
+PrismaService *-- blood_requests : Composition
+PrismaService *-- blood_request_statuses : Composition
+PrismaService *-- blood_request_inventory_allocations : Composition
+PrismaService *-- donation_interval_rules : Composition
+blood_request_statuses "1" o-- "0..*" blood_requests : Aggregation
+blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
+blood_inventory "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 @enduml
 ```
 
@@ -3296,6 +3498,7 @@ class blood_requests {
   +needs_donor_match: Boolean
   +assigned_staff_id: Int?
   +created_at: DateTime
+  ...
 }
 
 class blood_request_status_history {
@@ -3306,6 +3509,7 @@ class blood_request_status_history {
   +changed_by: Int?
   +change_reason: String?
   +created_at: DateTime
+  ...
 }
 
 class blood_request_donor_matches {
@@ -3316,6 +3520,7 @@ class blood_request_donor_matches {
   +match_status: String
   +contacted_at: DateTime?
   +responded_at: DateTime?
+  ...
 }
 
 class blood_request_inventory_allocations {
@@ -3326,6 +3531,7 @@ class blood_request_inventory_allocations {
   +is_active: Boolean
   +allocated_at: DateTime
   +released_at: DateTime?
+  ...
 }
 
 class blood_inventory {
@@ -3336,6 +3542,7 @@ class blood_inventory {
   +bag_code: String
   +volume_ml: Int
   +status_code: String
+  ...
 }
 
 class inventory_transactions {
@@ -3345,6 +3552,7 @@ class inventory_transactions {
   +reference_type: String?
   +reference_id: Int?
   +performed_by: Int?
+  ...
 }
 
 class medical_facilities {
@@ -3353,6 +3561,7 @@ class medical_facilities {
   +facility_name: String
   +phone: String?
   +address: String
+  ...
 }
 
 class blood_types {
@@ -3360,24 +3569,28 @@ class blood_types {
   +blood_type_code: String
   +abo: String
   +rh_factor: String
+  ...
 }
 
 class blood_components {
   +component_id: Int
   +component_code: String
   +component_name: String
+  ...
 }
 
 class urgency_levels {
   +urgency_id: Int
   +urgency_code: String
   +urgency_name: String
+  ...
 }
 
 class blood_request_statuses {
   +status_id: Int
   +status_code: String
   +status_name: String
+  ...
 }
 
 class users {
@@ -3386,6 +3599,7 @@ class users {
   +email: String
   +phone: String?
   +is_available_for_donation: Boolean
+  ...
 }
 
 class notifications {
@@ -3394,6 +3608,7 @@ class notifications {
   +title: String
   +message: String
   +notification_type: String
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -3435,7 +3650,7 @@ users "1" o-- "0..*" blood_request_donor_matches : Aggregation
 blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
-blood_requests "1" o-- "0..*" notifications : Aggregation
+users "1" o-- "0..*" notifications : Aggregation
 @enduml
 ```
 
@@ -3454,8 +3669,10 @@ hide empty members
 
 class RequestController {
   -requestService: RequestService
+  ...
   +createRequest(req: any, dto: CreateRequestDto): Promise<any>
   +createPublicRequest(req: any, dto: CreateRequestDto): Promise<any>
+  ...
 }
 
 class CreateRequestDto {
@@ -3486,8 +3703,10 @@ enum NotificationType {
 class RequestService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
+  ...
   +createRequest(dto: CreateRequestDto, user: any): Promise<any>
   +createPublicRequest(dto: CreateRequestDto, userId?: number): Promise<any>
+  ...
 }
 
 class NotificationsService {
@@ -3539,6 +3758,7 @@ class blood_requests {
   +status_id: Int
   +is_emergency: Boolean
   +clinical_notes: String?
+  ...
 }
 
 class blood_request_status_history {
@@ -3547,37 +3767,44 @@ class blood_request_status_history {
   +to_status_id: Int
   +changed_by: Int?
   +change_reason: String?
+  ...
 }
 
 class users {
   +user_id: Int
   +full_name: String
   +email: String
+  ...
 }
 
 class medical_facilities {
   +facility_id: Int
   +facility_name: String
+  ...
 }
 
 class blood_types {
   +blood_type_id: Int
   +blood_type_code: String
+  ...
 }
 
 class blood_components {
   +component_id: Int
   +component_name: String
+  ...
 }
 
 class urgency_levels {
   +urgency_id: Int
   +urgency_name: String
+  ...
 }
 
 class blood_request_statuses {
   +status_id: Int
   +status_code: String
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -3623,18 +3850,22 @@ hide empty members
 
 class RequestController {
   -requestService: RequestService
+  ...
   +getPublicRequests(query: any): Promise<any>
   +getPublicRequestByCode(code: string): Promise<any>
   +getMyRequests(req: any, query: any): Promise<any>
   +getMyRequestDetail(req: any, id: number): Promise<any>
   +getRequests(query: any, req: any): Promise<any>
+  ...
 }
 
 class RequestService {
   -prisma: PrismaService
+  ...
   +getRequests(query: any, user?: any): Promise<any>
   +getRequestByCode(code: string): Promise<any>
   +getRequestById(requestId: number, userId: number): Promise<any>
+  ...
 }
 
 interface OnModuleInit {
@@ -3678,31 +3909,37 @@ class blood_requests {
   +urgency_id: Int
   +status_id: Int
   +is_emergency: Boolean
+  ...
 }
 
 class medical_facilities {
   +facility_id: Int
   +facility_name: String
+  ...
 }
 
 class blood_types {
   +blood_type_id: Int
   +blood_type_code: String
+  ...
 }
 
 class blood_components {
   +component_id: Int
   +component_name: String
+  ...
 }
 
 class urgency_levels {
   +urgency_id: Int
   +urgency_name: String
+  ...
 }
 
 class blood_request_statuses {
   +status_id: Int
   +status_name: String
+  ...
 }
 
 class blood_request_status_history {
@@ -3712,6 +3949,7 @@ class blood_request_status_history {
   +to_status_id: Int
   +changed_by: Int?
   +change_reason: String?
+  ...
 }
 
 class donor_availability_slots {
@@ -3719,6 +3957,7 @@ class donor_availability_slots {
   +user_id: Int
   +notes: String?
   +status: String
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -3758,9 +3997,11 @@ hide empty members
 
 class RequestController {
   -requestService: RequestService
+  ...
   +updateRequest(req: any, id: number, dto: Partial<CreateRequestDto>): Promise<any>
   +deleteRequest(req: any, id: number): Promise<any>
   +cancelRequest(req: any, id: number): Promise<any>
+  ...
 }
 
 class CreateRequestDto {
@@ -3776,9 +4017,11 @@ class CreateRequestDto {
 
 class RequestService {
   -prisma: PrismaService
+  ...
   +updateRequest(requestId: number, dto: Partial<CreateRequestDto>, user: any): Promise<any>
   +deleteRequest(requestId: number, user: any): Promise<any>
   +cancelRequest(requestId: number, user: any): Promise<any>
+  ...
 }
 
 interface OnModuleInit {
@@ -3811,6 +4054,7 @@ class blood_requests {
   +patient_name: String
   +units_needed: Int
   +status_id: Int
+  ...
 }
 
 class blood_request_status_history {
@@ -3820,11 +4064,13 @@ class blood_request_status_history {
   +to_status_id: Int
   +changed_by: Int?
   +change_reason: String?
+  ...
 }
 
 class blood_request_statuses {
   +status_id: Int
   +status_code: String
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -3857,7 +4103,9 @@ hide empty members
 
 class RequestController {
   -requestService: RequestService
+  ...
   +processRequest(req: any, id: number): Promise<any>
+  ...
 }
 
 class EventEmitter2 {
@@ -3882,8 +4130,10 @@ class RequestService {
   -prisma: PrismaService
   -eventEmitter: EventEmitter2
   -notificationsService: NotificationsService
+  ...
   +processRequest(requestId: number, user: any): Promise<any>
   +handleMatchDonorsEvent(payload: any): Promise<void>
+  ...
 }
 
 class NotificationsService {
@@ -3908,6 +4158,7 @@ class PrismaClient {
 }
 
 class PrismaService {
+  +users: PrismaUserDelegate
   +blood_requests: PrismaBloodRequestDelegate
   +blood_inventory: PrismaBloodInventoryDelegate
   +blood_request_inventory_allocations: PrismaAllocationDelegate
@@ -3917,6 +4168,13 @@ class PrismaService {
   ...
   +onModuleInit(): Promise<void>
   +onModuleDestroy(): Promise<void>
+}
+
+class users {
+  +user_id: Int
+  +full_name: String
+  +email: String
+  ...
 }
 
 class blood_requests {
@@ -3930,6 +4188,7 @@ class blood_requests {
   +fulfilled_from_stock: Boolean
   +needs_donor_match: Boolean
   +assigned_staff_id: Int?
+  ...
 }
 
 class blood_inventory {
@@ -3938,6 +4197,7 @@ class blood_inventory {
   +blood_type_id: Int
   +component_id: Int
   +status_code: String
+  ...
 }
 
 class blood_request_inventory_allocations {
@@ -3945,6 +4205,7 @@ class blood_request_inventory_allocations {
   +request_id: Int
   +inventory_id: Int
   +allocated_by: Int?
+  ...
 }
 
 class inventory_transactions {
@@ -3954,6 +4215,7 @@ class inventory_transactions {
   +reference_type: String?
   +reference_id: Int?
   +performed_by: Int?
+  ...
 }
 
 class blood_request_status_history {
@@ -3963,6 +4225,7 @@ class blood_request_status_history {
   +to_status_id: Int
   +changed_by: Int?
   +change_reason: String?
+  ...
 }
 
 class notifications {
@@ -3971,6 +4234,7 @@ class notifications {
   +title: String
   +message: String
   +notification_type: String
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -3983,6 +4247,7 @@ CreateNotificationDto ..> NotificationType : Dependency
 PrismaService --|> PrismaClient : Inheritance
 PrismaService ..|> OnModuleInit : Implements
 PrismaService ..|> OnModuleDestroy : Implements
+PrismaService *-- users : Composition
 PrismaService *-- blood_requests : Composition
 PrismaService *-- blood_inventory : Composition
 PrismaService *-- blood_request_inventory_allocations : Composition
@@ -3993,7 +4258,7 @@ blood_requests "1" o-- "0..*" blood_request_status_history : Aggregation
 blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
-blood_requests "1" o-- "0..*" notifications : Aggregation
+users "1" o-- "0..*" notifications : Aggregation
 @enduml
 ```
 
@@ -4012,9 +4277,11 @@ hide empty members
 
 class RequestController {
   -requestService: RequestService
+  ...
   +getAllocations(req: any, id: number): Promise<any>
   +allocateInventory(req: any, id: number, dto: AllocateInventoryDto): Promise<any>
   +releaseAllocation(req: any, allocationId: number): Promise<any>
+  ...
 }
 
 class AllocateInventoryDto {
@@ -4023,9 +4290,11 @@ class AllocateInventoryDto {
 
 class RequestService {
   -prisma: PrismaService
+  ...
   +getAllocations(requestId: number, user?: any): Promise<any>
   +allocateInventory(requestId: number, inventoryIds: number[], user: any): Promise<any>
   +releaseAllocation(allocationId: number, user: any): Promise<any>
+  ...
 }
 
 interface OnModuleInit {
@@ -4061,12 +4330,14 @@ class blood_requests {
   +units_fulfilled: Int
   +status_id: Int
   +completed_at: DateTime?
+  ...
 }
 
 class blood_inventory {
   +inventory_id: Int
   +bag_code: String
   +status_code: String
+  ...
 }
 
 class blood_request_inventory_allocations {
@@ -4077,6 +4348,7 @@ class blood_request_inventory_allocations {
   +is_active: Boolean
   +allocated_at: DateTime
   +released_at: DateTime?
+  ...
 }
 
 class inventory_transactions {
@@ -4086,6 +4358,7 @@ class inventory_transactions {
   +reference_type: String?
   +reference_id: Int?
   +performed_by: Int?
+  ...
 }
 
 class blood_request_status_history {
@@ -4095,6 +4368,7 @@ class blood_request_status_history {
   +to_status_id: Int
   +changed_by: Int?
   +change_reason: String?
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -4131,9 +4405,11 @@ hide empty members
 
 class RequestController {
   -requestService: RequestService
+  ...
   +getMatches(req: any, id: number): Promise<any>
   +findDonorMatches(req: any, id: number): Promise<any>
   +updateMatchStatus(req: any, matchId: number, dto: UpdateMatchStatusDto): Promise<any>
+  ...
 }
 
 class UpdateMatchStatusDto {
@@ -4142,9 +4418,11 @@ class UpdateMatchStatusDto {
 
 class RequestService {
   -prisma: PrismaService
+  ...
   +getMatches(requestId: number, user?: any): Promise<any>
   +findDonorMatches(requestId: number, user?: any): Promise<any>
   +updateMatchStatus(matchId: number, status: string, user?: any): Promise<any>
+  ...
 }
 
 interface OnModuleInit {
@@ -4175,6 +4453,7 @@ class blood_requests {
   +request_code: String
   +blood_type_id: Int
   +facility_id: Int
+  ...
 }
 
 class blood_request_donor_matches {
@@ -4185,6 +4464,7 @@ class blood_request_donor_matches {
   +match_status: String
   +contacted_at: DateTime?
   +responded_at: DateTime?
+  ...
 }
 
 class users {
@@ -4194,6 +4474,7 @@ class users {
   +phone: String?
   +blood_type_id: Int?
   +is_available_for_donation: Boolean
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -4226,16 +4507,20 @@ hide empty members
 
 class RequestController {
   -requestService: RequestService
+  ...
   +exportExcel(query: any, res: Response, req: any): Promise<void>
   +downloadTemplate(res: Response): Promise<void>
   +importExcel(file: Express.Multer.File, req: any): Promise<any>
+  ...
 }
 
 class RequestService {
   -prisma: PrismaService
+  ...
   +exportExcel(query: any, user?: any): Promise<Buffer>
   +getTemplate(): Promise<Buffer>
   +importExcel(buffer: Buffer, user: any): Promise<any>
+  ...
 }
 
 class ExcelUtil <<utility>> {
@@ -4281,6 +4566,7 @@ class blood_requests {
   +status_id: Int
   +is_emergency: Boolean
   +clinical_notes: String?
+  ...
 }
 
 class blood_request_status_history {
@@ -4289,17 +4575,20 @@ class blood_request_status_history {
   +to_status_id: Int
   +changed_by: Int?
   +change_reason: String?
+  ...
 }
 
 class blood_request_statuses {
   +status_id: Int
   +status_code: String
   +status_name: String
+  ...
 }
 
 class urgency_levels {
   +urgency_id: Int
   +urgency_code: String
+  ...
 }
 
 RequestController --> RequestService : Association
@@ -4413,6 +4702,7 @@ class blood_inventory {
   +status_code: String
   +source_donation_id: Int?
   +notes: String?
+  ...
 }
 
 class inventory_transactions {
@@ -4425,6 +4715,7 @@ class inventory_transactions {
   +performed_by: Int?
   +notes: String?
   +created_at: DateTime
+  ...
 }
 
 class medical_facilities {
@@ -4433,6 +4724,7 @@ class medical_facilities {
   +facility_name: String
   +phone: String?
   +address: String
+  ...
 }
 
 class blood_types {
@@ -4440,23 +4732,27 @@ class blood_types {
   +blood_type_code: String
   +abo: String
   +rh_factor: String
+  ...
 }
 
 class blood_components {
   +component_id: Int
   +component_code: String
   +component_name: String
+  ...
 }
 
 class users {
   +user_id: Int
   +full_name: String
   +email: String
+  ...
 }
 
 class donations {
   +donation_id: Int
   +donation_code: String
+  ...
 }
 
 InventoryController --> InventoryService : Association
@@ -4499,14 +4795,18 @@ hide empty members
 
 class InventoryController {
   -inventoryService: InventoryService
+  ...
   +getInventoryList(query: any, req: any): Promise<any>
   +getStats(req: any): Promise<any>
+  ...
 }
 
 class InventoryService {
   -prisma: PrismaService
+  ...
   +getInventoryList(query: any, user: any): Promise<any>
   +getInventoryStats(user: any): Promise<any>
+  ...
 }
 
 interface OnModuleInit {
@@ -4543,21 +4843,25 @@ class blood_inventory {
   +collection_date: DateTime
   +expiry_date: DateTime
   +status_code: String
+  ...
 }
 
 class medical_facilities {
   +facility_id: Int
   +facility_name: String
+  ...
 }
 
 class blood_types {
   +blood_type_id: Int
   +blood_type_code: String
+  ...
 }
 
 class blood_components {
   +component_id: Int
   +component_name: String
+  ...
 }
 
 InventoryController --> InventoryService : Association
@@ -4590,7 +4894,9 @@ hide empty members
 
 class InventoryController {
   -inventoryService: InventoryService
+  ...
   +receiveBlood(req: any, dto: ReceiveBloodDto): Promise<any>
+  ...
 }
 
 class ReceiveBloodDto {
@@ -4607,7 +4913,9 @@ class ReceiveBloodDto {
 
 class InventoryService {
   -prisma: PrismaService
+  ...
   +receiveBlood(dto: any, user: any): Promise<any>
+  ...
 }
 
 interface OnModuleInit {
@@ -4644,6 +4952,7 @@ class blood_inventory {
   +expiry_date: DateTime
   +status_code: String
   +source_donation_id: Int?
+  ...
 }
 
 class inventory_transactions {
@@ -4654,6 +4963,7 @@ class inventory_transactions {
   +reference_type: String?
   +reference_id: Int?
   +performed_by: Int?
+  ...
 }
 
 InventoryController --> InventoryService : Association
@@ -4684,7 +4994,9 @@ hide empty members
 
 class InventoryController {
   -inventoryService: InventoryService
+  ...
   +updateBlood(req: any, inventoryId: number, dto: UpdateBloodDto): Promise<any>
+  ...
 }
 
 class UpdateBloodDto {
@@ -4700,7 +5012,9 @@ class UpdateBloodDto {
 
 class InventoryService {
   -prisma: PrismaService
+  ...
   +updateBlood(inventoryId: number, dto: any, user: any): Promise<any>
+  ...
 }
 
 interface OnModuleInit {
@@ -4732,6 +5046,7 @@ class blood_inventory {
   +expiry_date: DateTime
   +status_code: String
   +notes: String?
+  ...
 }
 
 InventoryController --> InventoryService : Association
@@ -4760,7 +5075,9 @@ hide empty members
 
 class InventoryController {
   -inventoryService: InventoryService
+  ...
   +discardBlood(req: any, inventoryId: number, dto: DiscardBloodDto): Promise<any>
+  ...
 }
 
 class DiscardBloodDto {
@@ -4769,7 +5086,9 @@ class DiscardBloodDto {
 
 class InventoryService {
   -prisma: PrismaService
+  ...
   +discardBlood(inventoryId: number, user: any, reason: string): Promise<any>
+  ...
 }
 
 interface OnModuleInit {
@@ -4799,6 +5118,7 @@ class blood_inventory {
   +inventory_id: Int
   +bag_code: String
   +status_code: String
+  ...
 }
 
 class inventory_transactions {
@@ -4809,6 +5129,7 @@ class inventory_transactions {
   +reference_type: String?
   +performed_by: Int?
   +notes: String?
+  ...
 }
 
 InventoryController --> InventoryService : Association
@@ -4839,16 +5160,20 @@ hide empty members
 
 class InventoryController {
   -inventoryService: InventoryService
+  ...
   +exportExcel(query: any, res: Response, req: any): Promise<void>
   +downloadTemplate(res: Response): Promise<void>
   +importExcel(file: Express.Multer.File, req: any): Promise<any>
+  ...
 }
 
 class InventoryService {
   -prisma: PrismaService
+  ...
   +exportExcel(query: any, user: any): Promise<Buffer>
   +getTemplate(): Promise<Buffer>
   +importExcel(buffer: Buffer, staffId: number): Promise<any>
+  ...
 }
 
 class ExcelUtil <<utility>> {
@@ -4890,6 +5215,7 @@ class blood_inventory {
   +collection_date: DateTime
   +expiry_date: DateTime
   +status_code: String
+  ...
 }
 
 class inventory_transactions {
@@ -4898,11 +5224,13 @@ class inventory_transactions {
   +transaction_type: String
   +quantity: Int
   +performed_by: Int?
+  ...
 }
 
 class users {
   +user_id: Int
   +full_name: String
+  ...
 }
 
 InventoryController --> InventoryService : Association
@@ -5030,6 +5358,7 @@ class facility_donation_schedules {
   +current_donors: Int
   +status: String
   +terms_html: String?
+  ...
 }
 
 class donor_availability_slots {
@@ -5038,6 +5367,7 @@ class donor_availability_slots {
   +schedule_id: Int?
   +status: String
   +created_at: DateTime
+  ...
 }
 
 class medical_facilities {
@@ -5046,6 +5376,7 @@ class medical_facilities {
   +facility_name: String
   +phone: String?
   +address: String
+  ...
 }
 
 class users {
@@ -5055,6 +5386,7 @@ class users {
   +phone: String?
   +gender: String?
   +blood_type_id: Int?
+  ...
 }
 
 class notifications {
@@ -5063,6 +5395,7 @@ class notifications {
   +title: String
   +message: String
   +notification_type: String
+  ...
 }
 
 SchedulesController --> SchedulesService : Association
@@ -5106,11 +5439,13 @@ hide empty members
 
 class SchedulesController {
   -schedulesService: SchedulesService
+  ...
   +getAllSchedules(query: ScheduleFilterDto, user: any): Promise<any>
   +getScheduleById(id: number, user: any): Promise<any>
   +createSchedule(dto: CreateScheduleDto, user: any): Promise<any>
   +updateSchedule(id: number, dto: UpdateScheduleDto, user: any): Promise<any>
   +deleteSchedule(id: number, user: any): Promise<any>
+  ...
 }
 
 class CreateScheduleDto {
@@ -5143,6 +5478,7 @@ class ScheduleFilterDto {
 
 class SchedulesService {
   -prisma: PrismaService
+  ...
   +onModuleInit(): Promise<void>
   +handleCronClosePastSchedules(): Promise<void>
   +getAllSchedules(query: ScheduleFilterDto, user: any): Promise<any>
@@ -5150,6 +5486,7 @@ class SchedulesService {
   +createSchedule(dto: CreateScheduleDto, user: any): Promise<any>
   +updateSchedule(id: number, dto: UpdateScheduleDto, user: any): Promise<any>
   +deleteSchedule(id: number, user: any): Promise<any>
+  ...
 }
 
 interface OnModuleInit {
@@ -5185,18 +5522,21 @@ class facility_donation_schedules {
   +current_donors: Int
   +status: String
   +terms_html: String?
+  ...
 }
 
 class medical_facilities {
   +facility_id: Int
   +facility_name: String
   +address: String
+  ...
 }
 
 class donor_availability_slots {
   +slot_id: Int
   +schedule_id: Int?
   +status: String
+  ...
 }
 
 SchedulesController --> SchedulesService : Association
@@ -5234,9 +5574,11 @@ hide empty members
 
 class SchedulesController {
   -schedulesService: SchedulesService
+  ...
   +getScheduleDonors(id: number, query: any, user: any): Promise<any>
   +updateDonorStatus(id: number, slotId: number, status: string, user: any): Promise<any>
   +exportScheduleDonors(id: number, res: Response, user: any): Promise<any>
+  ...
 }
 
 class CreateNotificationDto {
@@ -5255,9 +5597,11 @@ enum NotificationType {
 class SchedulesService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
+  ...
   +getScheduleDonors(scheduleId: number, query: any, user: any): Promise<any>
   +updateDonorStatus(scheduleId: number, slotId: number, status: string, user: any): Promise<any>
   +exportScheduleDonors(scheduleId: number, user: any): Promise<object>
+  ...
 }
 
 class NotificationsService {
@@ -5299,6 +5643,7 @@ class facility_donation_schedules {
   +schedule_id: Int
   +facility_id: Int
   +date: DateTime
+  ...
 }
 
 class donor_availability_slots {
@@ -5307,6 +5652,7 @@ class donor_availability_slots {
   +schedule_id: Int?
   +status: String
   +created_at: DateTime
+  ...
 }
 
 class users {
@@ -5316,11 +5662,13 @@ class users {
   +phone: String?
   +gender: String?
   +blood_type_id: Int?
+  ...
 }
 
 class blood_types {
   +blood_type_id: Int
   +blood_type_code: String
+  ...
 }
 
 class notifications {
@@ -5328,6 +5676,7 @@ class notifications {
   +user_id: Int
   +title: String
   +message: String
+  ...
 }
 
 SchedulesController --> SchedulesService : Association
@@ -5347,7 +5696,7 @@ PrismaService *-- blood_types : Composition
 PrismaService *-- notifications : Composition
 facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" donor_availability_slots : Aggregation
-blood_types "1" o-- "0..*" users : Aggregation
+blood_types "0..1" o-- "0..*" users : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 @enduml
 ```
@@ -5431,6 +5780,112 @@ class MasterDataService {
   +deleteDonationIntervalRule(id: number): Promise<any>
 }
 
+class MasterDataFilterDto {
+  +page: number?
+  +limit: number?
+  +search: string?
+  +status: string?
+  +sortBy: string?
+  +sortOrder: string?
+  +is_active: boolean?
+}
+
+class CreateFacilityDto {
+  +facility_code: string?
+  +facility_name: string
+  +short_name: string?
+  +address: string
+  +province_id: number?
+  +ward_id: number?
+  +phone: string?
+  +email: string?
+  +website: string?
+  +latitude: number?
+  +longitude: number?
+  +logo_url: string?
+  +is_primary: boolean?
+}
+
+class UpdateFacilityDto {
+  +facility_code: string?
+  +facility_name: string?
+  +short_name: string?
+  +address: string?
+  +province_id: number?
+  +ward_id: number?
+  +phone: string?
+  +email: string?
+  +website: string?
+  +latitude: number?
+  +longitude: number?
+  +logo_url: string?
+  +is_primary: boolean?
+  +is_active: boolean?
+}
+
+class CreateBloodTypeDto {
+  +blood_group: string
+  +rh_factor: string
+  +display_order: number?
+}
+
+class UpdateBloodTypeDto {
+  +blood_group: string?
+  +rh_factor: string?
+  +display_order: number?
+  +is_active: boolean?
+}
+
+class CreateBloodComponentDto {
+  +component_code: string
+  +component_name: string
+  +description: string?
+}
+
+class UpdateBloodComponentDto {
+  +component_code: string?
+  +component_name: string?
+  +description: string?
+  +is_active: boolean?
+}
+
+class CreateBloodCompatibilityDto {
+  +component_id: number
+  +donor_blood_type_id: number
+  +recipient_blood_type_id: number
+  +is_compatible: boolean?
+  +notes: string?
+}
+
+class UpdateBloodCompatibilityDto {
+  +component_id: number
+  +donor_blood_type_id: number
+  +recipient_blood_type_id: number
+  +is_compatible: boolean?
+  +notes: string?
+}
+
+class CreateDonationIntervalRuleDto {
+  +component_id: number
+  +min_interval_days: number
+  +max_donations_per_year: number?
+  +description: string?
+}
+
+class UpdateDonationIntervalRuleDto {
+  +component_id: number?
+  +min_interval_days: number?
+  +max_donations_per_year: number?
+  +description: string?
+  +is_active: boolean?
+}
+
+class ExcelUtil <<utility>> {
+  +generateExcel(data: any[], sheetName: string): Buffer
+  +generateTemplate(headers: string[], sheetName: string): Buffer
+  +parseExcel(buffer: Buffer): any[]
+}
+
 interface OnModuleInit {
   +onModuleInit(): Promise<void>
 }
@@ -5478,18 +5933,21 @@ class medical_facilities {
   +is_active: Boolean
   +created_at: DateTime
   +updated_at: DateTime?
+  ...
 }
 
 class provinces {
   +province_id: Int
   +province_code: String?
   +province_name: String
+  ...
 }
 
 class wards {
   +ward_id: Int
   +province_id: Int
   +ward_name: String
+  ...
 }
 
 class blood_types {
@@ -5499,6 +5957,7 @@ class blood_types {
   +rh_factor: String
   +display_order: Int
   +is_active: Boolean
+  ...
 }
 
 class blood_components {
@@ -5507,6 +5966,7 @@ class blood_components {
   +component_name: String
   +description: String?
   +is_active: Boolean
+  ...
 }
 
 class blood_compatibility {
@@ -5516,6 +5976,7 @@ class blood_compatibility {
   +recipient_blood_type_id: Int
   +is_compatible: Boolean
   +notes: String?
+  ...
 }
 
 class donation_interval_rules {
@@ -5525,6 +5986,7 @@ class donation_interval_rules {
   +max_donations_per_year: Int?
   +description: String?
   +is_active: Boolean
+  ...
 }
 
 class urgency_levels {
@@ -5532,6 +5994,7 @@ class urgency_levels {
   +urgency_code: String
   +urgency_name: String
   +priority_level: Int
+  ...
 }
 
 class roles {
@@ -5541,9 +6004,33 @@ class roles {
   +description: String?
   +is_active: Boolean
   +created_at: DateTime
+  ...
 }
 
 MasterDataController --> MasterDataService : Association
+MasterDataController ..> MasterDataFilterDto : Dependency
+MasterDataController ..> CreateFacilityDto : Dependency
+MasterDataController ..> UpdateFacilityDto : Dependency
+MasterDataController ..> CreateBloodTypeDto : Dependency
+MasterDataController ..> UpdateBloodTypeDto : Dependency
+MasterDataController ..> CreateBloodComponentDto : Dependency
+MasterDataController ..> UpdateBloodComponentDto : Dependency
+MasterDataController ..> CreateBloodCompatibilityDto : Dependency
+MasterDataController ..> UpdateBloodCompatibilityDto : Dependency
+MasterDataController ..> CreateDonationIntervalRuleDto : Dependency
+MasterDataController ..> UpdateDonationIntervalRuleDto : Dependency
+MasterDataService ..> MasterDataFilterDto : Dependency
+MasterDataService ..> CreateFacilityDto : Dependency
+MasterDataService ..> UpdateFacilityDto : Dependency
+MasterDataService ..> CreateBloodTypeDto : Dependency
+MasterDataService ..> UpdateBloodTypeDto : Dependency
+MasterDataService ..> CreateBloodComponentDto : Dependency
+MasterDataService ..> UpdateBloodComponentDto : Dependency
+MasterDataService ..> CreateBloodCompatibilityDto : Dependency
+MasterDataService ..> UpdateBloodCompatibilityDto : Dependency
+MasterDataService ..> CreateDonationIntervalRuleDto : Dependency
+MasterDataService ..> UpdateDonationIntervalRuleDto : Dependency
+MasterDataService ..> ExcelUtil : Dependency
 MasterDataService --> PrismaService : Association
 PrismaService --|> PrismaClient : Inheritance
 PrismaService ..|> OnModuleInit : Implements
@@ -5697,18 +6184,21 @@ class medical_facilities {
   +is_active: Boolean
   +created_at: DateTime
   +updated_at: DateTime?
+  ...
 }
 
 class provinces {
   +province_id: Int
   +province_code: String?
   +province_name: String
+  ...
 }
 
 class wards {
   +ward_id: Int
   +province_id: Int
   +ward_name: String
+  ...
 }
 
 MasterDataController --> MasterDataService : Association
@@ -5837,6 +6327,7 @@ class blood_types {
   +rh_factor: String
   +display_order: Int
   +is_active: Boolean
+  ...
 }
 
 class blood_components {
@@ -5845,6 +6336,7 @@ class blood_components {
   +component_name: String
   +description: String?
   +is_active: Boolean
+  ...
 }
 
 MasterDataController --> MasterDataService : Association
@@ -5952,6 +6444,7 @@ class blood_types {
   +rh_factor: String
   +display_order: Int
   +is_active: Boolean
+  ...
 }
 
 class blood_components {
@@ -5960,6 +6453,7 @@ class blood_components {
   +component_name: String
   +description: String?
   +is_active: Boolean
+  ...
 }
 
 class blood_compatibility {
@@ -5969,6 +6463,7 @@ class blood_compatibility {
   +recipient_blood_type_id: Int
   +is_compatible: Boolean
   +notes: String?
+  ...
 }
 
 MasterDataController --> MasterDataService : Association
@@ -6072,6 +6567,7 @@ class blood_components {
   +component_name: String
   +description: String?
   +is_active: Boolean
+  ...
 }
 
 class donation_interval_rules {
@@ -6081,6 +6577,7 @@ class donation_interval_rules {
   +max_donations_per_year: Int?
   +description: String?
   +is_active: Boolean
+  ...
 }
 
 MasterDataController --> MasterDataService : Association
@@ -6161,12 +6658,14 @@ class provinces {
   +province_id: Int
   +province_code: String?
   +province_name: String
+  ...
 }
 
 class wards {
   +ward_id: Int
   +province_id: Int
   +ward_name: String
+  ...
 }
 
 class roles {
@@ -6176,6 +6675,7 @@ class roles {
   +description: String?
   +is_active: Boolean
   +created_at: DateTime
+  ...
 }
 
 class urgency_levels {
@@ -6183,6 +6683,7 @@ class urgency_levels {
   +urgency_code: String
   +urgency_name: String
   +priority_level: Int
+  ...
 }
 
 MasterDataController --> MasterDataService : Association
@@ -6326,9 +6827,6 @@ class blog_categories {
   +blog_category_id: Int
   +category_name: String
   +slug: String
-  +created_at: DateTime
-  +updated_at: DateTime?
-  ...
 }
 
 class blog_posts {
@@ -6563,7 +7061,6 @@ class PrismaClient {
 class PrismaService {
   +blog_categories: PrismaBlogCategoryDelegate
   +blog_posts: PrismaBlogPostDelegate
-  +blog_comments: PrismaBlogCommentDelegate
   +users: PrismaUserDelegate
   ...
   +onModuleInit(): Promise<void>
@@ -6948,6 +7445,7 @@ class education_documents {
   +created_by: Int?
   +created_at: DateTime
   +updated_at: DateTime?
+  ...
 }
 
 class blood_types {
@@ -6957,6 +7455,7 @@ class blood_types {
   +rh_factor: String
   +display_order: Int
   +is_active: Boolean
+  ...
 }
 
 class users {
@@ -6964,7 +7463,8 @@ class users {
   +full_name: String
   +avatar_url: String?
   +email: String
-  +status: String
+  +is_active: Boolean
+  ...
 }
 
 EducationController --> EducationService : Association
@@ -7197,12 +7697,14 @@ class education_documents {
   +created_by: Int?
   +created_at: DateTime
   +updated_at: DateTime?
+  ...
 }
 
 class education_document_categories {
   +category_id: Int
   +category_name: String
   +sort_order: Int
+  ...
 }
 
 class blood_types {
@@ -7210,12 +7712,14 @@ class blood_types {
   +blood_type_code: String
   +abo: String
   +rh_factor: String
+  ...
 }
 
 class users {
   +user_id: Int
   +full_name: String
   +avatar_url: String?
+  ...
 }
 
 EducationController --> EducationService : Association
@@ -7302,6 +7806,7 @@ class donations {
   +donation_date: DateTime
   +status_code: String
   +created_at: DateTime
+  ...
 }
 
 class blood_inventory {
@@ -7313,6 +7818,7 @@ class blood_inventory {
   +collection_date: DateTime
   +status_code: String
   +created_at: DateTime
+  ...
 }
 
 class users {
@@ -7322,6 +7828,7 @@ class users {
   +email: String
   +is_active: Boolean
   +created_at: DateTime
+  ...
 }
 
 class facility_donation_schedules {
@@ -7331,6 +7838,7 @@ class facility_donation_schedules {
   +status: String
   +max_donors: Int
   +current_donors: Int
+  ...
 }
 
 class blood_requests {
@@ -7340,12 +7848,14 @@ class blood_requests {
   +status_id: Int
   +is_emergency: Boolean
   +created_at: DateTime
+  ...
 }
 
 class blood_request_statuses {
   +status_id: Int
   +status_code: String
   +status_name: String
+  ...
 }
 
 class blood_types {
@@ -7353,6 +7863,7 @@ class blood_types {
   +blood_type_code: String
   +abo: String
   +rh_factor: String
+  ...
 }
 
 class medical_facilities {
@@ -7361,6 +7872,7 @@ class medical_facilities {
   +facility_name: String
   +is_primary: Boolean
   +is_active: Boolean
+  ...
 }
 
 DashboardController --> DashboardService : Association
@@ -7401,16 +7913,12 @@ hide empty members
 
 class DashboardController {
   -dashboardService: DashboardService
-  ...
   +getStats(startDate?: string, endDate?: string, facilityId?: string, user?: any): Promise<any>
-  ...
 }
 
 class DashboardService {
   -prisma: PrismaService
-  ...
   +getStats(startDateStr?: string, endDateStr?: string, facilityIdStr?: string, user?: any): Promise<any>
-  ...
 }
 
 interface OnModuleInit {
@@ -7449,6 +7957,7 @@ class donations {
   +donation_date: DateTime
   +status_code: String
   +created_at: DateTime
+  ...
 }
 
 class blood_inventory {
@@ -7458,12 +7967,14 @@ class blood_inventory {
   +volume_ml: Int
   +collection_date: DateTime
   +status_code: String
+  ...
 }
 
 class users {
   +user_id: Int
   +role_id: Int
   +created_at: DateTime
+  ...
 }
 
 class facility_donation_schedules {
@@ -7471,6 +7982,7 @@ class facility_donation_schedules {
   +facility_id: Int
   +date: DateTime
   +status: String
+  ...
 }
 
 class blood_requests {
@@ -7478,22 +7990,26 @@ class blood_requests {
   +facility_id: Int
   +status_id: Int
   +is_emergency: Boolean
+  ...
 }
 
 class blood_request_statuses {
   +status_id: Int
   +status_code: String
+  ...
 }
 
 class blood_types {
   +blood_type_id: Int
   +blood_type_code: String
+  ...
 }
 
 class medical_facilities {
   +facility_id: Int
   +facility_name: String
   +is_active: Boolean
+  ...
 }
 
 DashboardController --> DashboardService : Association
@@ -7605,6 +8121,7 @@ class notifications {
   +is_read: Boolean
   +created_at: DateTime
   +read_at: DateTime?
+  ...
 }
 
 class users {
@@ -7613,6 +8130,7 @@ class users {
   +full_name: String
   +email: String
   +is_active: Boolean
+  ...
 }
 
 NotificationsController --> NotificationsService : Association
@@ -7693,12 +8211,14 @@ class notifications {
   +is_read: Boolean
   +created_at: DateTime
   +read_at: DateTime?
+  ...
 }
 
 class users {
   +user_id: Int
   +full_name: String
   +email: String
+  ...
 }
 
 NotificationsController --> NotificationsService : Association
@@ -7792,6 +8312,7 @@ class notifications {
   +reference_id: Int?
   +is_read: Boolean
   +created_at: DateTime
+  ...
 }
 
 class users {
@@ -7800,6 +8321,7 @@ class users {
   +full_name: String
   +email: String
   +is_active: Boolean
+  ...
 }
 
 NotificationsController --> NotificationsService : Association
@@ -8024,9 +8546,7 @@ hide empty members
 
 class CloudinaryController {
   -cloudinaryService: CloudinaryService
-  ...
   +uploadImage(file: Express.Multer.File): Promise<any>
-  ...
 }
 
 class CloudinaryService {

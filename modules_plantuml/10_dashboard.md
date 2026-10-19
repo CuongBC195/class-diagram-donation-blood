@@ -60,6 +60,7 @@ class donations {
   +donation_date: DateTime
   +status_code: String
   +created_at: DateTime
+  ...
 }
 
 class blood_inventory {
@@ -71,6 +72,7 @@ class blood_inventory {
   +collection_date: DateTime
   +status_code: String
   +created_at: DateTime
+  ...
 }
 
 class users {
@@ -80,6 +82,7 @@ class users {
   +email: String
   +is_active: Boolean
   +created_at: DateTime
+  ...
 }
 
 class facility_donation_schedules {
@@ -89,6 +92,7 @@ class facility_donation_schedules {
   +status: String
   +max_donors: Int
   +current_donors: Int
+  ...
 }
 
 class blood_requests {
@@ -98,12 +102,14 @@ class blood_requests {
   +status_id: Int
   +is_emergency: Boolean
   +created_at: DateTime
+  ...
 }
 
 class blood_request_statuses {
   +status_id: Int
   +status_code: String
   +status_name: String
+  ...
 }
 
 class blood_types {
@@ -111,6 +117,7 @@ class blood_types {
   +blood_type_code: String
   +abo: String
   +rh_factor: String
+  ...
 }
 
 class medical_facilities {
@@ -119,6 +126,7 @@ class medical_facilities {
   +facility_name: String
   +is_primary: Boolean
   +is_active: Boolean
+  ...
 }
 
 DashboardController --> DashboardService : Association
@@ -157,16 +165,12 @@ hide empty members
 
 class DashboardController {
   -dashboardService: DashboardService
-  ...
   +getStats(startDate?: string, endDate?: string, facilityId?: string, user?: any): Promise<any>
-  ...
 }
 
 class DashboardService {
   -prisma: PrismaService
-  ...
   +getStats(startDateStr?: string, endDateStr?: string, facilityIdStr?: string, user?: any): Promise<any>
-  ...
 }
 
 interface OnModuleInit {
@@ -205,6 +209,7 @@ class donations {
   +donation_date: DateTime
   +status_code: String
   +created_at: DateTime
+  ...
 }
 
 class blood_inventory {
@@ -214,12 +219,14 @@ class blood_inventory {
   +volume_ml: Int
   +collection_date: DateTime
   +status_code: String
+  ...
 }
 
 class users {
   +user_id: Int
   +role_id: Int
   +created_at: DateTime
+  ...
 }
 
 class facility_donation_schedules {
@@ -227,6 +234,7 @@ class facility_donation_schedules {
   +facility_id: Int
   +date: DateTime
   +status: String
+  ...
 }
 
 class blood_requests {
@@ -234,22 +242,26 @@ class blood_requests {
   +facility_id: Int
   +status_id: Int
   +is_emergency: Boolean
+  ...
 }
 
 class blood_request_statuses {
   +status_id: Int
   +status_code: String
+  ...
 }
 
 class blood_types {
   +blood_type_id: Int
   +blood_type_code: String
+  ...
 }
 
 class medical_facilities {
   +facility_id: Int
   +facility_name: String
   +is_active: Boolean
+  ...
 }
 
 DashboardController --> DashboardService : Association

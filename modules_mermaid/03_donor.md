@@ -158,6 +158,7 @@ class donor_profiles {
   +emergency_contact_name: String?
   +emergency_contact_phone: String?
   +is_active: Boolean
+  ...
 }
 
 class donor_availability_slots {
@@ -170,6 +171,7 @@ class donor_availability_slots {
   +notes: String?
   +status: String
   +is_active: Boolean
+  ...
 }
 
 class facility_donation_schedules {
@@ -181,6 +183,7 @@ class facility_donation_schedules {
   +max_donors: Int
   +current_donors: Int
   +status: String
+  ...
 }
 
 class donations {
@@ -194,6 +197,7 @@ class donations {
   +donation_date: DateTime
   +health_check_passed: Boolean
   +status_code: String
+  ...
 }
 
 class blood_inventory {
@@ -207,6 +211,7 @@ class blood_inventory {
   +expiry_date: DateTime
   +status_code: String
   +source_donation_id: Int?
+  ...
 }
 
 class medical_facilities {
@@ -215,6 +220,7 @@ class medical_facilities {
   +facility_name: String
   +phone: String?
   +address: String
+  ...
 }
 
 class blood_types {
@@ -222,6 +228,7 @@ class blood_types {
   +blood_type_code: String
   +abo: String
   +rh_factor: String
+  ...
 }
 
 class notifications {
@@ -230,6 +237,7 @@ class notifications {
   +title: String
   +message: String
   +notification_type: String
+  ...
 }
 
 DonorController --> DonorService : Association
@@ -283,9 +291,11 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
+  ...
   +registerDonor(req: any, data: any): Promise~any~
   +getProfile(req: any): Promise~any~
   +updateProfile(req: any, dto: UpdateDonorProfileDto): Promise~any~
+  ...
 }
 
 class UpdateDonorProfileDto {
@@ -305,9 +315,11 @@ class UpdateDonorProfileDto {
 
 class DonorService {
   -prisma: PrismaService
+  ...
   +registerDonorProfile(userId: number, data: any): Promise~any~
   +getDonorProfile(userId: number): Promise~any~
   +updateDonorProfile(userId: number, dto: UpdateDonorProfileDto): Promise~any~
+  ...
 }
 
 class OnModuleInit {
@@ -347,6 +359,7 @@ class users {
   +address: String?
   +blood_type_id: Int?
   +is_donor_registered: Boolean
+  ...
 }
 
 class donor_profiles {
@@ -360,6 +373,7 @@ class donor_profiles {
   +emergency_contact_phone: String?
   +total_donations: Int
   +is_active: Boolean
+  ...
 }
 
 class blood_types {
@@ -367,6 +381,7 @@ class blood_types {
   +blood_type_code: String
   +abo: String
   +rh_factor: String
+  ...
 }
 
 DonorController --> DonorService : Association
@@ -396,12 +411,16 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
+  ...
   +updateAvailability(req: any, body: object): Promise~any~
+  ...
 }
 
 class DonorService {
   -prisma: PrismaService
+  ...
   +updateAvailability(userId: number, isAvailable: boolean): Promise~any~
+  ...
 }
 
 class OnModuleInit {
@@ -433,6 +452,7 @@ class users {
   +email: String
   +is_available_for_donation: Boolean
   +is_donor_registered: Boolean
+  ...
 }
 
 DonorController --> DonorService : Association
@@ -455,8 +475,10 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
+  ...
   +bookSlot(req: any, dto: BookDonationSlotDto): Promise~any~
   +cancelSlot(req: any, id: number): Promise~any~
+  ...
 }
 
 class BookDonationSlotDto {
@@ -486,8 +508,10 @@ class NotificationType {
 class DonorService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
+  ...
   +bookDonationSlot(userId: number, data: BookDonationSlotDto): Promise~any~
   +cancelDonationSlot(userId: number, slotId: number): Promise~any~
+  ...
 }
 
 class NotificationsService {
@@ -518,6 +542,10 @@ class PrismaService {
   +facility_donation_schedules: PrismaDonationScheduleDelegate
   +donor_availability_slots: PrismaAvailabilitySlotDelegate
   +notifications: PrismaNotificationDelegate
+  +donor_profiles: PrismaDonorProfileDelegate
+  +blood_requests: PrismaBloodRequestDelegate
+  +blood_compatibility: PrismaBloodCompatibilityDelegate
+  +blood_request_donor_matches: PrismaDonorMatchDelegate
   ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
@@ -527,6 +555,7 @@ class users {
   +user_id: Int
   +full_name: String
   +email: String
+  ...
 }
 
 class facility_donation_schedules {
@@ -536,6 +565,7 @@ class facility_donation_schedules {
   +max_donors: Int
   +current_donors: Int
   +status: String
+  ...
 }
 
 class donor_availability_slots {
@@ -545,6 +575,41 @@ class donor_availability_slots {
   +notes: String?
   +status: String
   +is_active: Boolean
+  ...
+}
+
+class donor_profiles {
+  +donor_profile_id: Int
+  +user_id: Int
+  +blood_type_id: Int
+  +is_active: Boolean
+  ...
+}
+
+class blood_requests {
+  +request_id: Int
+  +request_code: String
+  +blood_type_id: Int
+  +component_id: Int
+  +status_id: Int
+  ...
+}
+
+class blood_compatibility {
+  +compatibility_id: Int
+  +component_id: Int
+  +donor_blood_type_id: Int
+  +recipient_blood_type_id: Int
+  +is_compatible: Boolean
+  ...
+}
+
+class blood_request_donor_matches {
+  +match_id: Int
+  +request_id: Int
+  +donor_user_id: Int
+  +match_status: String
+  ...
 }
 
 class notifications {
@@ -553,6 +618,7 @@ class notifications {
   +title: String
   +message: String
   +notification_type: String
+  ...
 }
 
 DonorController --> DonorService : Association
@@ -578,6 +644,15 @@ PrismaService *-- notifications : Composition
 users "1" o-- "0..*" donor_availability_slots : Aggregation
 facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
+PrismaService *-- donor_profiles : Composition
+PrismaService *-- blood_requests : Composition
+PrismaService *-- blood_compatibility : Composition
+PrismaService *-- blood_request_donor_matches : Composition
+
+users "1" o-- "0..1" donor_profiles : Aggregation
+blood_requests "1" o-- "0..*" blood_request_donor_matches : Aggregation
+users "1" o-- "0..*" blood_request_donor_matches : Aggregation
+blood_requests "0..1" o-- "0..*" donor_availability_slots : Aggregation
 ```
 
 ## 3.3.2.4 Class Diagram - View My Slots and History (`donor_history_slots`)
@@ -589,16 +664,20 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
+  ...
   +getHistory(req: any): Promise~any~
   +getMySlots(req: any): Promise~any~
   +getSchedules(facilityId: string): Promise~any~
+  ...
 }
 
 class DonorService {
   -prisma: PrismaService
+  ...
   +getDonationHistory(userId: number): Promise~any~
   +getMySlots(userId: number): Promise~any~
   +getSchedules(facilityId?: number): Promise~any~
+  ...
 }
 
 class OnModuleInit {
@@ -632,6 +711,7 @@ class users {
   +user_id: Int
   +full_name: String
   +email: String
+  ...
 }
 
 class donor_availability_slots {
@@ -641,6 +721,7 @@ class donor_availability_slots {
   +specific_date: DateTime?
   +status: String
   +is_active: Boolean
+  ...
 }
 
 class facility_donation_schedules {
@@ -648,6 +729,7 @@ class facility_donation_schedules {
   +facility_id: Int
   +date: DateTime
   +status: String
+  ...
 }
 
 class donations {
@@ -658,12 +740,14 @@ class donations {
   +volume_ml: Int
   +donation_date: DateTime
   +status_code: String
+  ...
 }
 
 class medical_facilities {
   +facility_id: Int
   +facility_name: String
   +address: String
+  ...
 }
 
 DonorController --> DonorService : Association
@@ -696,12 +780,14 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
+  ...
   +getSlots(query: PaginationDto, req: any): Promise~any~
   +createSlot(dto: any, req: any): Promise~any~
   +updateSlotStatus(id: number, dto: UpdateSlotStatusDto, req: any): Promise~any~
   +exportExcel(query: any, res: Response, req: any): Promise~void~
   +downloadTemplate(res: Response): Promise~void~
   +importExcel(file: Express.Multer.File, req: any): Promise~any~
+  ...
 }
 
 class PaginationDto {
@@ -719,12 +805,14 @@ class UpdateSlotStatusDto {
 class DonorService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
+  ...
   +getSlots(query: PaginationDto, user: any): Promise~any~
   +createAdminSlot(dto: any, user: any): Promise~any~
   +updateSlotStatus(slotId: number, dto: UpdateSlotStatusDto, user: any): Promise~any~
   +exportExcel(query: any, user: any): Promise~Buffer~
   +getTemplate(): Promise~Buffer~
   +importExcel(buffer: Buffer, user: any): Promise~any~
+  ...
 }
 
 class ExcelUtil {
@@ -766,10 +854,20 @@ class PrismaService {
   +onModuleDestroy(): Promise~void~
 }
 
+class notifications {
+  +notification_id: Int
+  +user_id: Int
+  +title: String
+  +message: String
+  +notification_type: String
+  ...
+}
+
 class users {
   +user_id: Int
   +full_name: String
   +phone: String?
+  ...
 }
 
 class donor_availability_slots {
@@ -779,12 +877,14 @@ class donor_availability_slots {
   +specific_date: DateTime?
   +notes: String?
   +status: String
+  ...
 }
 
 class facility_donation_schedules {
   +schedule_id: Int
   +facility_id: Int
   +date: DateTime
+  ...
 }
 
 DonorController --> DonorService : Association
@@ -793,6 +893,7 @@ DonorController ..> UpdateSlotStatusDto : Dependency
 
 DonorService --> PrismaService : Association
 DonorService --> NotificationsService : Association
+NotificationsService --> PrismaService : Association
 DonorService ..> PaginationDto : Dependency
 DonorService ..> UpdateSlotStatusDto : Dependency
 DonorService ..> ExcelUtil : Dependency
@@ -808,6 +909,7 @@ PrismaService *-- notifications : Composition
 
 users "1" o-- "0..*" donor_availability_slots : Aggregation
 facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
+users "1" o-- "0..*" notifications : Aggregation
 ```
 
 ## 3.3.2.6 Class Diagram - Record Blood Donation (`donor_record_donation`)
@@ -819,7 +921,9 @@ direction TB
 
 class DonorController {
   -donorService: DonorService
+  ...
   +recordDonation(req: any, dto: RecordDonationDto): Promise~any~
+  ...
 }
 
 class RecordDonationDto {
@@ -836,7 +940,9 @@ class RecordDonationDto {
 
 class DonorService {
   -prisma: PrismaService
+  ...
   +recordDonation(user: any, dto: RecordDonationDto): Promise~any~
+  ...
 }
 
 class OnModuleInit {
@@ -863,14 +969,49 @@ class PrismaService {
   +inventory_transactions: PrismaInventoryTransactionDelegate
   +donor_profiles: PrismaDonorProfileDelegate
   +blood_requests: PrismaBloodRequestDelegate
+  +blood_request_statuses: PrismaBloodRequestStatusDelegate
+  +blood_request_inventory_allocations: PrismaInventoryAllocationDelegate
+  +donation_interval_rules: PrismaDonationIntervalRuleDelegate
   ...
   +onModuleInit(): Promise~void~
   +onModuleDestroy(): Promise~void~
 }
 
+class blood_requests {
+  +request_id: Int
+  +request_code: String
+  +blood_type_id: Int
+  +component_id: Int
+  +status_id: Int
+  ...
+}
+
+class blood_request_statuses {
+  +status_id: Int
+  +status_code: String
+  +status_name: String
+  ...
+}
+
+class blood_request_inventory_allocations {
+  +allocation_id: Int
+  +request_id: Int
+  +inventory_id: Int
+  +units_allocated: Int
+  ...
+}
+
+class donation_interval_rules {
+  +rule_id: Int
+  +component_id: Int
+  +min_interval_days: Int
+  ...
+}
+
 class users {
   +user_id: Int
   +full_name: String
+  ...
 }
 
 class donor_profiles {
@@ -879,6 +1020,7 @@ class donor_profiles {
   +total_donations: Int
   +last_donation_date: DateTime?
   +next_eligible_date: DateTime?
+  ...
 }
 
 class donations {
@@ -893,6 +1035,7 @@ class donations {
   +health_check_passed: Boolean
   +result_notes: String?
   +status_code: String
+  ...
 }
 
 class blood_inventory {
@@ -906,6 +1049,7 @@ class blood_inventory {
   +expiry_date: DateTime
   +status_code: String
   +source_donation_id: Int?
+  ...
 }
 
 class inventory_transactions {
@@ -915,6 +1059,7 @@ class inventory_transactions {
   +reference_type: String?
   +reference_id: Int?
   +performed_by: Int?
+  ...
 }
 
 DonorController --> DonorService : Association
@@ -937,4 +1082,12 @@ users "1" o-- "0..*" donations : Aggregation
 donations "0..1" o-- "0..*" blood_inventory : Aggregation
 blood_inventory "1" o-- "0..*" inventory_transactions : Aggregation
 users "1" o-- "0..1" donor_profiles : Aggregation
+PrismaService *-- blood_requests : Composition
+PrismaService *-- blood_request_statuses : Composition
+PrismaService *-- blood_request_inventory_allocations : Composition
+PrismaService *-- donation_interval_rules : Composition
+
+blood_request_statuses "1" o-- "0..*" blood_requests : Aggregation
+blood_requests "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
+blood_inventory "1" o-- "0..*" blood_request_inventory_allocations : Aggregation
 ```

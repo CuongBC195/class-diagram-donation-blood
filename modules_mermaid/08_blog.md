@@ -123,9 +123,6 @@ class blog_categories {
   +blog_category_id: Int
   +category_name: String
   +slug: String
-  +created_at: DateTime
-  +updated_at: DateTime?
-  ...
 }
 
 class blog_posts {
@@ -357,7 +354,6 @@ class PrismaClient {
 class PrismaService {
   +blog_categories: PrismaBlogCategoryDelegate
   +blog_posts: PrismaBlogPostDelegate
-  +blog_comments: PrismaBlogCommentDelegate
   +users: PrismaUserDelegate
   ...
   +onModuleInit(): Promise~void~

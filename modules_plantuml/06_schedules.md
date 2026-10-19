@@ -108,6 +108,7 @@ class facility_donation_schedules {
   +current_donors: Int
   +status: String
   +terms_html: String?
+  ...
 }
 
 class donor_availability_slots {
@@ -116,6 +117,7 @@ class donor_availability_slots {
   +schedule_id: Int?
   +status: String
   +created_at: DateTime
+  ...
 }
 
 class medical_facilities {
@@ -124,6 +126,7 @@ class medical_facilities {
   +facility_name: String
   +phone: String?
   +address: String
+  ...
 }
 
 class users {
@@ -133,6 +136,7 @@ class users {
   +phone: String?
   +gender: String?
   +blood_type_id: Int?
+  ...
 }
 
 class notifications {
@@ -141,6 +145,7 @@ class notifications {
   +title: String
   +message: String
   +notification_type: String
+  ...
 }
 
 SchedulesController --> SchedulesService : Association
@@ -182,11 +187,13 @@ hide empty members
 
 class SchedulesController {
   -schedulesService: SchedulesService
+  ...
   +getAllSchedules(query: ScheduleFilterDto, user: any): Promise<any>
   +getScheduleById(id: number, user: any): Promise<any>
   +createSchedule(dto: CreateScheduleDto, user: any): Promise<any>
   +updateSchedule(id: number, dto: UpdateScheduleDto, user: any): Promise<any>
   +deleteSchedule(id: number, user: any): Promise<any>
+  ...
 }
 
 class CreateScheduleDto {
@@ -219,6 +226,7 @@ class ScheduleFilterDto {
 
 class SchedulesService {
   -prisma: PrismaService
+  ...
   +onModuleInit(): Promise<void>
   +handleCronClosePastSchedules(): Promise<void>
   +getAllSchedules(query: ScheduleFilterDto, user: any): Promise<any>
@@ -226,6 +234,7 @@ class SchedulesService {
   +createSchedule(dto: CreateScheduleDto, user: any): Promise<any>
   +updateSchedule(id: number, dto: UpdateScheduleDto, user: any): Promise<any>
   +deleteSchedule(id: number, user: any): Promise<any>
+  ...
 }
 
 interface OnModuleInit {
@@ -261,18 +270,21 @@ class facility_donation_schedules {
   +current_donors: Int
   +status: String
   +terms_html: String?
+  ...
 }
 
 class medical_facilities {
   +facility_id: Int
   +facility_name: String
   +address: String
+  ...
 }
 
 class donor_availability_slots {
   +slot_id: Int
   +schedule_id: Int?
   +status: String
+  ...
 }
 
 SchedulesController --> SchedulesService : Association
@@ -308,9 +320,11 @@ hide empty members
 
 class SchedulesController {
   -schedulesService: SchedulesService
+  ...
   +getScheduleDonors(id: number, query: any, user: any): Promise<any>
   +updateDonorStatus(id: number, slotId: number, status: string, user: any): Promise<any>
   +exportScheduleDonors(id: number, res: Response, user: any): Promise<any>
+  ...
 }
 
 class CreateNotificationDto {
@@ -329,9 +343,11 @@ enum NotificationType {
 class SchedulesService {
   -prisma: PrismaService
   -notificationsService: NotificationsService
+  ...
   +getScheduleDonors(scheduleId: number, query: any, user: any): Promise<any>
   +updateDonorStatus(scheduleId: number, slotId: number, status: string, user: any): Promise<any>
   +exportScheduleDonors(scheduleId: number, user: any): Promise<object>
+  ...
 }
 
 class NotificationsService {
@@ -373,6 +389,7 @@ class facility_donation_schedules {
   +schedule_id: Int
   +facility_id: Int
   +date: DateTime
+  ...
 }
 
 class donor_availability_slots {
@@ -381,6 +398,7 @@ class donor_availability_slots {
   +schedule_id: Int?
   +status: String
   +created_at: DateTime
+  ...
 }
 
 class users {
@@ -390,11 +408,13 @@ class users {
   +phone: String?
   +gender: String?
   +blood_type_id: Int?
+  ...
 }
 
 class blood_types {
   +blood_type_id: Int
   +blood_type_code: String
+  ...
 }
 
 class notifications {
@@ -402,6 +422,7 @@ class notifications {
   +user_id: Int
   +title: String
   +message: String
+  ...
 }
 
 SchedulesController --> SchedulesService : Association
@@ -421,7 +442,7 @@ PrismaService *-- blood_types : Composition
 PrismaService *-- notifications : Composition
 facility_donation_schedules "1" o-- "0..*" donor_availability_slots : Aggregation
 users "1" o-- "0..*" donor_availability_slots : Aggregation
-blood_types "1" o-- "0..*" users : Aggregation
+blood_types "0..1" o-- "0..*" users : Aggregation
 users "1" o-- "0..*" notifications : Aggregation
 @enduml
 ```

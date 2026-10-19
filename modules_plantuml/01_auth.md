@@ -37,6 +37,43 @@ class AuthService {
   +resetPassword(dto: ResetPasswordDto): Promise<any>
 }
 
+class RegisterDto {
+  +email: string
+  +password: string
+  +fullName: string
+  +phoneNumber?: string
+  +roleId?: number
+  +facilityId?: number
+}
+
+class LoginDto {
+  +email: string
+  +password: string
+}
+
+class OtpDto {
+  +email: string
+  +otp_code: string
+}
+
+class ResendOtpDto {
+  +email: string
+}
+
+class RefreshTokenDto {
+  +refresh_token: string
+}
+
+class ForgotPasswordDto {
+  +email: string
+}
+
+class ResetPasswordDto {
+  +email: string
+  +otp_code: string
+  +new_password: string
+}
+
 class JwtService {
   +sign(payload: object): string
   +verify(token: string): any
@@ -163,6 +200,19 @@ class notifications {
 }
 
 AuthController --> AuthService : Association
+AuthController ..> RegisterDto : Dependency
+AuthController ..> LoginDto : Dependency
+AuthController ..> OtpDto : Dependency
+AuthController ..> ResendOtpDto : Dependency
+AuthController ..> RefreshTokenDto : Dependency
+AuthController ..> ForgotPasswordDto : Dependency
+AuthController ..> ResetPasswordDto : Dependency
+AuthService ..> RegisterDto : Dependency
+AuthService ..> LoginDto : Dependency
+AuthService ..> OtpDto : Dependency
+AuthService ..> ResendOtpDto : Dependency
+AuthService ..> ForgotPasswordDto : Dependency
+AuthService ..> ResetPasswordDto : Dependency
 AuthService --> PrismaService : Association
 AuthService --> JwtService : Association
 AuthService --> MailService : Association
@@ -428,6 +478,7 @@ class users {
   +email: String
   +full_name: String
   +is_email_verified: Boolean
+  +is_active: Boolean
   ...
 }
 
@@ -794,6 +845,8 @@ class users {
   +user_id: Int
   +facility_id: Int?
   +email: String
+  +full_name: String
+  +avatar_url: String?
   +refresh_token: String?
   +role: roles
   +facility: medical_facilities?

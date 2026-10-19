@@ -90,6 +90,7 @@ class blood_inventory {
   +status_code: String
   +source_donation_id: Int?
   +notes: String?
+  ...
 }
 
 class inventory_transactions {
@@ -102,6 +103,7 @@ class inventory_transactions {
   +performed_by: Int?
   +notes: String?
   +created_at: DateTime
+  ...
 }
 
 class medical_facilities {
@@ -110,6 +112,7 @@ class medical_facilities {
   +facility_name: String
   +phone: String?
   +address: String
+  ...
 }
 
 class blood_types {
@@ -117,23 +120,27 @@ class blood_types {
   +blood_type_code: String
   +abo: String
   +rh_factor: String
+  ...
 }
 
 class blood_components {
   +component_id: Int
   +component_code: String
   +component_name: String
+  ...
 }
 
 class users {
   +user_id: Int
   +full_name: String
   +email: String
+  ...
 }
 
 class donations {
   +donation_id: Int
   +donation_code: String
+  ...
 }
 
 InventoryController --> InventoryService : Association
@@ -173,14 +180,18 @@ direction TB
 
 class InventoryController {
   -inventoryService: InventoryService
+  ...
   +getInventoryList(query: any, req: any): Promise~any~
   +getStats(req: any): Promise~any~
+  ...
 }
 
 class InventoryService {
   -prisma: PrismaService
+  ...
   +getInventoryList(query: any, user: any): Promise~any~
   +getInventoryStats(user: any): Promise~any~
+  ...
 }
 
 class OnModuleInit {
@@ -219,21 +230,25 @@ class blood_inventory {
   +collection_date: DateTime
   +expiry_date: DateTime
   +status_code: String
+  ...
 }
 
 class medical_facilities {
   +facility_id: Int
   +facility_name: String
+  ...
 }
 
 class blood_types {
   +blood_type_id: Int
   +blood_type_code: String
+  ...
 }
 
 class blood_components {
   +component_id: Int
   +component_name: String
+  ...
 }
 
 InventoryController --> InventoryService : Association
@@ -263,7 +278,9 @@ direction TB
 
 class InventoryController {
   -inventoryService: InventoryService
+  ...
   +receiveBlood(req: any, dto: ReceiveBloodDto): Promise~any~
+  ...
 }
 
 class ReceiveBloodDto {
@@ -280,7 +297,9 @@ class ReceiveBloodDto {
 
 class InventoryService {
   -prisma: PrismaService
+  ...
   +receiveBlood(dto: any, user: any): Promise~any~
+  ...
 }
 
 class OnModuleInit {
@@ -319,6 +338,7 @@ class blood_inventory {
   +expiry_date: DateTime
   +status_code: String
   +source_donation_id: Int?
+  ...
 }
 
 class inventory_transactions {
@@ -329,6 +349,7 @@ class inventory_transactions {
   +reference_type: String?
   +reference_id: Int?
   +performed_by: Int?
+  ...
 }
 
 InventoryController --> InventoryService : Association
@@ -356,7 +377,9 @@ direction TB
 
 class InventoryController {
   -inventoryService: InventoryService
+  ...
   +updateBlood(req: any, inventoryId: number, dto: UpdateBloodDto): Promise~any~
+  ...
 }
 
 class UpdateBloodDto {
@@ -372,7 +395,9 @@ class UpdateBloodDto {
 
 class InventoryService {
   -prisma: PrismaService
+  ...
   +updateBlood(inventoryId: number, dto: any, user: any): Promise~any~
+  ...
 }
 
 class OnModuleInit {
@@ -406,6 +431,7 @@ class blood_inventory {
   +expiry_date: DateTime
   +status_code: String
   +notes: String?
+  ...
 }
 
 InventoryController --> InventoryService : Association
@@ -430,7 +456,9 @@ direction TB
 
 class InventoryController {
   -inventoryService: InventoryService
+  ...
   +discardBlood(req: any, inventoryId: number, dto: DiscardBloodDto): Promise~any~
+  ...
 }
 
 class DiscardBloodDto {
@@ -439,7 +467,9 @@ class DiscardBloodDto {
 
 class InventoryService {
   -prisma: PrismaService
+  ...
   +discardBlood(inventoryId: number, user: any, reason: string): Promise~any~
+  ...
 }
 
 class OnModuleInit {
@@ -471,6 +501,7 @@ class blood_inventory {
   +inventory_id: Int
   +bag_code: String
   +status_code: String
+  ...
 }
 
 class inventory_transactions {
@@ -481,6 +512,7 @@ class inventory_transactions {
   +reference_type: String?
   +performed_by: Int?
   +notes: String?
+  ...
 }
 
 InventoryController --> InventoryService : Association
@@ -508,16 +540,20 @@ direction TB
 
 class InventoryController {
   -inventoryService: InventoryService
+  ...
   +exportExcel(query: any, res: Response, req: any): Promise~void~
   +downloadTemplate(res: Response): Promise~void~
   +importExcel(file: Express.Multer.File, req: any): Promise~any~
+  ...
 }
 
 class InventoryService {
   -prisma: PrismaService
+  ...
   +exportExcel(query: any, user: any): Promise~Buffer~
   +getTemplate(): Promise~Buffer~
   +importExcel(buffer: Buffer, staffId: number): Promise~any~
+  ...
 }
 
 class ExcelUtil {
@@ -562,6 +598,7 @@ class blood_inventory {
   +collection_date: DateTime
   +expiry_date: DateTime
   +status_code: String
+  ...
 }
 
 class inventory_transactions {
@@ -570,11 +607,13 @@ class inventory_transactions {
   +transaction_type: String
   +quantity: Int
   +performed_by: Int?
+  ...
 }
 
 class users {
   +user_id: Int
   +full_name: String
+  ...
 }
 
 InventoryController --> InventoryService : Association

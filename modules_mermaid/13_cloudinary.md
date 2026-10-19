@@ -44,9 +44,7 @@ direction TB
 
 class CloudinaryController {
   -cloudinaryService: CloudinaryService
-  ...
   +uploadImage(file: Express.Multer.File): Promise~any~
-  ...
 }
 
 class CloudinaryService {

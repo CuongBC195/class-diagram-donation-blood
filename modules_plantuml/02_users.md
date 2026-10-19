@@ -780,15 +780,13 @@ interface OnModuleDestroy {
 class PrismaClient {
   +$connect(): Promise<void>
   +$disconnect(): Promise<void>
+  +$transaction(callback: any): Promise<any>
   ...
 }
 
 class PrismaService {
   +users: PrismaUserDelegate
   +roles: PrismaRoleDelegate
-  +blood_types: PrismaBloodTypeDelegate
-  +provinces: PrismaProvinceDelegate
-  +wards: PrismaWardDelegate
   +medical_facilities: PrismaMedicalFacilityDelegate
   +donor_profiles: PrismaDonorProfileDelegate
   ...
