@@ -24,7 +24,7 @@ DESTINATIONS = [
 TMP_DIR = Path("/tmp/drawio_mermaid_batch")
 TMP_DIR.mkdir(parents=True, exist_ok=True)
 
-def fix_swimlane_margins(drawio_file: Path):
+def fix_drawio_styles(drawio_file: Path):
     import re
     tree = ET.parse(drawio_file)
     root = tree.getroot()
@@ -41,6 +41,25 @@ def fix_swimlane_margins(drawio_file: Path):
                     if new_style != style:
                         cell.attrib["style"] = new_style
                         changed = True
+
+    # Replace purple edge label background with white (#ffffff)
+    for cell in root.iter("mxCell"):
+        if cell.attrib.get("edge") == "1":
+            style = cell.attrib.get("style", "")
+            if "labelBackgroundColor=" in style:
+                new_style = re.sub(r"labelBackgroundColor=[^;]+", "labelBackgroundColor=#ffffff", style)
+                if new_style != style:
+                    cell.attrib["style"] = new_style
+                    changed = True
+
+    for uo in root.iter("UserObject"):
+        style = uo.attrib.get("mermaidBaseStyle", "")
+        if "labelBackgroundColor=" in style:
+            new_style = re.sub(r"labelBackgroundColor=[^;]+", "labelBackgroundColor=#ffffff", style)
+            if new_style != style:
+                uo.attrib["mermaidBaseStyle"] = new_style
+                changed = True
+
     if changed:
         tree.write(drawio_file, encoding="utf-8", xml_declaration=True)
 
@@ -55,7 +74,7 @@ def convert_single_mmd(key: str) -> Path:
         
     cmd = [DRAWIO_BIN, "-x", "-f", "xml", "-o", str(out_drawio), str(mmd_path)]
     subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    fix_swimlane_margins(out_drawio)
+    fix_drawio_styles(out_drawio)
     return out_drawio
 
 def main():
